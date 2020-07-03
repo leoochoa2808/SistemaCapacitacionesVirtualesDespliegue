@@ -1,0 +1,130 @@
+@{
+    ViewData["Title"] = "Evento";
+}
+@model Evento
+<form method="post" asp-controller="Home">
+    <div class="container py-3">
+        <div class="row">
+
+          <div class="col-md-3">
+          </div>
+
+          <div class="col-md-6">
+            <h2 style="text-align: center;">Crear Evento</h2><br/>
+
+                <div class="form-group">
+                  <label asp-for="NEvento" class="col-sm-4 col-form-label">Nombre de Evento</label>
+                  <div class="col-sm-8">
+                    <input asp-for="NEvento" class="form-control">
+                  </div>
+                </div><br/><br/>
+
+
+                <div class="form-group">
+                  <label asp-for="Categoria" class="col-sm-4 col-form-label">Categoria</label>
+                  <div class="col-sm-8">
+                      <select asp-for="Categoria" class="form-control">
+                        <option value=""></option>
+                        <option value="1">Desarrollo de Software</option>
+                      </select>
+                  </div>
+                </div><br/><br/>
+
+
+                <div class="form-group">
+                  <label asp-for="FInicio" class="col-sm-4 col-form-label">Fecha Inicio</label>
+                    <div class="col-sm-8">
+                      <input asp-for="FInicio" class="form-control">
+                    </div>
+                </div><br/><br/>
+
+
+                <div class="form-group">
+                  <label asp-for="FFin" class="col-sm-4 col-form-label">Fecha Fin</label>
+                    <div class="col-sm-8">
+                      <input asp-for="FFin" class="form-control">
+                    </div>
+                </div><br/><br/>
+
+
+                <div class="form-group">
+                  <label asp-for="Horario" class="col-sm-4 col-form-label">Horario</label>
+                  <div class="col-sm-8">
+                      <select asp-for="Horario" class="form-control">
+                        <option value=""></option>
+                        <option value="2">Lunes</option>
+                        <option value="3">Martes</option>
+                        <option value="4">Miercoles</option>
+                        <option value="5">Jueves</option>
+                        <option value="6">Viernes</option>
+                        <option value="7">Sabado</option>
+                      </select>
+                  </div>
+                </div><br/><br/>       
+
+
+                <div class="form-group">
+                  <label asp-for="HInicio" class="col-sm-4 col-form-label">Hora Inicio</label>
+                    <div class="col-sm-8">
+                      <input asp-for="HInicio" class="form-control">
+                    </div>
+                </div><br/><br/>
+
+
+                <div class="form-group">
+                  <label asp-for="HFin" class="col-sm-4 col-form-label">Hora Fin</label>
+                    <div class="col-sm-8">
+                      <input asp-for="HFin" class="form-control">
+                    </div>
+                </div><br/><br/>
+
+
+                <div class="form-group">
+                  <label asp-for="Instructor" class="col-sm-4 col-form-label">Instructor</label>
+                  <div class="col-sm-8">
+                      <select asp-for="Instructor" class="form-control">
+                        <option value=""></option>
+                        <option value="2">Carlos Rojas Balvin</option>
+                        <option value="3">Brendan Villaran Bueno</option>
+                      </select>
+                  </div>
+                </div><br/><br/>
+
+
+                <div class="form-group">
+                  <label asp-for="Stock" class="col-sm-4 col-form-label">Stock Participantes</label>
+                    <div class="col-sm-8">
+                      <input asp-for="Stock" class="form-control" >
+                    </div>
+                </div><br/><br/>
+
+
+                <div class="form-group">
+                  <label asp-for="Inversion" class="col-sm-4 col-form-label">Inversion</label>
+                    <div class="col-sm-8">
+                      <input asp-for="Inversion" class="form-control">
+                    </div>
+                </div><br/><br/>
+
+    
+                <div class="form-group">
+                  <label asp-for="Descripcion" class="col-sm-12 col-form-label">Descripcion del Evento</label>
+                    <div class="col-sm-12">
+                      <input asp-for="Descripcion" class="form-control">
+                    </div>
+                </div><br/><br/><br/>
+                
+                <div class="form-group col-md-12">
+                  <div class="col-sm-12">
+                    <button class="btn btn-primary">Registrar</button>
+                  </div>
+                 </div>   
+        </div>
+        
+        <div class="col-md-3">
+        </div>
+
+      </div> 
+    </div>   
+  </form> 
+  
