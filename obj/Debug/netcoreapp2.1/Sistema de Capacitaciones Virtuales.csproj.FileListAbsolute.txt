@@ -1,33 +1,37 @@
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.deps.json
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.runtimeconfig.json
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.runtimeconfig.dev.json
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.dll
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.pdb
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.Views.dll
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.Views.pdb
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.csprojAssemblyReference.cache
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.csproj.CoreCompileInputs.cache
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorAssemblyInfo.cache
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorAssemblyInfo.cs
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.AssemblyInfoInputs.cache
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.AssemblyInfo.cs
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.TagHelpers.input.cache
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.TagHelpers.output.cache
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorCoreGenerate.cache
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\Evento.g.cshtml.cs
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorTargetAssemblyInfo.cache
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorTargetAssemblyInfo.cs
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.Views.pdb
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.dll
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.pdb
-C:\Users\Patricia\Desktop\CapacitacionVisual\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.csproj.CopyComplete
+D:\KleerProject\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\appsettings.Development.json
+D:\KleerProject\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\appsettings.json
+D:\KleerProject\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+D:\KleerProject\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.deps.json
+D:\KleerProject\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.runtimeconfig.json
+D:\KleerProject\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.runtimeconfig.dev.json
+D:\KleerProject\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.dll
+D:\KleerProject\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.pdb
+D:\KleerProject\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.Views.dll
+D:\KleerProject\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.Views.pdb
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.csprojAssemblyReference.cache
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.AssemblyInfoInputs.cache
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.AssemblyInfo.cs
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.csproj.CoreCompileInputs.cache
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorAssemblyInfo.cache
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorAssemblyInfo.cs
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.TagHelpers.input.cache
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.TagHelpers.output.cache
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorCoreGenerate.cache
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.cshtml.g.cs
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.cshtml.g.cs
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\Evento.cshtml.g.cs
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.cshtml.g.cs
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.cshtml.g.cs
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.cshtml.g.cs
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorTargetAssemblyInfo.cache
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorTargetAssemblyInfo.cs
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.Views.pdb
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.dll
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.pdb
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.genruntimeconfig.cache
+D:\KleerProject\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.csproj.CopyComplete

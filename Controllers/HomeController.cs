@@ -38,7 +38,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers
         {
             return View();
         }
-
+        //NADA SIRVE
 
 
 
