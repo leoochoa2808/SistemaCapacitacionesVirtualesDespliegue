@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Sistema_de_Capacitaciones_Virtuales.Models;
 
 namespace Sistema_de_Capacitaciones_Virtuales
 {
@@ -31,8 +33,16 @@ namespace Sistema_de_Capacitaciones_Virtuales
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+                //Conexion a base de datos
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<KleerDbContext>(o =>
+                    o.UseNpgsql(
+                    "Host=ec2-52-202-146-43.compute-1.amazonaws.com;" +
+                    "Database=dec175u6j2l7ep;Username=uzymstzjwswvba;"+
+                    "Password=4855b2563de5e64b7726b9c7b13b81aafdc7055f68e5b10940b676fcbe81b4bf;"+
+                    "Port=5432;SSL Mode=Require;Trust Server Certificate=true")
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
