@@ -52,9 +52,13 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
 
                     b.Property<DateTime?>("HoraInicio");
 
+                    b.Property<int?>("Instructor_EventoId");
+
                     b.Property<double>("Inversion");
 
                     b.Property<string>("NombreEvento");
+
+                    b.Property<int?>("Participante_EventoId");
 
                     b.Property<int>("StockParticipantes");
 
@@ -64,6 +68,10 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
 
                     b.HasIndex("CategoriaId");
 
+                    b.HasIndex("Instructor_EventoId");
+
+                    b.HasIndex("Participante_EventoId");
+
                     b.ToTable("Eventos");
                 });
 
@@ -72,21 +80,25 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ApellidoMaterno");
+                    b.Property<string>("ApelidoMaterno");
 
                     b.Property<string>("ApellidoPaterno");
 
-                    b.Property<string>("Celular");
-
-                    b.Property<string>("CodInstructor");
+                    b.Property<int>("CodInstructor");
 
                     b.Property<string>("Correo");
+
+                    b.Property<int?>("Instructor_EventoId");
 
                     b.Property<string>("PrimerNombre");
 
                     b.Property<string>("SegundoNombre");
 
+                    b.Property<int>("celular");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("Instructor_EventoId");
 
                     b.ToTable("Instructores");
                 });
@@ -96,15 +108,11 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("EventoId");
+                    b.Property<int>("CodEvento");
 
-                    b.Property<int?>("InstructorId");
+                    b.Property<int>("CodInstructor");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("EventoId");
-
-                    b.HasIndex("InstructorId");
 
                     b.ToTable("Instructor_Eventos");
                 });
@@ -114,21 +122,25 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ApellidoMaterno");
+                    b.Property<string>("ApelidoMaterno");
 
                     b.Property<string>("ApellidoPaterno");
 
-                    b.Property<string>("Celular");
-
-                    b.Property<string>("CodParticipante");
+                    b.Property<int>("CodParticipante");
 
                     b.Property<string>("Correo");
+
+                    b.Property<int?>("Participante_EventoId");
 
                     b.Property<string>("PrimerNombre");
 
                     b.Property<string>("SegundoNombre");
 
+                    b.Property<int>("celular");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("Participante_EventoId");
 
                     b.ToTable("Participantes");
                 });
@@ -138,15 +150,13 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("EventoId");
+                    b.Property<int>("CodEvento");
 
-                    b.Property<int?>("ParticipanteId");
+                    b.Property<int>("CodParticipante");
+
+                    b.Property<int?>("Participante_EventoId");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("EventoId");
-
-                    b.HasIndex("ParticipanteId");
 
                     b.ToTable("Participante_Eventos");
                 });
@@ -156,28 +166,28 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                     b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Categoria", "Categoria")
                         .WithMany("Eventos")
                         .HasForeignKey("CategoriaId");
+
+                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Instructor_Evento", "Instructor_Evento")
+                        .WithMany("Eventos")
+                        .HasForeignKey("Instructor_EventoId");
+
+                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Participante_Evento", "Participante_Evento")
+                        .WithMany("Eventos")
+                        .HasForeignKey("Participante_EventoId");
                 });
 
-            modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Instructor_Evento", b =>
+            modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Instructor", b =>
                 {
-                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Evento", "Evento")
-                        .WithMany("Instructor_Eventos")
-                        .HasForeignKey("EventoId");
-
-                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Instructor", "Instructor")
-                        .WithMany("Instructor_Eventos")
-                        .HasForeignKey("InstructorId");
+                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Instructor_Evento", "Instructor_Evento")
+                        .WithMany("Instructores")
+                        .HasForeignKey("Instructor_EventoId");
                 });
 
-            modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Participante_Evento", b =>
+            modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Participante", b =>
                 {
-                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Evento", "Evento")
-                        .WithMany("Participante_Eventos")
-                        .HasForeignKey("EventoId");
-
-                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Participante", "Participante")
-                        .WithMany("Participante_Eventos")
-                        .HasForeignKey("ParticipanteId");
+                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Participante_Evento", "Participante_Evento")
+                        .WithMany("Participantes")
+                        .HasForeignKey("Participante_EventoId");
                 });
 #pragma warning restore 612, 618
         }
