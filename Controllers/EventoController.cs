@@ -32,7 +32,6 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers
                 return View();
             } else
                 return View ();
-
        }
         
         // public IActionResult CrearEvento (Evento e) {
