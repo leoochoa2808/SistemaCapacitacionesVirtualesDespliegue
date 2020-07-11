@@ -10,9 +10,9 @@ namespace Sistema_de_Capacitaciones_Virtuales.Models
         public string PrimerNombre { get; set; }
         public string SegundoNombre { get; set; }
         public string ApellidoPaterno { get; set; }
-        public string ApelidoMaterno { get; set; }
+        public string ApellidoMaterno { get; set; }
         public string Correo { get; set; }
-        public int celular { get; set; }
+        public int Celular { get; set; }
         public Instructor_Evento Instructor_Evento { get; set; }
         public int? Instructor_EventoId { get; set; }
     }
