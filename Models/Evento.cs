@@ -19,10 +19,8 @@ namespace Sistema_de_Capacitaciones_Virtuales.Models
         public string estado { get; set; }
         public DateTime? FechConfirmacion { get; set; }
         public string Frecuencia { get; set; }
-        public Instructor_Evento Instructor_Evento { get; set; }
-        public int? Instructor_EventoId { get; set; }
-        public Participante_Evento Participante_Evento { get; set; }
-        public int? Participante_EventoId { get; set; }
+        public List<Instructor_Evento> Instructor_Eventos { get; set; }
+        public List<Participante_Evento> Participante_Eventos { get; set; }
         
 
         // public int Id {get;set;}
