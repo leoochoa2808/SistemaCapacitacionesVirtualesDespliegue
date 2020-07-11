@@ -15,8 +15,24 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers
         public EventoController(KleerDbContext context) {
             _context = context;
         }
-       public IActionResult CrearEvento () {
-           return View();
+
+        //metodo para listar las listas para el combobox. El nombre del método tenia el mismo nombre que la vista.
+       public IActionResult Evento () {
+           ViewBag.Categorias = _context.Categorias.ToList();
+           ViewBag.Instructores = _context.Instructores.ToList();
+           return View("Evento");
+       }
+
+       [HttpPost]
+       public IActionResult Evento (Evento e){
+           ViewBag.Eventos = _context.Eventos.ToList();
+           if (ModelState.IsValid) {
+                _context.Add (e);
+                _context.SaveChanges ();
+                return View();
+            } else
+                return View ();
+
        }
         
         // public IActionResult CrearEvento (Evento e) {
