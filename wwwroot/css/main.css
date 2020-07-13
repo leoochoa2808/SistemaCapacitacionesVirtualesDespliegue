@@ -2009,7 +2009,7 @@ input, select, textarea {
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
-	select[name="combx"],
+	select[type="combx"],
 	input[type="date"],
 	input[type="time"],
 	textarea {
@@ -2036,7 +2036,7 @@ input, select, textarea {
 		input[type="password"]:focus,
 		input[type="email"]:focus,
 		input[type="date"]:focus,
-		select[name="combx"]:focus,
+		select[type="combx"]:focus,
 		input[type="time"]:focus,
 		textarea:focus {
 			border-color: #37c0fb;
@@ -2045,7 +2045,7 @@ input, select, textarea {
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
-	select[name="combx"],
+	select[type="combx"],
 	input[type="date"],
 	input[type="time"]{
 		line-height: 1em;
