@@ -4,132 +4,83 @@ Layout = "~/Views/Shared/_Layout.cshtml";
 @model Evento
 
 <body>
-  
-<form method="post" asp-controller="Evento">
-    <div class="container py-3">
-        <div class="row">
 
-          <div class="col-md-3">
-          </div>
-
-          <div class="col-md-6">
-            <h2 style="text-align: center;">Crear Evento</h2><br/>
-
-                <div class="form-group">
-                  <label class="col-sm-4 col-form-label">Nombre de Evento</label>
-                  <div class="col-sm-8">
-                    <input asp-for="NombreEvento" class="form-control">
-                  </div>
-                </div><br/><br/>
-
-
-                <div class="form-group">
-                  <label class="col-sm-4 col-form-label">Categoria</label>
-                  <div class="col-sm-8"></div>
-                      <select asp-for="CategoriaId" id="input" class="form-control">
-                            <option>Seleccionar categoría</option>
+					<div class="container" style="padding-bottom: 10%; padding-right:10%; padding-left:10%; padding-top:2%;">
+						
+            <section  class="col-8 col-12-narrower">
+								<h3 align="center" style="font-size: 40px;">Crear Evento</h3>
+								<form method="post" asp-controller="Evento">
+									<div class="row gtr-50">
+										<div class="col-12 col-12-mobilep">
+                      <label class="col-12 col-12-mobilep">Nombre del Evento</label>
+											<input type="text" name="name" id="name" placeholder="Ingrese el nombre" />
+										</div>
+                    <div class="col-8 col-12-mobilep">
+                      <label class="col-8 col-12-mobilep">Categoría</label>
+                       <select name="combx" asp-for="CategoriaId" id="name">
+                            <option name="combx" value="">--- Seleccionar categoria</option>
                          @foreach(var cat in (List<Categoria>)ViewBag.Categorias)
                            {
-                            <option value="@cat.Id">@cat.NombreCategoria</option>
-                            }                                                                                                                     -->
-                      </select>
-                  </div>
-                </div><br/><br/>
-
-
-                <div class="form-group">
-                  <label class="col-sm-4 col-form-label">Fecha Inicio</label>
-                    <div class="col-sm-8">
-                      <input asp-for="FechaInicio" class="form-control">
-                    </div>
-                </div><br/><br/>
-
-
-                <div class="form-group">
-                  <label class="col-sm-4 col-form-label">Fecha Fin</label>
-                    <div class="col-sm-8">
-                      <input asp-for="FechaFin" class="form-control">
-                    </div>
-                </div><br/><br/>
-
-
-                <div class="form-group">
-                  <label class="col-sm-4 col-form-label">Horario</label>
-                  <div class="col-sm-8">
-                      <select asp-for="Frecuencia" class="form-control">
+                            <option name="combx" value="@cat.Id">@cat.NombreCategoria</option>
+                            }                                                                                                                    
+                      </select>										
+										</div>
+                    <div class="col-4 col-12-mobilep">
+                      <label class="col-4 col-12-mobilep">Horario</label>
+											<select name="combx" id="name">
+                        <option name="combx" value="">--- Seleccionar Horario</option>
                         <option value="SABATINO">SABATINO</option>
                         <option value="L-MI">L-MI</option>
                         <option value="MI-VI">MI-VI</option>
-                        <option value="M-J">M-J</option>                       
+                        <option value="M-J">M-J</option>  
                       </select>
-                  </div>
-                </div><br/><br/>       
-
-
-                <div class="form-group">
-                  <label  class="col-sm-4 col-form-label">Hora Inicio</label>
-                    <div class="col-sm-8">
-                      <input asp-for="HoraInicio" class="form-control">
-                    </div>
-                </div><br/><br/>
-
-
-                <div class="form-group">
-                  <label class="col-sm-4 col-form-label">Hora Fin</label>
-                    <div class="col-sm-8">
-                      <input asp-for="HoraFin" class="form-control">
-                    </div>
-                </div><br/><br/>
-
-
-                @* <div class="form-group">
-                  <label asp-for="Instructor" class="col-sm-4 col-form-label">Instructor</label>
-                  <div class="col-sm-8">
-                      <select asp-for="CategoriaId" id="input" class="form-control">
-                         @foreach(var inst in (List<Instructor>)ViewBag.Instructores)
-                           {
-                            <option value="@inst.Id">@inst.PrimerNombre @inst.ApellidoPaterno @inst.ApellidoMaterno</option>
-                            }                                                                                                                     -->
-                      </select>
-                  </div>
-                </div><br/><br/> *@
-
-
-                <div class="form-group">
-                  <label class="col-sm-4 col-form-label">Stock Participantes</label>
-                    <div class="col-sm-8">
-                      <input asp-for="StockParticipantes" class="form-control" >
-                    </div>
-                </div><br/><br/>
-
-
-                <div class="form-group">
-                  <label class="col-sm-4 col-form-label">Inversion</label>
-                    <div class="col-sm-8">
-                      <input asp-for="Inversion" class="form-control">
-                    </div>
-                </div><br/><br/>
-
-    
-                <div class="form-group">
-                  <label class="col-sm-12 col-form-label">Descripcion del Evento</label>
-                    <div class="col-sm-12">
-                      <input asp-for="Descripcion" class="form-control">
-                    </div>
-                </div><br/><br/><br/>
-                
-                <div class="form-group col-md-12">
-                  <div class="col-sm-12">
-                    <button  type="submit" class="btn btn-primary" >Registrar</button>
-                  </div>
-                 </div>   
-        </div>
-        
-        <div class="col-md-3">
-        </div>
-
-      </div> 
-    </div>   
-  </form> 
+										</div>
+										<div class="col-4 col-12-mobilep">
+                      <label class="col-4 col-12-mobilep">Fecha inicio</label>
+											<input type="date" name="email" id="email" placeholder="Fecha de inicio" />
+										</div>
+                     <div class="col-4 col-12-mobilep">
+                      <label class="col-4 col-12-mobilep">Fecha Fin</label>
+											<input type="date" name="email" id="email" placeholder="Fecha fin" />
+										</div>
+                    <div class="col-4 col-12-mobilep">
+                      <label class="col-3 col-12-mobilep">Inversion</label>
+											<input type="email" name="email" id="email" placeholder="Inversion" />
+										</div>
+                    <div class="col-4 col-12-mobilep">                      
+                      <label class="col-4 col-12-mobilep">Hora Inicio</label>
+											<input type="time" name="email" id="email" placeholder="Horar Inicio" />
+										</div>
+                   
+                    
+										 <div class="col-4 col-12-mobilep">
+                       <label class="col-4 col-12-mobilep">Hora Fin</label>
+											<input type="time" name="email" id="email" placeholder="Horar Fin" />
+										</div>
+                     
+                    <div class="col-4 col-12-mobilep">
+                      <label class="col-3 col-12-mobilep">Stock</label>
+											<input type="email" name="email" id="email" placeholder="Stock Participantes" />
+										</div>
+                    
+                    <div class="col-8 col-12-mobilep">
+                       <label class="col-8 col-12-mobilep">Instructor</label>
+											<input type="email" name="email" id="email" placeholder="Instructor" />
+										</div>
+										<div class="col-12">
+                      <label class="col-12 col-12-mobilep">Descripción</label>
+											<textarea name="message" id="message" placeholder="Ingrese una descripción sobe el Evento" rows="5"></textarea>
+										</div>
+										<div class="col-12">
+											<ul class="actions">
+												<li><input type="submit"  class="button alt create" value="Registrar" /></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+							</section>
+						
+					</div>
+ 
 </body>
   

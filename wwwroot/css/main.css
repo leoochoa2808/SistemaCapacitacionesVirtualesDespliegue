@@ -129,7 +129,7 @@ input, select, textarea {
 	}
 
 	p, ul, ol, dl, table, blockquote {
-		margin: 0 0 2em 0;
+		margin: 1em 0 2em 0;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -227,6 +227,7 @@ input, select, textarea {
 
 			.container {
 				width: 90%;
+				margin: 25px;
 			}
 
 		}
@@ -235,6 +236,12 @@ input, select, textarea {
 
 			.container {
 				width: 100%;
+				margin-top: 50px;
+				margin-left: 0;
+			}
+			.img{
+				width: 40%;
+				height:40%;
 			}
 
 		}
@@ -2002,6 +2009,9 @@ input, select, textarea {
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
+	select[name="combx"],
+	input[type="date"],
+	input[type="time"],
 	textarea {
 		-moz-appearance: none;
 		-webkit-appearance: none;
@@ -2025,13 +2035,19 @@ input, select, textarea {
 		input[type="text"]:focus,
 		input[type="password"]:focus,
 		input[type="email"]:focus,
+		input[type="date"]:focus,
+		select[name="combx"]:focus,
+		input[type="time"]:focus,
 		textarea:focus {
 			border-color: #37c0fb;
 		}
 
 	input[type="text"],
 	input[type="password"],
-	input[type="email"] {
+	input[type="email"],
+	select[name="combx"],
+	input[type="date"],
+	input[type="time"]{
 		line-height: 1em;
 	}
 
@@ -2456,7 +2472,10 @@ input, select, textarea {
 			background-color: #555555;
 			color: #fff;
 		}
-
+		.button.alt.create {
+			background-color: #7bcaea;
+			color: #fff;
+		}
 			input[type="submit"].alt:hover,
 			input[type="reset"].alt:hover,
 			input[type="button"].alt:hover,
@@ -2464,7 +2483,10 @@ input, select, textarea {
 			.button.alt:hover {
 				background-color: #626262;
 			}
-
+			.button.alt.create:hover {
+				background-color: #1eb8fb;
+				
+			}
 			input[type="submit"].alt:active,
 			input[type="reset"].alt:active,
 			input[type="button"].alt:active,
@@ -2801,6 +2823,9 @@ input, select, textarea {
 
 	@media screen and (max-width: 1680px) {
 
+			/* .button.alt.create{
+				margin-left: 18.5em;
+			} */
 		/* Basic */
 
 			body, input, select, textarea {
@@ -2820,6 +2845,9 @@ input, select, textarea {
 
 	@media screen and (max-width: 1280px) {
 
+		/* .button.alt.create{
+			margin-left: 16em;
+		} */
 		/* Basic */
 
 			body, input, select, textarea {
@@ -2916,6 +2944,7 @@ input, select, textarea {
 
 			h1, h2, h3, h4, h5, h6 {
 				margin-bottom: 0.5em;
+				margin-top: 0.5em;
 			}
 
 			header p {
