@@ -24,17 +24,16 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers
 
        [HttpPost]
        public IActionResult CrearEvento(Evento e){
-           ViewBag.Eventos = _context.Eventos.ToList();
-           if (ModelState.IsValid) {
+           if (ModelState.IsValid) { 
                 _context.Add (e);
-                _context.SaveChanges ();
-                return View();
+                _context.SaveChanges();
+                return RedirectToAction("Index","Home");
             } else
-                return View ();
+                return View (e);
        }
-        
-        // public IActionResult CrearEvento (Evento e) {
-                       
-        // }
+       public IActionResult VisualizarPendientes()
+       {           
+           return View(_context.Eventos.ToList());
+       }
     }
 }
