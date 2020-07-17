@@ -11888,11 +11888,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Patricia\\Desktop\\Capacitaciones usmp\\Sistema de Capacitaciones Virtuales\\Sistema de Capacitaciones Virtuales.csproj",
+      "projectUniqueName": "C:\\Users\\Patricia\\Desktop\\capacitacion\\Sistema de Capacitaciones Virtuales\\Sistema de Capacitaciones Virtuales.csproj",
       "projectName": "Sistema de Capacitaciones Virtuales",
-      "projectPath": "c:\\Users\\Patricia\\Desktop\\Capacitaciones usmp\\Sistema de Capacitaciones Virtuales\\Sistema de Capacitaciones Virtuales.csproj",
+      "projectPath": "C:\\Users\\Patricia\\Desktop\\capacitacion\\Sistema de Capacitaciones Virtuales\\Sistema de Capacitaciones Virtuales.csproj",
       "packagesPath": "C:\\Users\\Patricia\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Patricia\\Desktop\\Capacitaciones usmp\\Sistema de Capacitaciones Virtuales\\obj\\",
+      "outputPath": "C:\\Users\\Patricia\\Desktop\\capacitacion\\Sistema de Capacitaciones Virtuales\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
