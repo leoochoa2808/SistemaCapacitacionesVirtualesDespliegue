@@ -8,6 +8,7 @@
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/encabezado.css" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -17,7 +18,7 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top barra">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -26,13 +27,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Sistema_de_Capacitaciones_Virtuales</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">ABC</a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+            <div class="navbar-collapse collapse ">
+                <ul class="nav navbar-nav opciones">
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Somos</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">Cursos</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contactanos</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Evento">Evento</a></li>
                 </ul>
             </div>
@@ -43,10 +44,6 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2020 - Sistema_de_Capacitaciones_Virtuales</p>
-        </footer>
     </div>
 
     <environment include="Development">

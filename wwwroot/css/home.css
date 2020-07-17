@@ -1,0 +1,44 @@
+
+.texto{
+    font-family: Georgia, 'Times New Roman', serif;;
+    text-align: center;
+    color: black; 
+}
+
+
+.imagen{
+    width: 570px;
+    height: 375px;
+}
+
+.imagen1{
+    width: 570px;
+    height: 315px;
+}
+.parrafo{
+    font-family: fantasy;
+    color:black;
+    text-transform: uppercase;
+}
+
+
+.fondo{
+  background-color: yellowgreen;  
+}
+.ubicacion{
+    margin-left: 78px;
+    width: 400px;
+    height: 300px;
+}
+
+.textou{
+    font-family: Georgia, 'Times New Roman', serif;;
+    text-align: center;
+    color: black;
+}
+
+.imagenc{
+    width: 100px;
+    height: 100px;
+    margin-left: 70px;
+}
