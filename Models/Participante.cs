@@ -13,6 +13,9 @@ namespace Sistema_de_Capacitaciones_Virtuales.Models
         public string ApellidoMaterno { get; set; }
         public string Correo { get; set; }
         public string Celular { get; set; }
+        
+        public string username {get; set;}
+        public string pass {get; set;}
         public List<Participante_Evento> Participante_Eventos { get; set; }
     }
 }

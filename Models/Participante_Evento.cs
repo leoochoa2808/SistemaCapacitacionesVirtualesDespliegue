@@ -7,7 +7,10 @@ namespace Sistema_de_Capacitaciones_Virtuales.Models
     {
         public int Id { get; set; }
         public Evento Evento {get;set;}
+        public int? EventoId {get; set;}
         public Participante Participante {get;set;}    
         public int? ParticipanteId { get; set; }    
+
+        public string Comentario {get; set;}
     }
 }
