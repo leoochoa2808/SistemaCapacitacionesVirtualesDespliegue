@@ -1,4 +1,3 @@
-
 @model Evento
 
 <body>
@@ -62,7 +61,7 @@
                     
                     <div class="col-8 col-12-mobilep">
                        <label class="col-8 col-12-mobilep">Instructor</label>
-											<select type="combx" id="name">
+											<select type="combx" asp-for="InstructorId" id="name">
                             <option value="">--- Seleccionar Instructor</option>
                          @foreach(var inst in (List<Instructor>)ViewBag.Instructores)
                            {
@@ -85,4 +84,3 @@
 						
 					</div>
 </body>
-  

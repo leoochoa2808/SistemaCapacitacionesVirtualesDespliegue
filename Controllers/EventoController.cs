@@ -25,6 +25,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers
        [HttpPost]
        public IActionResult CrearEvento(Evento e){
            if (ModelState.IsValid) { 
+               e.estado = "Por confirmar";
                 _context.Add (e);
                 _context.SaveChanges();
                 return RedirectToAction("Index","Home");

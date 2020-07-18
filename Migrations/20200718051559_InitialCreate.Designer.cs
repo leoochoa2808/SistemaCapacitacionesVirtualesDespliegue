@@ -10,7 +10,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
 namespace SistemadeCapacitacionesVirtuales.Migrations
 {
     [DbContext(typeof(KleerDbContext))]
-    [Migration("20200711073005_InitialCreate")]
+    [Migration("20200718051559_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,13 +54,11 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
 
                     b.Property<DateTime?>("HoraInicio");
 
-                    b.Property<int?>("Instructor_EventoId");
+                    b.Property<int?>("InstructorId");
 
                     b.Property<double>("Inversion");
 
                     b.Property<string>("NombreEvento");
-
-                    b.Property<int?>("Participante_EventoId");
 
                     b.Property<int>("StockParticipantes");
 
@@ -70,11 +68,59 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
 
                     b.HasIndex("CategoriaId");
 
-                    b.HasIndex("Instructor_EventoId");
-
-                    b.HasIndex("Participante_EventoId");
+                    b.HasIndex("InstructorId");
 
                     b.ToTable("Eventos");
+                });
+
+            modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Gestor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ApellidoMaterno");
+
+                    b.Property<string>("ApellidoPaterno");
+
+                    b.Property<string>("Celular");
+
+                    b.Property<int>("CodGestor");
+
+                    b.Property<string>("Correo");
+
+                    b.Property<string>("Gestor_Contra");
+
+                    b.Property<string>("Gestor_Usuario");
+
+                    b.Property<string>("PrimerNombre");
+
+                    b.Property<string>("Rol");
+
+                    b.Property<string>("SegundoNombre");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Gestor");
+                });
+
+            modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Gestor_Evento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("EventoId");
+
+                    b.Property<int?>("GestorId");
+
+                    b.Property<string>("Motivo");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventoId");
+
+                    b.HasIndex("GestorId");
+
+                    b.ToTable("Gestor_Evento");
                 });
 
             modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Instructor", b =>
@@ -82,41 +128,23 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ApelidoMaterno");
+                    b.Property<string>("ApellidoMaterno");
 
                     b.Property<string>("ApellidoPaterno");
 
-                    b.Property<int>("CodInstructor");
+                    b.Property<string>("Celular");
+
+                    b.Property<string>("CodInstructor");
 
                     b.Property<string>("Correo");
-
-                    b.Property<int?>("Instructor_EventoId");
 
                     b.Property<string>("PrimerNombre");
 
                     b.Property<string>("SegundoNombre");
 
-                    b.Property<int>("celular");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("Instructor_EventoId");
 
                     b.ToTable("Instructores");
-                });
-
-            modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Instructor_Evento", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("CodEvento");
-
-                    b.Property<int>("CodInstructor");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Instructor_Eventos");
                 });
 
             modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Participante", b =>
@@ -124,25 +152,25 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ApelidoMaterno");
+                    b.Property<string>("ApellidoMaterno");
 
                     b.Property<string>("ApellidoPaterno");
 
-                    b.Property<int>("CodParticipante");
+                    b.Property<string>("Celular");
+
+                    b.Property<string>("CodParticipante");
 
                     b.Property<string>("Correo");
-
-                    b.Property<int?>("Participante_EventoId");
 
                     b.Property<string>("PrimerNombre");
 
                     b.Property<string>("SegundoNombre");
 
-                    b.Property<int>("celular");
+                    b.Property<string>("pass");
+
+                    b.Property<string>("username");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Participante_EventoId");
 
                     b.ToTable("Participantes");
                 });
@@ -152,13 +180,17 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("CodEvento");
+                    b.Property<string>("Comentario");
 
-                    b.Property<int>("CodParticipante");
+                    b.Property<int?>("EventoId");
 
-                    b.Property<int?>("Participante_EventoId");
+                    b.Property<int?>("ParticipanteId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EventoId");
+
+                    b.HasIndex("ParticipanteId");
 
                     b.ToTable("Participante_Eventos");
                 });
@@ -169,27 +201,31 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                         .WithMany("Eventos")
                         .HasForeignKey("CategoriaId");
 
-                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Instructor_Evento", "Instructor_Evento")
-                        .WithMany("Eventos")
-                        .HasForeignKey("Instructor_EventoId");
-
-                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Participante_Evento", "Participante_Evento")
-                        .WithMany("Eventos")
-                        .HasForeignKey("Participante_EventoId");
+                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Instructor", "Instructor")
+                        .WithMany()
+                        .HasForeignKey("InstructorId");
                 });
 
-            modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Instructor", b =>
+            modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Gestor_Evento", b =>
                 {
-                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Instructor_Evento", "Instructor_Evento")
-                        .WithMany("Instructores")
-                        .HasForeignKey("Instructor_EventoId");
+                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Evento", "Evento")
+                        .WithMany("Gestor_Eventos")
+                        .HasForeignKey("EventoId");
+
+                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Gestor", "Gestor")
+                        .WithMany("Gestor_Eventos")
+                        .HasForeignKey("GestorId");
                 });
 
-            modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Participante", b =>
+            modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Participante_Evento", b =>
                 {
-                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Participante_Evento", "Participante_Evento")
-                        .WithMany("Participantes")
-                        .HasForeignKey("Participante_EventoId");
+                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Evento", "Evento")
+                        .WithMany("Participante_Eventos")
+                        .HasForeignKey("EventoId");
+
+                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Participante", "Participante")
+                        .WithMany("Participante_Eventos")
+                        .HasForeignKey("ParticipanteId");
                 });
 #pragma warning restore 612, 618
         }
