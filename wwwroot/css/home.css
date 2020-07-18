@@ -1,6 +1,6 @@
 
 .texto{
-    font-family: Georgia, 'Times New Roman', serif;;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     text-align: center;
     color: black; 
 }
@@ -42,3 +42,8 @@
     height: 100px;
     margin-left: 70px;
 }
+
+
+
+
+
