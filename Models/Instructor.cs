@@ -13,6 +13,6 @@ namespace Sistema_de_Capacitaciones_Virtuales.Models
         public string ApellidoMaterno { get; set; }
         public string Correo { get; set; }
         public string Celular { get; set; }
-        public List<Instructor_Evento> Instructor_Eventos { get; set; }
+
     }
 }

@@ -22,32 +22,25 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Instructor_Eventos",
+                name: "Gestor",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    CodInstructor = table.Column<int>(nullable: false),
-                    CodEvento = table.Column<int>(nullable: false)
+                    CodGestor = table.Column<int>(nullable: false),
+                    PrimerNombre = table.Column<string>(nullable: true),
+                    SegundoNombre = table.Column<string>(nullable: true),
+                    ApellidoPaterno = table.Column<string>(nullable: true),
+                    ApellidoMaterno = table.Column<string>(nullable: true),
+                    Correo = table.Column<string>(nullable: true),
+                    Celular = table.Column<string>(nullable: true),
+                    Gestor_Usuario = table.Column<string>(nullable: true),
+                    Gestor_Contra = table.Column<string>(nullable: true),
+                    Rol = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Instructor_Eventos", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Participante_Eventos",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    CodParticipante = table.Column<int>(nullable: false),
-                    CodEvento = table.Column<int>(nullable: false),
-                    Participante_EventoId = table.Column<int>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Participante_Eventos", x => x.Id);
+                    table.PrimaryKey("PK_Gestor", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -56,24 +49,38 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    CodInstructor = table.Column<int>(nullable: false),
+                    CodInstructor = table.Column<string>(nullable: true),
                     PrimerNombre = table.Column<string>(nullable: true),
                     SegundoNombre = table.Column<string>(nullable: true),
                     ApellidoPaterno = table.Column<string>(nullable: true),
-                    ApelidoMaterno = table.Column<string>(nullable: true),
+                    ApellidoMaterno = table.Column<string>(nullable: true),
                     Correo = table.Column<string>(nullable: true),
-                    celular = table.Column<int>(nullable: false),
-                    Instructor_EventoId = table.Column<int>(nullable: true)
+                    Celular = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Instructores", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Instructores_Instructor_Eventos_Instructor_EventoId",
-                        column: x => x.Instructor_EventoId,
-                        principalTable: "Instructor_Eventos",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Participantes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    CodParticipante = table.Column<string>(nullable: true),
+                    PrimerNombre = table.Column<string>(nullable: true),
+                    SegundoNombre = table.Column<string>(nullable: true),
+                    ApellidoPaterno = table.Column<string>(nullable: true),
+                    ApellidoMaterno = table.Column<string>(nullable: true),
+                    Correo = table.Column<string>(nullable: true),
+                    Celular = table.Column<string>(nullable: true),
+                    username = table.Column<string>(nullable: true),
+                    pass = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Participantes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -94,8 +101,7 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                     estado = table.Column<string>(nullable: true),
                     FechConfirmacion = table.Column<DateTime>(nullable: true),
                     Frecuencia = table.Column<string>(nullable: true),
-                    Instructor_EventoId = table.Column<int>(nullable: true),
-                    Participante_EventoId = table.Column<int>(nullable: true)
+                    InstructorId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -107,41 +113,63 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Eventos_Instructor_Eventos_Instructor_EventoId",
-                        column: x => x.Instructor_EventoId,
-                        principalTable: "Instructor_Eventos",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Eventos_Participante_Eventos_Participante_EventoId",
-                        column: x => x.Participante_EventoId,
-                        principalTable: "Participante_Eventos",
+                        name: "FK_Eventos_Instructores_InstructorId",
+                        column: x => x.InstructorId,
+                        principalTable: "Instructores",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Participantes",
+                name: "Gestor_Evento",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    CodParticipante = table.Column<int>(nullable: false),
-                    PrimerNombre = table.Column<string>(nullable: true),
-                    SegundoNombre = table.Column<string>(nullable: true),
-                    ApellidoPaterno = table.Column<string>(nullable: true),
-                    ApelidoMaterno = table.Column<string>(nullable: true),
-                    Correo = table.Column<string>(nullable: true),
-                    celular = table.Column<int>(nullable: false),
-                    Participante_EventoId = table.Column<int>(nullable: true)
+                    GestorId = table.Column<int>(nullable: true),
+                    EventoId = table.Column<int>(nullable: true),
+                    Motivo = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Participantes", x => x.Id);
+                    table.PrimaryKey("PK_Gestor_Evento", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Participantes_Participante_Eventos_Participante_EventoId",
-                        column: x => x.Participante_EventoId,
-                        principalTable: "Participante_Eventos",
+                        name: "FK_Gestor_Evento_Eventos_EventoId",
+                        column: x => x.EventoId,
+                        principalTable: "Eventos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Gestor_Evento_Gestor_GestorId",
+                        column: x => x.GestorId,
+                        principalTable: "Gestor",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Participante_Eventos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    EventoId = table.Column<int>(nullable: true),
+                    ParticipanteId = table.Column<int>(nullable: true),
+                    Comentario = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Participante_Eventos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Participante_Eventos_Eventos_EventoId",
+                        column: x => x.EventoId,
+                        principalTable: "Eventos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Participante_Eventos_Participantes_ParticipanteId",
+                        column: x => x.ParticipanteId,
+                        principalTable: "Participantes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -152,33 +180,44 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                 column: "CategoriaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Eventos_Instructor_EventoId",
+                name: "IX_Eventos_InstructorId",
                 table: "Eventos",
-                column: "Instructor_EventoId");
+                column: "InstructorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Eventos_Participante_EventoId",
-                table: "Eventos",
-                column: "Participante_EventoId");
+                name: "IX_Gestor_Evento_EventoId",
+                table: "Gestor_Evento",
+                column: "EventoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Instructores_Instructor_EventoId",
-                table: "Instructores",
-                column: "Instructor_EventoId");
+                name: "IX_Gestor_Evento_GestorId",
+                table: "Gestor_Evento",
+                column: "GestorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Participantes_Participante_EventoId",
-                table: "Participantes",
-                column: "Participante_EventoId");
+                name: "IX_Participante_Eventos_EventoId",
+                table: "Participante_Eventos",
+                column: "EventoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Participante_Eventos_ParticipanteId",
+                table: "Participante_Eventos",
+                column: "ParticipanteId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Eventos");
+                name: "Gestor_Evento");
 
             migrationBuilder.DropTable(
-                name: "Instructores");
+                name: "Participante_Eventos");
+
+            migrationBuilder.DropTable(
+                name: "Gestor");
+
+            migrationBuilder.DropTable(
+                name: "Eventos");
 
             migrationBuilder.DropTable(
                 name: "Participantes");
@@ -187,10 +226,7 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                 name: "Categorias");
 
             migrationBuilder.DropTable(
-                name: "Instructor_Eventos");
-
-            migrationBuilder.DropTable(
-                name: "Participante_Eventos");
+                name: "Instructores");
         }
     }
 }
