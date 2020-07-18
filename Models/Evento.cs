@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 namespace Sistema_de_Capacitaciones_Virtuales.Models
-{
+{//comentario 
     public class Evento
     {
         public int Id { get; set; }
