@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Sistema_de_Capacitaciones_Virtuales.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Text;
 
 namespace Sistema_de_Capacitaciones_Virtuales.Controllers
 {
@@ -32,9 +33,33 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers
             } else
                 return View (e);
        }
-       public IActionResult VisualizarPendientes()
-       {           
-           return View(_context.Eventos.ToList());
+
+       
+       public IActionResult VisualizarPendientes(int? id)
+       {
+            if (id is null)
+            {
+                return View(_context.Eventos.ToList()); 
+            }
+                try
+                {
+                    var evento = _context.Eventos.SingleOrDefault (m => m.Id == id);
+                    evento.estado="Confirmado";
+                    _context.Entry (evento).State = EntityState.Modified;
+                    _context.SaveChanges ();
+                    return View(_context.Eventos.ToList());  
+                }
+                catch (System.Exception)
+                {
+                    //Ingresar mensaje de error
+                    return View(_context.Eventos.ToList());  
+                }
+               
+           
+            
+            
        }
+
+       
     }
 }
