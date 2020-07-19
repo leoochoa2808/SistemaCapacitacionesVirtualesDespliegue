@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="~/vendor/perfect-scrollbar/perfect-scrollbar.css">
 	<link rel="stylesheet" type="text/css" href="~/css/tableutil.css">
 	<link rel="stylesheet" type="text/css" href="~/css/table.css">
+
 <div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -22,7 +23,7 @@
 							</tr>
 						</thead>
 						<tbody>
-  								@foreach (var e in Model){
+              @foreach (var e in Model){
 								<tr>
 									<td class="column">@e.NombreEvento</td>
 									<td class="column">@e.CategoriaId</td>
@@ -31,21 +32,13 @@
 										<a class="btn nav-link" asp-controller="Evento" asp-action="VisualizarPendientes" asp-route-id="@e.Id">
 										<i class="fa fa-check mr-3"></i>Confirmar</a></td>
 									<td class="column">Ver</td>									
-								</tr>
-              }								
-								
-								
+								</tr>}										
 						</tbody>
 					</table>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-                        
-                        
-                        
-                    
   <script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
 	<script src="~/vendor/bootstrap/js/popper.js"></script>
 	<script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
