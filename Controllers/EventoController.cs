@@ -15,6 +15,8 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers
         public EventoController(KleerDbContext context) {
             _context = context;
         }
+        //variable estatica para guardar el Evento
+        /* public static int idevento; */
        public IActionResult CrearEvento()
        {
            ViewBag.Categorias = _context.Categorias.ToList();
@@ -32,9 +34,42 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers
             } else
                 return View (e);
        }
+       [HttpPost]
        public IActionResult VisualizarPendientes()
        {           
            return View(_context.Eventos.ToList());
        }
+        
+        public IActionResult VisualizarPendientes(int? id){
+
+            if(id is null){
+                return View(_context.Eventos.ToList());
+            }else{
+                var evento = _context.Eventos.SingleOrDefault (m => m.Id == id);
+                evento.estado="Confirmado";
+                evento.FechConfirmacion= DateTime.Now;
+                _context.Entry (evento).State = EntityState.Modified;
+                _context.SaveChanges ();
+                return View(_context.Eventos.ToList());
+            }
+
+            /* try
+            {
+                var evento = _context.Eventos.SingleOrDefault (j => j.Id == id);
+            if (evento == null) {
+                return NotFound ();
+            }
+            _context.Remove (evento);
+            _context.SaveChanges ();
+            return View();
+            }
+            catch (System.Exception)
+            {
+                
+                throw;
+            } */
+            
+        }
+       
     }
 }

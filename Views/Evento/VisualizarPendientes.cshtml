@@ -28,12 +28,11 @@
 									<td class="column">@e.NombreEvento</td>
 									<td class="column">@e.CategoriaId</td>
 									<td class="column">@e.estado</td>
-									<td class="column">CHCK TRSH</td>
+									<td class="column">
+										<a class="btn nav-link" asp-controller="Evento" asp-action="VisualizarPendientes" asp-route-id="@e.Id">
+										<i class="fa fa-check mr-3"></i>Confirmar</a></td>
 									<td class="column">Ver</td>									
-								</tr>
-              }								
-								
-								
+								</tr>}										
 						</tbody>
 					</table>
 				</div>
