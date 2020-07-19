@@ -4,62 +4,57 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Sistema_de_Capacitaciones_Virtuales.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Text;
+using Sistema_de_Capacitaciones_Virtuales.Models;
 
-namespace Sistema_de_Capacitaciones_Virtuales.Controllers
-{
-    public class EventoController : Controller
-    {
+namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
+    public class EventoController : Controller {
         private readonly KleerDbContext _context;
-        public EventoController(KleerDbContext context) {
+        public EventoController (KleerDbContext context) {
             _context = context;
         }
-       public IActionResult CrearEvento()
-       {
-           ViewBag.Categorias = _context.Categorias.ToList();
-           ViewBag.Instructores = _context.Instructores.ToList();
-           return View();
-       }
+        //variable estatica para guardar el Evento
+        /* public static int idevento; */
+        public IActionResult CrearEvento () {
+            ViewBag.Categorias = _context.Categorias.ToList ();
+            ViewBag.Instructores = _context.Instructores.ToList ();
+            return View ();
+        }
 
-       [HttpPost]
-       public IActionResult CrearEvento(Evento e){
-           if (ModelState.IsValid) { 
-               e.estado = "Por confirmar";
+        [HttpPost]
+        public IActionResult CrearEvento (Evento e) {
+            if (ModelState.IsValid) {
+                e.estado = "Por confirmar";
                 _context.Add (e);
-                _context.SaveChanges();
-                return RedirectToAction("Index","Home");
+                _context.SaveChanges ();
+                return RedirectToAction ("Index", "Home");
             } else
                 return View (e);
-       }
+        }
 
-       
-       public IActionResult VisualizarPendientes(int? id)
-       {
-            if (id is null)
-            {
-                return View(_context.Eventos.ToList()); 
+        [HttpGet]
+        public IActionResult VisualizarPendientes () {
+            TempData["est1"]=1; //es el estado para Confirmar el evento
+            TempData["est2"]=2; //es el estado para Rechazar el evento
+            return View (_context.Eventos.ToList ());
+        }
+
+        public IActionResult VisualizarPendientes1 (int? id, int? est) {
+
+            var evento = _context.Eventos.SingleOrDefault (m => m.Id == id);
+
+            if (est == 1 && evento.estado == "Pendiente") {
+                evento.estado = "Confirmado";
+                evento.FechConfirmacion = DateTime.Now;
+            } else if (est == 2 && evento.estado == "Pendiente") {
+                evento.estado = "Rechazado";
             }
-                try
-                {
-                    var evento = _context.Eventos.SingleOrDefault (m => m.Id == id);
-                    evento.estado="Confirmado";
-                    _context.Entry (evento).State = EntityState.Modified;
-                    _context.SaveChanges ();
-                    return View(_context.Eventos.ToList());  
-                }
-                catch (System.Exception)
-                {
-                    //Ingresar mensaje de error
-                    return View(_context.Eventos.ToList());  
-                }
-               
-           
-            
-            
-       }
+            _context.Entry (evento).State = EntityState.Modified;
+            _context.SaveChanges ();
 
-       
+            return RedirectToAction("VisualizarPendientes");
+
+        }
+
     }
 }
