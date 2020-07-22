@@ -1,0 +1,34 @@
+D:\rama_jose\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.deps.json
+D:\rama_jose\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.runtimeconfig.json
+D:\rama_jose\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.runtimeconfig.dev.json
+D:\rama_jose\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.dll
+D:\rama_jose\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.pdb
+D:\rama_jose\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.Views.dll
+D:\rama_jose\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.Views.pdb
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.csprojAssemblyReference.cache
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.csproj.CoreCompileInputs.cache
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorAssemblyInfo.cache
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorAssemblyInfo.cs
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.AssemblyInfoInputs.cache
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.AssemblyInfo.cs
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.TagHelpers.input.cache
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.TagHelpers.output.cache
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorCoreGenerate.cache
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Evento\CrearEvento.g.cshtml.cs
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Evento\VisualizarPendientes.g.cshtml.cs
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorTargetAssemblyInfo.cache
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorTargetAssemblyInfo.cs
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.Views.pdb
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.dll
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.pdb
+D:\rama_jose\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.csproj.CopyComplete
