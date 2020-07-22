@@ -1,3 +1,7 @@
+@{
+    var est1 = TempData["est1"] as int?;
+	var est2 = TempData["est2"] as int?;
+}
 
 @model List<Evento>
 	<link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
@@ -29,9 +33,11 @@
 									<td class="column">@e.CategoriaId</td>
 									<td class="column">@e.estado</td>
 									<td class="column">
-										<a class="btn nav-link" asp-controller="Evento" asp-action="VisualizarPendientes" asp-route-id="@e.Id">
-										<i class="fa fa-check mr-3"></i>Confirmar</a></td>
-									<td class="column">Ver</td>									
+										<a class="btn nav-link" asp-controller="Evento" asp-action="CambioEstadoCR" asp-route-id="@e.Id" asp-route-est="@est1">
+										<i class="fa fa-check mr-3"></i>Confirmar</a>
+										<a class="btn nav-link" asp-controller="Evento" asp-action="CambioEstadoCR" asp-route-id="@e.Id" asp-route-est="@est2">
+										<i class="fa fa-check mr-3"></i>Rechazar</a></td>
+									<td class="column">Ver</td>	
 								</tr>}										
 						</tbody>
 					</table>
@@ -39,7 +45,8 @@
 			</div>
 		</div>
 	</div>
-  <script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
+  <script src="~/vendor/jquery/jquery-3.2.1.min.js">
+  </script>
 	<script src="~/vendor/bootstrap/js/popper.js"></script>
 	<script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="~/vendor/select2/select2.min.js"></script>
