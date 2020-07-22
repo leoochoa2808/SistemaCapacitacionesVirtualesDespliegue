@@ -31,12 +31,13 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
             } else
                 return View (e);
         }
+        #region Visualizar Pendientes
 
         [HttpGet]
         public IActionResult VisualizarPendientes () {
             TempData["est1"]=1; //es el estado para Confirmar el evento
             TempData["est2"]=2; //es el estado para Rechazar el evento
-            return View (_context.Eventos.ToList ());
+            return View (_context.Eventos.Where(x=>x.estado=="Pendiente").ToList());
         }
 
         public IActionResult CambioEstadoCR (int? id, int? est) {
@@ -61,5 +62,44 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
 
         }
 
+        #endregion
+        #region Visualizar Confirmados
+
+        [HttpGet]
+        public IActionResult VisualizarConfirmados () {
+            TempData["est1"]=1; //es el estado para Cancelar el evento
+            return View (_context.Eventos.Where(x=>x.estado=="Confirmado").ToList());
+        }
+
+        public IActionResult CambioEstadoCC (int? id, int? est) {
+
+            if(id != null && est != null){
+
+                var evento = _context.Eventos.SingleOrDefault (m => m.Id == id);
+
+                if (est == 1 && evento.estado == "Confirmado" && evento.estado !="Cancelado") {
+                    evento.estado = "Cancelado";
+                    evento.FechConfirmacion = DateTime.Now;
+                } 
+                _context.Entry (evento).State = EntityState.Modified;
+                _context.SaveChanges ();
+
+                return RedirectToAction("VisualizarConfirmados");
+
+            }
+            return View("VisualizarConfirmados");
+
+        }
+
+        #endregion
+        #region Visualizar Todo
+
+        [HttpGet]
+        public IActionResult VisualizarTodo () {
+            return View (_context.Eventos.ToList());
+        }
+
+        #endregion
+    
     }
 }

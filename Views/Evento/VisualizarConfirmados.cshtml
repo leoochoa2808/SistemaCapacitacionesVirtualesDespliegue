@@ -1,6 +1,5 @@
 @{
     var est1 = TempData["est1"] as int?;
-	var est2 = TempData["est2"] as int?;
 }
 @model List<Evento>
 	
@@ -10,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
 	<link rel="stylesheet" type="text/css" href="~/vendor/perfect-scrollbar/perfect-scrollbar.css">
 	<link rel="stylesheet" type="text/css" href="~/css/tableutil.css">
-	<link rel="stylesheet" type="text/css" href="~/css/tablependientes.css">
+	<link rel="stylesheet" type="text/css" href="~/css/tableconfirmados.css">
 	<link rel="stylesheet" href="~/css/main.css"/>
 
 <div class="limiter">
@@ -23,7 +22,9 @@
 								<th class="column">Nombre del Evento</th>
 								<th class="column">Categoria</th>
 								<th class="column">Estado</th>
-								<th class="column">Confirmar</th>
+								<th class="column">Fecha de confirmación</th>
+								<th class="column">Fecha inicio</th>
+								<th class="column">Cancelar</th>
 								<th class="column">Detalle</th>
 							</tr>
 						</thead>
@@ -33,11 +34,11 @@
 									<td class="column">@e.NombreEvento</td>
 									<td class="column">@e.CategoriaId</td>
 									<td class="column">@e.estado</td>
+									<td class="column">@e.FechConfirmacion</td>
+									<td class="column">@e.FechaInicio</td>
 									<td class="column">
-										<a class="btn" asp-controller="Evento" asp-action="CambioEstadoCR" asp-route-id="@e.Id" asp-route-est="@est1">
-										<i class="fa fa-check mr-3"></i>Confirmar</a>
-										<a class="btn" asp-controller="Evento" asp-action="CambioEstadoCR" asp-route-id="@e.Id" asp-route-est="@est2">
-										<i class="fa fa-trash mr-3"></i>Rechazar</a></td>
+										<a class="btn" asp-controller="Evento" asp-action="CambioEstadoCC" asp-route-id="@e.Id" asp-route-est="@est1">
+										<i class="fa fa-trash mr-3"></i>Cancelar</a></td>
 									<td class="column">Ver</td>	
 								</tr>}										
 						</tbody>
