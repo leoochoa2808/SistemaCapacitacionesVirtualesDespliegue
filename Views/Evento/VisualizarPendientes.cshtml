@@ -1,0 +1,53 @@
+@{
+    var est1 = TempData["est1"] as int?;
+	var est2 = TempData["est2"] as int?;
+}
+
+@model List<Evento>
+	<link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="~/vendor/perfect-scrollbar/perfect-scrollbar.css">
+	<link rel="stylesheet" type="text/css" href="~/css/tableutil.css">
+	<link rel="stylesheet" type="text/css" href="~/css/table.css">
+
+<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column">Nombre del Evento</th>
+								<th class="column">Categoria</th>
+								<th class="column">Estado</th>
+								<th class="column">Confirmar</th>
+								<th class="column">Detalle</th>
+							</tr>
+						</thead>
+						<tbody>
+              @foreach (var e in Model){
+								<tr>
+									<td class="column">@e.NombreEvento</td>
+									<td class="column">@e.CategoriaId</td>
+									<td class="column">@e.estado</td>
+									<td class="column">
+										<a class="btn nav-link" asp-controller="Evento" asp-action="CambioEstadoCR" asp-route-id="@e.Id" asp-route-est="@est1">
+										<i class="fa fa-check mr-3"></i>Confirmar</a>
+										<a class="btn nav-link" asp-controller="Evento" asp-action="CambioEstadoCR" asp-route-id="@e.Id" asp-route-est="@est2">
+										<i class="fa fa-check mr-3"></i>Rechazar</a></td>
+									<td class="column">Ver</td>	
+								</tr>}										
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+  <script src="~/vendor/jquery/jquery-3.2.1.min.js">
+  </script>
+	<script src="~/vendor/bootstrap/js/popper.js"></script>
+	<script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="~/vendor/select2/select2.min.js"></script>
+	<script src="~/js/table.js"></script>

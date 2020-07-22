@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
+
 namespace Sistema_de_Capacitaciones_Virtuales.Models
 {
     public class Evento
@@ -24,11 +25,10 @@ namespace Sistema_de_Capacitaciones_Virtuales.Models
         //[DataType(DataType.Date)]
         public DateTime? FechConfirmacion { get; set; }
         public string Frecuencia { get; set; }
-        public List<Instructor_Evento> Instructor_Eventos { get; set; }
+        public Instructor Instructor {get; set;}
+        public int? InstructorId {get; set;}
+        public List<Gestor_Evento> Gestor_Eventos {get; set;}
         public List<Participante_Evento> Participante_Eventos { get; set; }       
-
-       
-
-
+        
     }
 }
