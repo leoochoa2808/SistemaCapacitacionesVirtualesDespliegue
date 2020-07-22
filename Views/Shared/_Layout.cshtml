@@ -5,7 +5,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="~/css/main.css"/>
-		<link rel="icon" href="~/images/logo.ico">
+		<link rel="icon" href="~/css/images/logo.ico">
         @* <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> *@
 	</head>
 <body>
@@ -18,7 +18,7 @@
 						<nav id="nav">
 							<ul>
 								<li class="current"><a href="~/Home/Index">Home</a></li>
-								<li>
+								@* <li>
 									<a href="#">Dropdown</a>
 									<ul>
 										<li><a href="#">Lorem dolor</a></li>
@@ -36,11 +36,11 @@
 										</li>
 										<li><a href="#">Veroeros feugiat</a></li>
 									</ul>
-								</li>
+								</li> *@
 								<li><a asp-controller="Evento" asp-action="CrearEvento">Crear Evento</a></li>
-								<li><a method="get" asp-controller="Evento" asp-action="VisualizarPendientes">VisualizarPendientes</a></li>
-								<li><a href="#">Two Sidebar</a></li>
-								<li><a href="#">No Sidebar</a></li>
+								<li><a asp-controller="Evento" asp-action="VisualizarPendientes">Visualizar Pendientes</a></li>
+								<li><a asp-controller="Evento" asp-action="VisualizarConfirmados">Visualizar Confirmados</a></li>
+								<li><a asp-controller="Evento" asp-action="VisualizarTodo">Visualizar Todo</a></li>
 							</ul>
 						</nav>
 				</div>
