@@ -1,46 +1,5 @@
 ﻿<!DOCTYPE html>
 <html>
-<<<<<<< HEAD
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ABC</title>
-
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-        <link rel="stylesheet" href="~/css/encabezado.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
-</head>
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top barra">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">ABC</a>
-            </div>
-            <div class="navbar-collapse collapse ">
-                <ul class="nav navbar-nav opciones">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Somos</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">Cursos</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contactanos</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Evento">Evento</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-=======
    <head>
 		<title>ABC</title>
 		<meta charset="utf-8" />
@@ -52,7 +11,6 @@
 <body>
    <!-- Header -->
 				<div id="header">
->>>>>>> master
 
 					<!-- Logo -->
 						<h1><a href="~/Home/Index" id="logo" align="center"><img style="width: 10%; height:15%;"  src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Diario_ABC_logo.svg/512px-Diario_ABC_logo.svg.png" class="img-fluid" alt="ABC"></em></a></h1>
@@ -92,9 +50,7 @@
     
     <main>
         @RenderBody()
-<<<<<<< HEAD
-    </div>
-=======
+
     </main>
     <!-- Scripts -->
 			<script src="~/js/jquery.min.js"></script>
@@ -164,7 +120,6 @@
 							</section>
 						</div>
 					</div>
->>>>>>> master
 
 					<!-- Icons -->
 						<ul class="icons">
@@ -175,11 +130,8 @@
 							<li><a href="#" class="icon brands fa-google-plus-g"><span class="label">Google+</span></a></li>
 						</ul>
 
-<<<<<<< HEAD
-    @RenderSection("Scripts", required: false)
-</body>
-</html>
-=======
+
+
 					<!-- Copyright -->
 						<div class="copyright">
 							<ul class="menu">
@@ -189,4 +141,4 @@
 
 				</div>
 </html>
->>>>>>> master
+
