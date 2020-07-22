@@ -39,20 +39,25 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
             return View (_context.Eventos.ToList ());
         }
 
-        public IActionResult VisualizarPendientes1 (int? id, int? est) {
+        public IActionResult CambioEstadoCR (int? id, int? est) {
 
-            var evento = _context.Eventos.SingleOrDefault (m => m.Id == id);
+            if(id != null && est != null){
 
-            if (est == 1 && evento.estado == "Pendiente") {
-                evento.estado = "Confirmado";
-                evento.FechConfirmacion = DateTime.Now;
-            } else if (est == 2 && evento.estado == "Pendiente") {
-                evento.estado = "Rechazado";
+                var evento = _context.Eventos.SingleOrDefault (m => m.Id == id);
+
+                if (est == 1 && evento.estado == "Pendiente" && evento.estado !="Rechazado") {
+                    evento.estado = "Confirmado";
+                    evento.FechConfirmacion = DateTime.Now;
+                } else if (est == 2 && evento.estado == "Pendiente" && evento.estado != "Confirmado") {
+                    evento.estado = "Rechazado";
+                }
+                _context.Entry (evento).State = EntityState.Modified;
+                _context.SaveChanges ();
+
+                return RedirectToAction("VisualizarPendientes");
+
             }
-            _context.Entry (evento).State = EntityState.Modified;
-            _context.SaveChanges ();
-
-            return RedirectToAction("VisualizarPendientes");
+            return View("VisualizarPendientes");
 
         }
 
