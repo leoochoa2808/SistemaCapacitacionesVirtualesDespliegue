@@ -1,6 +1,10 @@
 
 .texto{
+<<<<<<< HEAD
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+=======
+    font-family: Georgia, 'Times New Roman', serif;;
+>>>>>>> master
     text-align: center;
     color: black; 
 }
@@ -42,8 +46,11 @@
     height: 100px;
     margin-left: 70px;
 }
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> master
