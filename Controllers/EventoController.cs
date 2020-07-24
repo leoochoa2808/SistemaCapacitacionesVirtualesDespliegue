@@ -98,8 +98,10 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         public IActionResult VisualizarTodo () {
             return View (_context.Eventos.ToList());
         }
-
         #endregion
-    
+
+
+
+       
     }
 }
