@@ -104,7 +104,7 @@
   
   .container-table100 {
     width: 100%;
-    min-height: 100vh;
+    min-height: 50vh;
   
     display: -webkit-box;
     display: -webkit-flex;
@@ -114,8 +114,9 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 33px 30px;
+    
   }
+  
   
   .wrap-table100 {
     width: 1170px;
@@ -128,7 +129,7 @@
     border-radius: 10px;
     overflow: hidden;
     width: 100%;
-    margin: 0 auto;
+    padding: 0px;
     position: relative;
   }
   table * {
