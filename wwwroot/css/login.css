@@ -1,0 +1,71 @@
+#login {
+    padding: 80px;
+    background-color: rgba(89, 114, 106, 0.603);
+    color:black;
+    margin-left: 300px;
+}
+
+h5 {
+    font-size: 30px;
+    color: black;
+    font-weight: lighter;
+    text-align: center;
+    margin-bottom: 35px;
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+#input {
+    background-color: rgb(247, 250, 253);
+    border-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-weight: lighter;
+}
+.text-muted {
+    color: #42484e!important;
+}
+.form-text {
+    display: block;
+    margin-top: .25rem;
+}
+#ing {
+    background-color: #ADFF2F;
+    border-color: white;
+    color:black;
+    font-weight: lighter;
+    margin-top: 10px;
+    text-align: center;
+    margin-left: 40px;
+}
+#forgot {
+    font-weight: lighter;
+    color: blue;
+}
+p {
+    color:black;
+    font-weight: lighter;
+}
+#cre {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+    font-weight: lighter;
+    margin-top: 101px;
+    text-align: center;
+}
+label {
+    font-weight: lighter;
+}
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+
+
