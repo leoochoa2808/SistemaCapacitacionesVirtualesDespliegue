@@ -37,7 +37,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         public IActionResult VisualizarPendientes () {
             TempData["est1"]=1; //es el estado para Confirmar el evento
             TempData["est2"]=2; //es el estado para Rechazar el evento
-            return View (_context.Eventos.Where(x=>x.estado=="Pendiente").ToList());
+            return View (_context.Eventos.Include(x=>x.Categoria).Where(x=>x.estado=="Pendiente").ToList());
         }
 
         public IActionResult CambioEstadoCR (int? id, int? est) {
@@ -68,7 +68,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         [HttpGet]
         public IActionResult VisualizarConfirmados () {
             TempData["est1"]=1; //es el estado para Cancelar el evento
-            return View (_context.Eventos.Where(x=>x.estado=="Confirmado").ToList());
+            return View (_context.Eventos.Include(x=>x.Categoria).Where(x=>x.estado=="Confirmado").ToList());
         }
 
         public IActionResult CambioEstadoCC (int? id, int? est) {
@@ -96,7 +96,8 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
 
         [HttpGet]
         public IActionResult VisualizarTodo () {
-            return View (_context.Eventos.ToList());
+            
+            return View (_context.Eventos.Include(x=>x.Categoria).ToList());
         }
         #endregion
 

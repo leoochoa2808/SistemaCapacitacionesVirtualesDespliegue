@@ -7,8 +7,6 @@ namespace Sistema_de_Capacitaciones_Virtuales.Models
     public class Evento
     {
         public int Id { get; set; }
-
-        
         public Categoria Categoria { get; set; }
         public int? CategoriaId { get; set; }
         public string NombreEvento { get; set; }

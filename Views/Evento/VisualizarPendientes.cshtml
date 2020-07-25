@@ -32,7 +32,7 @@
               @foreach (var e in Model){
 								<tr>
 									<td class="column">@e.NombreEvento</td>
-									<td class="column">@e.CategoriaId</td>
+									<td class="column">@e.Categoria.NombreCategoria</td>
 									<td class="column">@e.estado</td>
 									<td class="column">
 										<a class="btn" asp-controller="Evento" asp-action="CambioEstadoCR" asp-route-id="@e.Id" asp-route-est="@est1">

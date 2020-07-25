@@ -33,7 +33,7 @@
               @foreach (var e in Model){
 								<tr>
 									<td class="column">@e.NombreEvento</td>
-									<td class="column">@e.CategoriaId</td>
+									<td class="column">@e.Categoria.NombreCategoria</td>
 									<td class="column">@e.estado</td>
 									<td class="column">@e.FechConfirmacion</td>
 									<td class="column">@e.FechaInicio</td>
