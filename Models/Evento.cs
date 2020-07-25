@@ -7,6 +7,8 @@ namespace Sistema_de_Capacitaciones_Virtuales.Models
     public class Evento
     {
         public int Id { get; set; }
+
+        
         public Categoria Categoria { get; set; }
         public int? CategoriaId { get; set; }
         public string NombreEvento { get; set; }
@@ -28,7 +30,8 @@ namespace Sistema_de_Capacitaciones_Virtuales.Models
         public Instructor Instructor {get; set;}
         public int? InstructorId {get; set;}
         public List<Gestor_Evento> Gestor_Eventos {get; set;}
-        public List<Participante_Evento> Participante_Eventos { get; set; }       
+        public List<Participante_Evento> Participante_Eventos { get; set; }     
+       
         
     }
 }

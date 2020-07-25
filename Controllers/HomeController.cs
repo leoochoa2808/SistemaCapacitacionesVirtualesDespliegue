@@ -15,6 +15,10 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers
         {
             return View();
         }
+        public IActionResult Cursos()
+        {
+            return View();
+        }
 
         public IActionResult About()
         {
