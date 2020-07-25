@@ -1,0 +1,56 @@
+@model Participante
+<link rel="stylesheet" href="~/css/login.css">
+<body>
+    
+    <div class="container">
+        <br>
+        <div class="row" >
+                    <h5>Registrate</h5>
+                    <form method="post" asp-controller="Usuario" asp-action="Registrar">
+                        <div class="row gtr-50">
+							<div class="col-4 col-12-mobilep">
+                                <label class="col-4 col-12-mobilep">Nombre del Evento</label>
+								<input asp-for="CodParticipante" type="text" id="name" placeholder="Ingrese su DNI" required>
+							</div>
+							<div class="col-4 col-12-mobilep">
+                                <label class="col-4 col-12-mobilep">Primer Nombre</label>
+								<input asp-for="PrimerNombre" type="text" id="name" placeholder="Ingrese su primer nombre" required>
+							</div>
+                            <div class="col-4 col-12-mobilep">
+                                <label class="col-4 col-12-mobilep">Segundo Nombre</label>
+								<input asp-for="SegundoNombre" type="text" id="name" placeholder="Ingrese su segundo nombre">
+							</div>
+                            <div class="col-6 col-12-mobilep">
+                                <label class="col-6 col-12-mobilep">Apellido Paterno</label>
+								<input asp-for="ApellidoPaterno" type="text" id="name" placeholder="Ingrese su apellido paterno" required>
+							</div>
+                            <div class="col-6 col-12-mobilep">
+                                <label class="col-6 col-12-mobilep">Apellido Materno</label>
+								<input asp-for="ApellidoMaterno" type="text" id="name" placeholder="Ingrese su apellido materno" required>
+							</div>
+                            <div class="col-6 col-12-mobilep">
+                                <label class="col-6 col-12-mobilep">Correo</label>
+								<input asp-for="Correo" type="text" id="name" placeholder="Ingrese su correo" required>
+							</div>
+                            <div class="col-6 col-12-mobilep">
+                                <label class="col-6 col-12-mobilep">Celular</label>
+								<input asp-for="Celular" type="text" id="name" placeholder="Ingrese su celular" required>
+							</div>
+                            <div class="col-6 col-12-mobilep">
+                                <label class="col-6 col-12-mobilep">Nombre de ususario</label>
+								<input asp-for="username" type="text" id="name" placeholder="Ingrese su nombre de usuario" required>
+							</div>
+                            <div class="col-6 col-12-mobilep">
+                                <label class="col-6 col-12-mobilep">Contraseña</label>
+								<input asp-for="pass" type="text" id="name" placeholder="Ingrese su contraseña" required>
+							</div> 
+                        </div>
+                        <center>
+                            <button type="submit" class="btn" id="ing">Crear Cuenta</button>
+                        </center>
+                    </form>
+        </div>
+        
+    </div><br>
+            
+</body>
