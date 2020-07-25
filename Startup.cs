@@ -42,13 +42,15 @@ namespace Sistema_de_Capacitaciones_Virtuales
                     "Database=d36smukblul4sn;Username=mudcwplykcnyxd;"+
                     "Password=3acf5700563f773a4848eeb9d479b2e3ada82b3ca18edb694f08a714a7e33e83;"+
                     "Port=5432;SSL Mode=Require;Trust Server Certificate=true")
-
+                    
+                    // CONEXIÓN JOSÉ
                     // "Host=ec2-54-234-28-165.compute-1.amazonaws.com;" +
                     // "Database=dem3lid08fd3uv;Username=jkyeoqoduaxgmw;"+
                     // "Password=550c535ff443076255991dcbffa2258ccb19b497ab4f31ea397ff9af9b6c3ff1;"+
                     // "Port=5432;SSL Mode=Require;Trust Server Certificate=true")
                     
-/*                     "Host=ec2-52-202-146-43.compute-1.amazonaws.com;" +
+/*   CONEXION LEONARDO    
+                "Host=ec2-52-202-146-43.compute-1.amazonaws.com;" +
                     "Database=dec175u6j2l7ep;Username=uzymstzjwswvba;"+
                     "Password=4855b2563de5e64b7726b9c7b13b81aafdc7055f68e5b10940b676fcbe81b4bf;"+
                     "Port=5432;SSL Mode=Require;Trust Server Certificate=true") */
