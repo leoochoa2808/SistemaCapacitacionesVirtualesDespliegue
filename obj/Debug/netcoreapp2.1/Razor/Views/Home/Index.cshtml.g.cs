@@ -54,7 +54,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
             WriteLiteral("\r\n\r\n\t");
             EndContext();
             BeginContext(5, 3643, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7343dc594d634c62956a4bedab48cc8c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "db0f1fad6a614b3cb71e1c1801b4969d", async() => {
                 BeginContext(30, 3611, true);
                 WriteLiteral(@"
 		<div id=""page-wrapper"">		

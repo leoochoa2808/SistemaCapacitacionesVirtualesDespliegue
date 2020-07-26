@@ -39,7 +39,7 @@
 										<i class="fa fa-check mr-3"></i>Confirmar</a>
 										<a class="btn" asp-controller="Evento" asp-action="CambioEstadoCR" asp-route-id="@e.Id" asp-route-est="@est2">
 										<i class="fa fa-trash mr-3"></i>Rechazar</a></td>
-									<td class="column">Ver</td>	
+									<td class="column"><a asp-controller="Evento" asp-action="DetallePendiente" asp-route-idevento="@e.Id" asp-controller="Evento" asp-action="DetallePendiente" asp-route-idevento="@e.Id" >Ver</a></td>	
 								</tr>}										
 						</tbody>
 					</table>

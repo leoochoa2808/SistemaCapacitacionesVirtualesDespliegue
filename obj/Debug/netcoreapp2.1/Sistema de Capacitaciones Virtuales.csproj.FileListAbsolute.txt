@@ -18,16 +18,21 @@ C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netco
 C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.TagHelpers.output.cache
 C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorCoreGenerate.cache
 C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Evento\CrearEvento.cshtml.g.cs
+C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Evento\DetallePendiente.cshtml.g.cs
 C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Evento\VisualizarConfirmados.cshtml.g.cs
 C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Evento\VisualizarPendientes.cshtml.g.cs
 C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Evento\VisualizarTodo.cshtml.g.cs
 C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.cshtml.g.cs
+C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\Cursos.cshtml.g.cs
 C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\Somos.cshtml.g.cs
 C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
 C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Usuario\Login.cshtml.g.cs
+C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Usuario\Registrar.cshtml.g.cs
 C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorTargetAssemblyInfo.cache
@@ -37,7 +42,3 @@ C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netco
 C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.pdb
 C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.genruntimeconfig.cache
 C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.csproj.CopyComplete
-C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\Cursos.cshtml.g.cs
-C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Home\Somos.cshtml.g.cs
-C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Usuario\Login.cshtml.g.cs
-C:\Users\josyu\rama_josselyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Usuario\Registrar.cshtml.g.cs
