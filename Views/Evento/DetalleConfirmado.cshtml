@@ -1,0 +1,88 @@
+@model Evento
+
+<body>
+
+					<div class="container" style="padding-bottom: 10%; padding-right:10%; padding-left:10%; padding-top:2%;">						
+            <section  class="col-8 col-12-narrower">
+								<h3 align="center" style="font-size: 40px;">Crear Evento</h3>
+								<form method="post" >
+									<div class="row gtr-50">
+										<div class="col-12 col-12-mobilep">
+                      <label class="col-12 col-12-mobilep">Nombre del Evento</label>
+											<input asp-for="NombreEvento" type="text" id="name" placeholder="Ingrese el nombre">
+										</div>
+                    <div class="col-8 col-12-mobilep">
+                      <label class="col-8 col-12-mobilep">Categoría</label>
+                       <select type="combx" asp-for="CategoriaId" id="name">
+                            <option value="">--- Seleccionar categoria</option>
+                         @foreach(var cat in (List<Categoria>)ViewBag.Categorias)
+                           {
+                            <option name="combx" value="@cat.Id">@cat.NombreCategoria</option>
+                            }                                                                                                                    
+                      </select>										
+										</div>
+                    <div class="col-4 col-12-mobilep">
+                      <label class="col-4 col-12-mobilep">Horario</label>
+											<select asp-for="Frecuencia" type="combx" id="name">
+                        <option value="">--- Seleccionar Horario</option>
+                        <option value="SABATINO">SABATINO</option>
+                        <option value="L-MI">L-MI</option>
+                        <option value="MI-VI">MI-VI</option>
+                        <option value="M-J">M-J</option>  
+                      </select>
+										</div>
+										<div class="col-4 col-12-mobilep">
+                      <label class="col-4 col-12-mobilep">Fecha inicio</label>
+											<input asp-for="FechaInicio" type="date"  id="name" placeholder="Fecha de inicio" />
+										</div>
+                     <div class="col-4 col-12-mobilep">
+                      <label class="col-4 col-12-mobilep">Fecha Fin</label>
+											<input asp-for="FechaFin" type="date" id="name" placeholder="Fecha fin" />
+										</div>
+                    <div class="col-4 col-12-mobilep">
+                      <label class="col-3 col-12-mobilep">Inversion</label>
+											<input asp-for="Inversion" type="text" id="name" placeholder="Inversion" />
+										</div>
+                    <div class="col-4 col-12-mobilep">                      
+                      <label class="col-4 col-12-mobilep">Hora Inicio</label>
+											<input asp-for="HoraInicio" type="time" id="name" placeholder="Horar Inicio" />
+										</div>
+                   
+                    
+										 <div class="col-4 col-12-mobilep">
+                       <label class="col-4 col-12-mobilep">Hora Fin</label>
+											<input asp-for="HoraFin" type="time" id="name" placeholder="Horar Fin" />
+										</div>
+                     
+                    <div class="col-4 col-12-mobilep">
+                      <label class="col-3 col-12-mobilep">Stock</label>
+											<input asp-for="StockParticipantes" type="text" id="name" placeholder="Stock Participantes" />
+										</div>
+                    
+                    <div class="col-8 col-12-mobilep">
+                       <label class="col-8 col-12-mobilep">Instructor</label>
+											<select type="combx" asp-for="InstructorId" id="name">
+                            <option value="">--- Seleccionar Instructor</option>
+                         @foreach(var inst in (List<Instructor>)ViewBag.Instructores)
+                           {
+                            <option name="combx" value="@inst.Id">@inst.PrimerNombre @inst.SegundoNombre @inst.ApellidoPaterno</option>
+                            }                                                                                                                    
+                      </select>		
+										</div>
+										<div class="col-12">
+                                        <label class="col-12 col-12-mobilep">Descripción</label>
+											<textarea asp-for="Descripcion" placeholder="Ingrese una descripción sobe el Evento" rows="5"></textarea>
+										</div>
+										<div class="col-12">
+											<ul class="actions">
+												<li><input type="submit" href="~/Evento/CrearEvento" class="button alt create" value="Registrar" /></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+							</section>
+						
+					</div>
+          <br><br>
+          
+</body>
