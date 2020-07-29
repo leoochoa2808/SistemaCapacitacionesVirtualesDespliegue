@@ -101,8 +101,5 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         }
         #endregion
 
-
-
-       
     }
 }
