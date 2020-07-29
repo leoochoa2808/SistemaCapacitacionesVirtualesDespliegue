@@ -24,7 +24,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         [HttpPost]
         public IActionResult CrearEvento (Evento e) {
             if (ModelState.IsValid) {
-                e.estado = "Por confirmar";
+                e.estado = "Pendiente";
                 _context.Add (e);
                 _context.SaveChanges ();
                 return RedirectToAction ("Index", "Home");
@@ -62,6 +62,12 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
 
         }
 
+        public IActionResult DetallePendiente (int? idevento)
+        {
+            var evento = _context.Eventos.SingleOrDefault (m => m.Id == idevento);
+            if(evento==null) return NotFound();
+            return View(evento);
+        }
         #endregion
         #region Visualizar Confirmados
 
