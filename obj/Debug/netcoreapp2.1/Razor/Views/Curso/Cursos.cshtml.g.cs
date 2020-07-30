@@ -67,7 +67,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(25, 2294, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "431576df45724955a1e8aae628234f06", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0edf9f92836f45d6babfb33a6fe9df39", async() => {
                 BeginContext(31, 101, true);
                 WriteLiteral("\r\n\r\n            <div class=\"col-md-9\" id=\"slider\">\r\n\r\n                <div class=\"row ml-4 pl-4\">\r\n\r\n");
                 EndContext();
@@ -81,7 +81,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
                 WriteLiteral("                    <div class=\"col-md-3\">\r\n                        <figure class=\"card card-product\">\r\n                            <div class=\"img-wrap\"><div class=\"img-wrap\">");
                 EndContext();
                 BeginContext(378, 404, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9d1eefee82f14a5387ce99f74d54dacd", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ab98db758024a1b810755ab3d87d7bb", async() => {
                     BeginContext(630, 80, true);
                     WriteLiteral("<img id=\"product\"\r\n                                            class=\"img-fluid\"");
                     EndContext();
@@ -159,7 +159,7 @@ WriteAttributeValue("", 761, e.NombreEvento, 761, 15, false);
                                     ");
                 EndContext();
                 BeginContext(1598, 304, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cbc6b23385dc4412917e8460df823498", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ce59b6c26dc54ff2ad4a7c4255d9c20b", async() => {
                     BeginContext(1883, 15, true);
                     WriteLiteral("Pre inscripción");
                     EndContext();

@@ -66,7 +66,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(2, 46, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "615c408ab61f4389bf725f1d5c6f8c93", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "73167fc3e9624638a2c9a6c8fce3e6ad", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -85,7 +85,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(50, 2148, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0ee514ff82174e6aac59c07aa7b21694", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f73810d58a444b329ea15c841ba4c5c3", async() => {
                 BeginContext(56, 288, true);
                 WriteLiteral(@"
     
@@ -101,7 +101,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
                     ");
                 EndContext();
                 BeginContext(344, 1716, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6142549759aa46129df2595653667bf3", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f176091f96b40bba8c10eb7d5702ade", async() => {
                     BeginContext(424, 862, true);
                     WriteLiteral(@"
                         <div class=""form-group"">
@@ -152,7 +152,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
                         ");
                     EndContext();
                     BeginContext(1815, 99, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e4209a51d4b145aba9105b34fb7d22db", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4687a461a5d4f19946b910db8bc2c20", async() => {
                         BeginContext(1854, 56, true);
                         WriteLiteral(" ¿Has olvidado tu constraseña?\r\n                        ");
                         EndContext();
@@ -175,7 +175,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
                     WriteLiteral("<br>\r\n                        ");
                     EndContext();
                     BeginContext(1944, 79, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1c4556b567594581bcbca9a28d8436a6", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1f863ff71b45477cb79ded4dd6715035", async() => {
                         BeginContext(1982, 37, true);
                         WriteLiteral(" Registrate\r\n                        ");
                         EndContext();

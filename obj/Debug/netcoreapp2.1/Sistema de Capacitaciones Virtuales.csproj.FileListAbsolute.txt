@@ -19,6 +19,7 @@ C:\Users\josyu\OneDrive\Escritorio\rama_josseyn\Sistema de Capacitaciones Virtua
 C:\Users\josyu\OneDrive\Escritorio\rama_josseyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorCoreGenerate.cache
 C:\Users\josyu\OneDrive\Escritorio\rama_josseyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Curso\Cursos.cshtml.g.cs
 C:\Users\josyu\OneDrive\Escritorio\rama_josseyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Evento\CrearEvento.cshtml.g.cs
+C:\Users\josyu\OneDrive\Escritorio\rama_josseyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Evento\DetalleConfirmado.cshtml.g.cs
 C:\Users\josyu\OneDrive\Escritorio\rama_josseyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Evento\DetallePendiente.cshtml.g.cs
 C:\Users\josyu\OneDrive\Escritorio\rama_josseyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Evento\VisualizarConfirmados.cshtml.g.cs
 C:\Users\josyu\OneDrive\Escritorio\rama_josseyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Evento\VisualizarPendientes.cshtml.g.cs
@@ -43,4 +44,3 @@ C:\Users\josyu\OneDrive\Escritorio\rama_josseyn\Sistema de Capacitaciones Virtua
 C:\Users\josyu\OneDrive\Escritorio\rama_josseyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.pdb
 C:\Users\josyu\OneDrive\Escritorio\rama_josseyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.genruntimeconfig.cache
 C:\Users\josyu\OneDrive\Escritorio\rama_josseyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.csproj.CopyComplete
-C:\Users\josyu\OneDrive\Escritorio\rama_josseyn\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Razor\Views\Evento\DetalleConfirmado.cshtml.g.cs
