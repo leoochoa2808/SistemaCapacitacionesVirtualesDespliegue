@@ -141,15 +141,5 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         public IActionResult VisualizarTodo() => View(_context.Eventos.Include(x => x.Categoria).ToList());
         #endregion
 
-<<<<<<< HEAD
-=======
-
-
-
-<<<<<<< HEAD
->>>>>>> a30ae062d851a71c1faf5c5626461b1b3c527028
-=======
-
->>>>>>> a30ae062d851a71c1faf5c5626461b1b3c527028
     }
 }
