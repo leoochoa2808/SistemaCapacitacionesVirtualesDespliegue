@@ -15,10 +15,31 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers
         public UsuarioController (KleerDbContext context) {
             _context = context;
         }   
+        public static int idIniciar;
         public IActionResult Login()
         {
+            //TempData["idusu"] = Convert.ToInt32(iniciar.Id);
             return View();
         }
+        public static String NombreUsu;
+        [HttpPost]
+        public IActionResult Login (string user, string pasw) {
+
+            var part = _context.Participantes.FirstOrDefault (P => P.username == user && P.pass == pasw);
+            var gest = _context.Gestores.FirstOrDefault(G => G.Gestor_Usuario == user && G.Gestor_Contra == pasw);
+
+            if(part != null || gest != null){
+                part.username = user;
+                part.pass = pasw;
+                
+                gest.Gestor_Usuario = user;
+                gest.Gestor_Contra = pasw;
+            }
+            
+            return RedirectToAction("Login");
+            
+        }
+
         public IActionResult Registrar()
         {
             return View();

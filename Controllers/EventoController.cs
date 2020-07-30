@@ -141,8 +141,11 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         public IActionResult VisualizarTodo() => View(_context.Eventos.Include(x => x.Categoria).ToList());
         #endregion
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> rama_jose
     }
 }
