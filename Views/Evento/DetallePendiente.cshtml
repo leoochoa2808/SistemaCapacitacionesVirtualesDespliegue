@@ -4,11 +4,29 @@
 
 		<div class="container" style="padding-bottom: 10%; padding-right:10%; padding-left:10%; padding-top:2%;">						
             <section  class="col-8 col-12-narrower">
-				<div class="row gtr-50">
-                    <div class="col-6 col-12-mobilep">
+		<center><div class="row gtr-50">
+                    <div class="col-4 col-12-mobilep">
                         <h2>@Html.DisplayTextFor(Models => Models.NombreEvento)</h2>
 				    </div>
-                </div>				
+                    <div class="col-4 col-12-mobilep">
+                        <h5>Inversión</h5>
+                        <p>@Html.DisplayTextFor(Models => Models.Inversion)</p>
+				    </div>
+                    <div class="col-4 col-12-mobilep">
+                        <h5>Stock de participantes</h5>
+                        <p>@Html.DisplayTextFor(Models => Models.StockParticipantes)</p>
+				    </div>
+                    <div class="col-12 col-12-mobilep">
+                        <h5>Descripción</h5>
+                        <p>@Html.DisplayTextFor(Models => Models.Descripcion)</p>
+				    </div>
+                    <div class="col-12 col-12-mobilep">
+                        <h5>Horarios disponibles</h5>
+                        <p>@Html.DisplayTextFor(Models => Models.Frecuencia)</p>
+                        <p>@Html.DisplayTextFor(Models => Models.HoraInicio) - @Html.DisplayTextFor(Models => Models.HoraFin)</p>
+                        <p>@Html.DisplayTextFor(Models => Models.FechaInicio) - @Html.DisplayTextFor(Models => Models.FechaFin)</p>
+				    </div>    
+                </div></center>				
 			</section>
 						
 		</div>

@@ -68,12 +68,50 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
             if(evento==null) return NotFound();
             return View(evento);
         }
+
+        public static int idE; 
+        public IActionResult DetalleConfirmado (int? id)
+        {
+            ViewBag.Categorias = _context.Categorias.ToList ();
+            ViewBag.Instructores = _context.Instructores.ToList ();
+            var evento = _context.Eventos.Include(x => x.Categoria).Include(x => x.Instructor).SingleOrDefault (m => m.Id == id);
+            idE = evento.Id;
+            if(evento==null) return NotFound();
+            return View(evento);   
+        }
+
+        [HttpPost]
+        public IActionResult ModificarEvento(Evento e)
+        {
+            var evento = _context.Eventos.Include(x => x.Categoria).Include(x => x.Instructor).SingleOrDefault (m => m.Id == idE);
+            if (ModelState.IsValid)
+            {
+                evento.NombreEvento = e.NombreEvento;
+                evento.CategoriaId = e.CategoriaId;
+                evento.Frecuencia = e.Frecuencia;
+                evento.FechaInicio = e.FechaInicio;
+                evento.FechaFin = e.FechaFin;
+                evento.Inversion = e.Inversion;
+                evento.HoraInicio = e.HoraInicio;
+                evento.HoraFin = e.HoraFin;
+                evento.StockParticipantes = e.StockParticipantes;
+                evento.InstructorId = e.InstructorId;
+                evento.Descripcion = e.Descripcion;
+                _context.Entry (evento).State = EntityState.Modified;
+                _context.SaveChanges ();
+                return RedirectToAction ("VisualizarConfirmados");
+            }else{
+                TempData["Message"] = "Datos incompletos";
+                return View ();
+            }
+        }
         #endregion
         #region Visualizar Confirmados
 
         [HttpGet]
         public IActionResult VisualizarConfirmados () {
-            TempData["est1"]=1; //es el estado para Cancelar el evento
+            TempData["est1"]=1; //es el estado para Cancelar el eventoNADA
+
             return View (_context.Eventos.Include(x=>x.Categoria).Where(x=>x.estado=="Confirmado").ToList());
         }
 
@@ -97,15 +135,17 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
 
         }
 
-        #endregion
+        #endregion        
+
         #region Visualizar Todo
-
-        [HttpGet]
-        public IActionResult VisualizarTodo () {
-            
-            return View (_context.Eventos.Include(x=>x.Categoria).ToList());
-        }
+        public IActionResult VisualizarTodo() => View(_context.Eventos.Include(x => x.Categoria).ToList());
         #endregion
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> a30ae062d851a71c1faf5c5626461b1b3c527028
     }
 }
