@@ -10,7 +10,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
 namespace SistemadeCapacitacionesVirtuales.Migrations
 {
     [DbContext(typeof(KleerDbContext))]
-    [Migration("20200718051559_InitialCreate")]
+    [Migration("20200730062214_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -100,7 +100,7 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Gestor");
+                    b.ToTable("Gestores");
                 });
 
             modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Gestor_Evento", b =>
@@ -120,7 +120,7 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
 
                     b.HasIndex("GestorId");
 
-                    b.ToTable("Gestor_Evento");
+                    b.ToTable("Gestor_Eventos");
                 });
 
             modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Instructor", b =>
@@ -145,6 +145,36 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Instructores");
+                });
+
+            modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Pago", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("CodPago");
+
+                    b.Property<int?>("EventoId");
+
+                    b.Property<DateTime?>("FechaEmision");
+
+                    b.Property<DateTime?>("FechaVenc");
+
+                    b.Property<double>("MontoPago");
+
+                    b.Property<int?>("ParticipanteId");
+
+                    b.Property<int?>("TipoPagoId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventoId");
+
+                    b.HasIndex("ParticipanteId");
+
+                    b.HasIndex("TipoPagoId");
+
+                    b.ToTable("Pagos");
                 });
 
             modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Participante", b =>
@@ -195,6 +225,42 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                     b.ToTable("Participante_Eventos");
                 });
 
+            modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Tarjeta", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<char>("CVV")
+                        .HasMaxLength(3);
+
+                    b.Property<int>("Cel_Contacto");
+
+                    b.Property<string>("Direccion");
+
+                    b.Property<DateTime?>("FechaVenc_Tarjeta");
+
+                    b.Property<char>("NroTarjeta")
+                        .HasMaxLength(16);
+
+                    b.Property<double>("Saldo_Tarjeta");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tarjetas");
+                });
+
+            modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.TipoPago", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Descripcion_pago");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TipoPagos");
+                });
+
             modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Evento", b =>
                 {
                     b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Categoria", "Categoria")
@@ -215,6 +281,21 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                     b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Gestor", "Gestor")
                         .WithMany("Gestor_Eventos")
                         .HasForeignKey("GestorId");
+                });
+
+            modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Pago", b =>
+                {
+                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Evento", "Evento")
+                        .WithMany()
+                        .HasForeignKey("EventoId");
+
+                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Participante", "Participante")
+                        .WithMany()
+                        .HasForeignKey("ParticipanteId");
+
+                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.TipoPago", "TipoPago")
+                        .WithMany()
+                        .HasForeignKey("TipoPagoId");
                 });
 
             modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Participante_Evento", b =>

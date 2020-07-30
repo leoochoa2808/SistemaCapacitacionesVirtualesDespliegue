@@ -22,7 +22,7 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Gestor",
+                name: "Gestores",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -40,7 +40,7 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Gestor", x => x.Id);
+                    table.PrimaryKey("PK_Gestores", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -84,6 +84,37 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Tarjetas",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    NroTarjeta = table.Column<char>(maxLength: 16, nullable: false),
+                    FechaVenc_Tarjeta = table.Column<DateTime>(nullable: true),
+                    CVV = table.Column<char>(maxLength: 3, nullable: false),
+                    Direccion = table.Column<string>(nullable: true),
+                    Cel_Contacto = table.Column<int>(nullable: false),
+                    Saldo_Tarjeta = table.Column<double>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tarjetas", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TipoPagos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    Descripcion_pago = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TipoPagos", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Eventos",
                 columns: table => new
                 {
@@ -121,7 +152,7 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Gestor_Evento",
+                name: "Gestor_Eventos",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -132,17 +163,54 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Gestor_Evento", x => x.Id);
+                    table.PrimaryKey("PK_Gestor_Eventos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Gestor_Evento_Eventos_EventoId",
+                        name: "FK_Gestor_Eventos_Eventos_EventoId",
                         column: x => x.EventoId,
                         principalTable: "Eventos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Gestor_Evento_Gestor_GestorId",
+                        name: "FK_Gestor_Eventos_Gestores_GestorId",
                         column: x => x.GestorId,
-                        principalTable: "Gestor",
+                        principalTable: "Gestores",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Pagos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    CodPago = table.Column<int>(nullable: false),
+                    FechaEmision = table.Column<DateTime>(nullable: true),
+                    FechaVenc = table.Column<DateTime>(nullable: true),
+                    MontoPago = table.Column<double>(nullable: false),
+                    TipoPagoId = table.Column<int>(nullable: true),
+                    ParticipanteId = table.Column<int>(nullable: true),
+                    EventoId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Pagos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Pagos_Eventos_EventoId",
+                        column: x => x.EventoId,
+                        principalTable: "Eventos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Pagos_Participantes_ParticipanteId",
+                        column: x => x.ParticipanteId,
+                        principalTable: "Participantes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Pagos_TipoPagos_TipoPagoId",
+                        column: x => x.TipoPagoId,
+                        principalTable: "TipoPagos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -185,14 +253,29 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                 column: "InstructorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Gestor_Evento_EventoId",
-                table: "Gestor_Evento",
+                name: "IX_Gestor_Eventos_EventoId",
+                table: "Gestor_Eventos",
                 column: "EventoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Gestor_Evento_GestorId",
-                table: "Gestor_Evento",
+                name: "IX_Gestor_Eventos_GestorId",
+                table: "Gestor_Eventos",
                 column: "GestorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pagos_EventoId",
+                table: "Pagos",
+                column: "EventoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pagos_ParticipanteId",
+                table: "Pagos",
+                column: "ParticipanteId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pagos_TipoPagoId",
+                table: "Pagos",
+                column: "TipoPagoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Participante_Eventos_EventoId",
@@ -208,13 +291,22 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Gestor_Evento");
+                name: "Gestor_Eventos");
+
+            migrationBuilder.DropTable(
+                name: "Pagos");
 
             migrationBuilder.DropTable(
                 name: "Participante_Eventos");
 
             migrationBuilder.DropTable(
-                name: "Gestor");
+                name: "Tarjetas");
+
+            migrationBuilder.DropTable(
+                name: "Gestores");
+
+            migrationBuilder.DropTable(
+                name: "TipoPagos");
 
             migrationBuilder.DropTable(
                 name: "Eventos");
