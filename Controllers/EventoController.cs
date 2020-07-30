@@ -87,7 +87,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
             if (ModelState.IsValid)
             {
                 evento.NombreEvento = e.NombreEvento;
-                evento.Categoria = e.Categoria;
+                evento.CategoriaId = e.CategoriaId;
                 evento.Frecuencia = e.Frecuencia;
                 evento.FechaInicio = e.FechaInicio;
                 evento.FechaFin = e.FechaFin;
@@ -95,7 +95,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 evento.HoraInicio = e.HoraInicio;
                 evento.HoraFin = e.HoraFin;
                 evento.StockParticipantes = e.StockParticipantes;
-                evento.Instructor = e.Instructor;
+                evento.InstructorId = e.InstructorId;
                 evento.Descripcion = e.Descripcion;
                 _context.Entry (evento).State = EntityState.Modified;
                 _context.SaveChanges ();
@@ -135,18 +135,14 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
 
         }
 
-        #endregion
+        #endregion        
+
         #region Visualizar Todo
-
-        [HttpGet]
-        public IActionResult VisualizarTodo () {
-            
-            return View (_context.Eventos.Include(x=>x.Categoria).ToList());
-        }
+        public IActionResult VisualizarTodo() => View(_context.Eventos.Include(x => x.Categoria).ToList());
         #endregion
 
 
 
-       
+
     }
 }
