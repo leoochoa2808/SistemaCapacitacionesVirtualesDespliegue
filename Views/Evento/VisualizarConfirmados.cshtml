@@ -9,11 +9,10 @@
 	<link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
 	<link rel="stylesheet" type="text/css" href="~/vendor/perfect-scrollbar/perfect-scrollbar.css">
 	<link rel="stylesheet" type="text/css" href="~/css/tableutil.css">
-	<link rel="stylesheet" type="text/css" href="~/css/tableconfirmados.css">
+	<link rel="stylesheet" type="text/css" href="~/css/tableconfirmados.css"> 
 	<link rel="stylesheet" href="~/css/main.css"/>
 
 <div class="limiter">
-	<br><h3 align="center" style="font-size: 40px;">Confirmados</h3>
 		<div class="container-table100">
 			<div class="wrap-table100">
 				<div class="table100">
@@ -33,7 +32,7 @@
               @foreach (var e in Model){
 								<tr>
 									<td class="column">@e.NombreEvento</td>
-									<td class="column">@e.Categoria.NombreCategoria</td>
+									<td class="column">@e.CategoriaId</td>
 									<td class="column">@e.estado</td>
 									<td class="column">@e.FechConfirmacion</td>
 									<td class="column">@e.FechaInicio</td>
