@@ -18,7 +18,7 @@ h5 {
 #input {
     background-color: rgb(247, 250, 253);
     border-color: rgba(0, 0, 0, 0.3);
-    color: white;
+    color: black;
     font-weight: lighter;
 }
 .text-muted {
@@ -26,7 +26,7 @@ h5 {
 }
 .form-text {
     display: block;
-    margin-top: .25rem;
+    margin-top: .20rem;
 }
 #ing {
     background-color: #ADFF2F;
@@ -66,6 +66,8 @@ a {
     background-color: transparent;
 }
 
-
+.button.alt.create:hover {
+    background-color: #1eb8fb;
+}
 
 
