@@ -2473,8 +2473,9 @@ input, select, textarea {
 		input[type="button"].alt,
 		button.alt,
 		.button.alt {
-			background-color: #555555;
-			color: #fff;
+			background-color:#F0E68C;
+			color: #474747;
+			margin-left: 10px;
 		}
 		.button.alt.create {
 			background-color: #7bcaea;
@@ -2736,9 +2737,7 @@ input, select, textarea {
 		padding: 5em 0 3em 0;
 	}
 
-		.wrapper.style1 {
-			background: #fff;
-		}
+		
 
 		.wrapper.style2 {
 			background-color:#D8BFD8;
@@ -3374,3 +3373,13 @@ input, select, textarea {
 			}
 
 	}
+
+
+	/*carrito*/
+
+	#carrito {
+		font-size: 100%;
+		color: white;
+	}
+
+	/*cursos*/
