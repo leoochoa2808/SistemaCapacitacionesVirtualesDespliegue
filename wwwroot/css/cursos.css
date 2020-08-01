@@ -1,71 +1,63 @@
 
-#page-wrapper > section {
+#main .major h2 {
+    background: #f7f7f7 url(images/bg02.png);
+}
+
+
+header.major {
+    margin: 0.75em 0 2.5em 0;
+}
+header.major {
+    position: relative;
+    text-align: center;
+    border-top: solid 1px #ccc;
+    top: 1em;
+    margin: 0 0 3em 0;
+}
+header {
+    margin: 0 0 1.5em 0;
+}
+
+
+
+header.major h2 {
+    padding: 0 1em 0 1em;
+}
+header.major h2 {
+    background: #fff;
+    position: relative;
+    top: -0.65em;
+    display: inline;
+    margin: 0;
+    padding: 0 1em 0 1em;
+}
+.letra {
+    font-size: 1.5em;
+}
+
+.image img {
+    display: block;
+    width: 100%;
+}
+section > :last-child, section:last-child, article > :last-child, article:last-child {
     margin-bottom: 0;
 }
-.wrapper.style{
-    background-color:#FFE4C4;
-    color: #484d55;
+section > :last-child, section:last-child, article > :last-child, article:last-child {
+    margin-bottom: 0;
 }
-.wrapper .title {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    text-align: center;
-    text-transform: uppercase;
-    display: block;
-    font-weight: 700;
-    letter-spacing: 0.25em;
-    font-size: 0.9em;
-    width: 25em;
-    height: 3.25em;
-    top: -3.25em;
-    line-height: 3.25em;
-    margin-bottom: -3.25em;
-    margin-left: -12.5em;
-    padding-top: 0.5em;
+.box {
+    background: #ffffff;
+    border-bottom: solid 1px #ccc;
+    padding: 2.75em 1.75em 2.75em 1.75em;
+}
+section, article {
+    margin-bottom: 2.5em;
 }
 
-#highlights .highlight {
-    text-align: center;
+h3 {
+    font-size: 1.35em;
 }
-/* Image */
-
-.image {
-    display: inline-block;
+.button.alt {
+    background-color: #555555;
+    color: #fff;
 }
-
-    .image img {
-        display: block;
-        width: 100%;
-    }
-
-    .image.fit {
-        display: block;
-        width: 100%;
-    }
-
-    .image.left {
-        float: left;
-        margin: 0 2em 2em 0;
-    }
-
-    .image.centered {
-        display: block;
-        margin: 0 0 2em 0;
-    }
-
-        .image.centered img {
-            margin: 0 auto;
-            width: auto;
-        }
-
-    .image.featured {
-        display: block;
-        width: 100%;
-        margin: 0 0 2em 0;
-    }
-
-    .wrapper.style5 {
-        background-color: #9bd186;
-        
-    }
