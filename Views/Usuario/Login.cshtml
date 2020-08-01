@@ -1,5 +1,7 @@
+@model Login
 
 <link rel="stylesheet" href="~/css/login.css">
+
 <body>
     
     <div class="container">
@@ -9,7 +11,7 @@
             </div>
             <div class="col-md-6">
                 <div id="login">
-                    <h5>Iniciar Sesion</h5>
+                    <h5>Iniciar Sesión</h5>
                 
                     <form method="post" asp-controller="Usuarios" asp-action="Login" style="center">
                         <div class="form-group">
@@ -30,13 +32,12 @@
                         }
                         }
                         </div>
-                        <button type="submit" class="btn" id="ing">Ingresar</button>
-                        <button type="submit" class="btn" id="ing">Crear Cuenta</button>
+                        <br>
+                        <input type="submit" href="" class="button alt create" value="Ingresar" />
+                        <a href="/Usuario/Registrar" class="button">Crear cuenta</a>
                         <br><br>
                         <center>
                         <a id="forgot" asp-action="RecuperarC"> ¿Has olvidado tu constraseña?
-                        </a><br>
-                        <a id="forgot" asp-action="Registrar"> Registrate
                         </a><center>
                     </form>
                 </div>
