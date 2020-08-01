@@ -15,5 +15,10 @@ namespace Sistema_de_Capacitaciones_Virtuales.Models {
         public int Cel_Contacto { get; set;}
         public Double Saldo_Tarjeta { get; set;}
 
+
+
+
+        public string Descripcion_pago { get; set; }
+
     }
 }
