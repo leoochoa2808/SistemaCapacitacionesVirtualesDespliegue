@@ -1,0 +1,67 @@
+#page-wrapper > section {
+    margin-bottom: 0;
+}
+.box.page-content h2 {
+    font-size: 2em;
+    margin: 0 0 0.5em 0;
+}
+ul.meta li:first-child {
+    margin-left: 0;
+}
+ul.meta li:before {
+    opacity: 0.5;
+    cursor: default;
+    margin-right: 0.5em;
+}
+
+ul.meta li {
+    position: relative;
+    display: inline-block;
+    margin-left: 1em;
+    padding-left: 0;
+}
+ul li {
+    padding-left: 0.5em;
+}
+.icon {
+    text-decoration: none;
+    position: relative;
+    text-decoration: none;
+}
+.image:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 80%;
+    border-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+h3, h4 {
+    font-size: 1.25em;
+}
+p, ul, ol, dl, table {
+    margin-bottom: 1em;
+}
+
+ul.lista {
+    position: relative;
+    display: inline-block;
+    margin-left: 1em;
+    padding-left: 0;
+}
+ul.lista li{
+    
+    margin-left: 2em;
+    
+}
+.horario p{
+    text-align: center;
+}
+.letra{
+    font-size: 2.85em;
+}
