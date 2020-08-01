@@ -1,0 +1,12 @@
+element.style {
+    padding-bottom: 10%;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 2%;
+}
+
+
+
+.button.alt.create:hover {
+    background-color: #1eb8fb;
+}
