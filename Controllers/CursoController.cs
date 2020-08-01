@@ -14,10 +14,18 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         public CursoController (KleerDbContext context) {
             _context = context;
         }
+        
+
         public IActionResult Cursos()
         {
-            return View(_context.Eventos.Include (x => x.Categoria).Include (x => x.Instructor).ToList());
+            return View();
         }
+
+        public IActionResult DCurso1()
+        {
+            return View();
+        }
+
 
 
     }
