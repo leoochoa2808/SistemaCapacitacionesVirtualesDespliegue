@@ -19,6 +19,15 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
             return View(_context.Eventos.Include (x => x.Categoria).Include (x => x.Instructor).ToList());
         }
 
+        public IActionResult CursoDetalle(int? idE){
+
+            TempData["est1"]=1;
+            var evento = _context.Eventos.SingleOrDefault (m => m.Id == idE);
+            if(evento==null) return NotFound();
+            return View(evento);
+
+        }
+
 
     }
 }

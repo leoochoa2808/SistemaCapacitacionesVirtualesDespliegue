@@ -1,5 +1,6 @@
 @{
-    var idusu = TempData["idusu"] as int?;
+    var idevento = TempData["ide"] as int?;
+    var idu = TempData["idusu"] as int?;
 }
 
 @model Evento
@@ -31,10 +32,10 @@
                         <p>@Html.DisplayTextFor(Models => Models.FechaInicio) - @Html.DisplayTextFor(Models => Models.FechaFin)</p>
 				    </div>    
                     <div class="bottom-wrap">
-                                    <a  asp-controller="Carritos"
-                                        asp-action="Carritoc"
-                                        asp-route-idE="1"
-                                        asp-route-idusu="1" id="but"
+                                    <a  asp-controller="Inscripcion"
+                                        asp-action="PreInscripcionCursos"
+                                        asp-route-idE="@idevento"
+                                        asp-route-idusu="@idu" id="but"
                                         class="btn float-right">Pre inscripción</a>
                     </div>
                 </div></center>				

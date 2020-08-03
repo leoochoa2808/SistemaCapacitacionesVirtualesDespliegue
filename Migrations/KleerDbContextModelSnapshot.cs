@@ -164,6 +164,8 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
 
                     b.Property<int?>("TipoPagoId");
 
+                    b.Property<string>("estado_pago");
+
                     b.HasKey("Id");
 
                     b.HasIndex("EventoId");

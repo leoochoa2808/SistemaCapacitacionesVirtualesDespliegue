@@ -20,9 +20,11 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         public static int iduser;
 
         [HttpPost]
-        public IActionResult RecuperarC (string emailR) {
+        public IActionResult PreInscripcionCursos (int? idE, int? idU) {
 
-            var usuario = _context.Participantes.FirstOrDefault (U => U.Correo == emailR);
+            var evento = _context.Eventos.SingleOrDefault(e =>e.Id == idE);
+            var usuario = _context.Participantes.FirstOrDefault (p => p.Id == idU);
+            var destino_correo = usuario.Correo;
             iduser = usuario.Id;
             if (usuario != null) {
                 int longitud = 7;
@@ -37,7 +39,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
 
                 System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage ();
 
-                msg.To.Add (emailR);
+                msg.To.Add (destino_correo);
                 msg.Subject = "Recuperar Contraseña";
                 msg.SubjectEncoding = System.Text.Encoding.UTF8;
                 //ENVIA UNA COPIA DEL CORREO
@@ -45,7 +47,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 //toda estructura html es texto y css
                 msg.Body =
                     "<body>" +
-                    "<div id='msg'><p>INGRESE EL SIGUIENTE TOKEN</p><br><strong><h1>" + codigo + "</h1><strong></div><br>" +
+                    "<div id='msg'><p>SE HA REALIZADO SU PREINSCRIPCION CON EL SIGUIENTE CÓDIGO DE PAGO: </p><br><strong><h1>" + codigo + "</h1><strong></div><br>" +
                     "</body>";
                 msg.BodyEncoding = System.Text.Encoding.UTF8;
                 msg.IsBodyHtml = true;
@@ -62,7 +64,18 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 //eso se especifica en el web.config(appsettings.json) 
 
                 cliente.Send (msg);
+                var p = new Pago ();
+                p.EventoId = evento.Id;
+                p.CodPago = Int32.Parse(codigo);
+                p.ParticipanteId = usuario.Id;
+                p.FechaEmision = DateTime.Now;
+                //DateTime fecha = DateTime.Now.AddDays(7);
+                p.FechaVenc = DateTime.Now.AddDays(7);
+                p.MontoPago = evento.Inversion;
+
                 //return View();
+                _context.Add(p);
+                _context.SaveChanges();
                 return RedirectToAction ("Token");
             } else {
                 TempData["Message"] = "Correo invalido";
