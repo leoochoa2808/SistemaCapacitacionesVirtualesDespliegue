@@ -19,16 +19,15 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         //variable iduser graba la sesion del usuario
         public static int iduser;
 
-        [HttpPost]
         public IActionResult PreInscripcionCursos (int? idE, int? idU) {
 
-            var evento = _context.Eventos.SingleOrDefault(e =>e.Id == idE);
+            var evento = _context.Eventos.FirstOrDefault(e =>e.Id == idE);
             var usuario = _context.Participantes.FirstOrDefault (p => p.Id == idU);
             var destino_correo = usuario.Correo;
             iduser = usuario.Id;
-            if (usuario != null) {
+            if (usuario != null || evento != null) {
                 int longitud = 7;
-                const string alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                const string alfabeto = "0123456789"; //"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
                 StringBuilder token = new StringBuilder ();
                 Random rnd = new Random ();
 
@@ -40,7 +39,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage ();
 
                 msg.To.Add (destino_correo);
-                msg.Subject = "Recuperar Contraseña";
+                msg.Subject = "Pre Inscripción Curso - ABC";
                 msg.SubjectEncoding = System.Text.Encoding.UTF8;
                 //ENVIA UNA COPIA DEL CORREO
                 msg.Bcc.Add ("joseacb2496@gmail.com");
@@ -48,6 +47,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 msg.Body =
                     "<body>" +
                     "<div id='msg'><p>SE HA REALIZADO SU PREINSCRIPCION CON EL SIGUIENTE CÓDIGO DE PAGO: </p><br><strong><h1>" + codigo + "</h1><strong></div><br>" +
+                    "<div>Monto a Pagar</div>"+ evento.Inversion+
                     "</body>";
                 msg.BodyEncoding = System.Text.Encoding.UTF8;
                 msg.IsBodyHtml = true;
@@ -64,25 +64,42 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 //eso se especifica en el web.config(appsettings.json) 
 
                 cliente.Send (msg);
-                var p = new Pago ();
-                p.EventoId = evento.Id;
-                p.CodPago = Int32.Parse(codigo);
-                p.ParticipanteId = usuario.Id;
-                p.FechaEmision = DateTime.Now;
-                //DateTime fecha = DateTime.Now.AddDays(7);
-                p.FechaVenc = DateTime.Now.AddDays(7);
-                p.MontoPago = evento.Inversion;
-
                 //return View();
-                _context.Add(p);
+                
+                var pago = new Pago ();
+                pago.EventoId = evento.Id;
+                pago.CodPago = Int32.Parse(codigo);
+                pago.ParticipanteId = usuario.Id;
+                pago.FechaEmision = DateTime.Now;
+                //DateTime fecha = DateTime.Now.AddDays(7);
+                pago.FechaVenc = DateTime.Now.AddDays(7);
+                pago.MontoPago = evento.Inversion;
+                pago.estado_pago = "Pago Pendiente";
+                pago.TipoPagoId = 1;
+                //return View();
+                _context.Add(pago);
                 _context.SaveChanges();
-                return RedirectToAction ("Token");
-            } else {
+                return RedirectToAction("CursoDetalle", "Curso");
+            }else {
                 TempData["Message"] = "Correo invalido";
                 //return RecuperarC ("Correo invalido"); 
-                return View ();
+                return NotFound ();
             }
+        }
+        [HttpPost]
+        public IActionResult PreInscripcionCursos(){
 
+            var usuario = _context.Participantes.SingleOrDefault(u=>u.Id ==iduser);
+            var lista = _context.Pagos.Where(u=>u.ParticipanteId == usuario.Id && u.estado_pago == "Pago Pendiente").Include(e=>e.Evento).Include(t=>t.TipoPago);
+            return View();
+
+        }
+
+        public IActionResult CursosInscritos(){
+            
+            var usuario = _context.Participantes.SingleOrDefault(u=>u.Id ==iduser);
+            var lista = _context.Pagos.Where(u=>u.ParticipanteId == usuario.Id && u.estado_pago == "Pago Pendiente").Include(e=>e.Evento).Include(t=>t.TipoPago);
+            return View();
         }
 
     }
