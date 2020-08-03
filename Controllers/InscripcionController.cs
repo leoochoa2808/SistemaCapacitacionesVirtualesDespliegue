@@ -47,6 +47,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 msg.Body =
                     "<body>" +
                     "<div id='msg'><p>SE HA REALIZADO SU PREINSCRIPCION CON EL SIGUIENTE CÓDIGO DE PAGO: </p><br><strong><h1>" + codigo + "</h1><strong></div><br>" +
+                    "<div>Monto a Pagar</div>"+ evento.Inversion+
                     "</body>";
                 msg.BodyEncoding = System.Text.Encoding.UTF8;
                 msg.IsBodyHtml = true;
@@ -74,19 +75,30 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 pago.FechaVenc = DateTime.Now.AddDays(7);
                 pago.MontoPago = evento.Inversion;
                 pago.estado_pago = "Pago Pendiente";
-
+                pago.TipoPagoId = 1;
                 //return View();
                 _context.Add(pago);
                 _context.SaveChanges();
-                return RedirectToAction("Cursos", "Curso");
+                return RedirectToAction("CursoDetalle", "Curso");
             }else {
                 TempData["Message"] = "Correo invalido";
                 //return RecuperarC ("Correo invalido"); 
                 return NotFound ();
             }
         }
+        [HttpPost]
+        public IActionResult PreInscripcionCursos(){
 
-        public IActionResult ModalPrueba(){
+            var usuario = _context.Participantes.SingleOrDefault(u=>u.Id ==iduser);
+            var lista = _context.Pagos.Where(u=>u.ParticipanteId == usuario.Id && u.estado_pago == "Pago Pendiente").Include(e=>e.Evento).Include(t=>t.TipoPago);
+            return View();
+
+        }
+
+        public IActionResult CursosInscritos(){
+            
+            var usuario = _context.Participantes.SingleOrDefault(u=>u.Id ==iduser);
+            var lista = _context.Pagos.Where(u=>u.ParticipanteId == usuario.Id && u.estado_pago == "Pago Pendiente").Include(e=>e.Evento).Include(t=>t.TipoPago);
             return View();
         }
 
