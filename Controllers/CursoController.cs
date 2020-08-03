@@ -16,12 +16,14 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         }
         public IActionResult Cursos()
         {
+            TempData["idusu"] = 13;
             return View(_context.Eventos.Include (x => x.Categoria).Include (x => x.Instructor).ToList());
         }
 
         public IActionResult CursoDetalle(int? idE){
 
-            TempData["est1"]=1;
+            TempData["idusu"] = 13;
+            TempData["ide"] = idE;
             var evento = _context.Eventos.SingleOrDefault (m => m.Id == idE);
             if(evento==null) return NotFound();
             return View(evento);
