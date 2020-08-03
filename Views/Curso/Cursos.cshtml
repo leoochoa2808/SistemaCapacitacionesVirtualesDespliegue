@@ -6,52 +6,6 @@
   
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <body>
-
-            <div class="col-md-9" id="slider">
-
-                <div class="row ml-4 pl-4">
-
-                    @foreach (var e in Model)
-                    {
-                    <div class="col-md-3">
-                        <figure class="card card-product">
-                            <div class="img-wrap"><div class="img-wrap"><a
-                                        asp-action="JuegoDetalle"
-                                        asp-controller="Juegos"
-                                        asp-route-id="1"
-                                        asp-route-idU="2"><img id="product"
-                                            class="img-fluid"
-                                            src="@e.NombreEvento"></a></div>
-                                <figcaption class="info-wrap">
-                                    <h4 class="title">@e.Categoria.NombreCategoria</h4>
-                                    <p class="desc"
-                                        style="text-overflow:ellipsis;white-space:nowrap;overflow:hidden;">@e.Instructor.PrimerNombre</p>
-                                    <div class="rating-wrap">
-                                        <div class="label-rating">@e.Descripcion</div>
-                                        <div class="label-rating">154 orders
-                                        </div>
-                                    </div>
-                                </figcaption>
-                                <div class="bottom-wrap">
-                                    <a  asp-controller="Carritos"
-                                        asp-action="Carritoc"
-                                        asp-route-idJ="1"
-                                        asp-route-id="1" id="but"
-                                        class="btn float-right">Pre inscripción</a>
-                                    <div class="price-wrap h5">
-                                        <span class="price-new">S/@e.Inversion</span>
-                                    </div>
-                                </div>
-                            </figure>
-                        </div>
-                        }
-                    </div>
-                </div>
-            </div>
-
-</body>
-
-=======
   <div class="container" style="padding-top:10px">
     
       <div class="card-deck">
@@ -75,4 +29,3 @@
       
   </div>
 </body>
->>>>>>> origin/develop

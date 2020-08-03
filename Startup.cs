@@ -39,10 +39,10 @@ namespace Sistema_de_Capacitaciones_Virtuales
             services.AddDbContext<KleerDbContext>(o =>
                     o.UseNpgsql(
                     
-                    // CONEXIÓN JOSÉ
+                    // CONEXIÓN JOSSELYN
                     "Host=ec2-54-234-28-165.compute-1.amazonaws.com;" +
-                    "Database=dem3lid08fd3uv;Username=jkyeoqoduaxgmw;"+
-                    "Password=550c535ff443076255991dcbffa2258ccb19b497ab4f31ea397ff9af9b6c3ff1;"+
+                    "Database=d36smukblul4sn;Username=mudcwplykcnyxd;"+
+                    "Password=3acf5700563f773a4848eeb9d479b2e3ada82b3ca18edb694f08a714a7e33e83;"+
                     "Port=5432;SSL Mode=Require;Trust Server Certificate=true"
                     
                     )            
