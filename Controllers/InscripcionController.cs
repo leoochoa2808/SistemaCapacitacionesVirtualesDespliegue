@@ -86,8 +86,8 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 return NotFound ();
             }
         }
-        [HttpPost]
-        public IActionResult PreInscripcionCursos(){
+        [HttpGet]
+        public IActionResult PreInscripcionCursos(int? iduser){
 
             var usuario = _context.Participantes.SingleOrDefault(u=>u.Id ==iduser);
             var lista = _context.Pagos.Where(u=>u.ParticipanteId == usuario.Id && u.estado_pago == "Pago Pendiente").Include(e=>e.Evento).Include(t=>t.TipoPago);
@@ -98,7 +98,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         public IActionResult CursosInscritos(){
             
             var usuario = _context.Participantes.SingleOrDefault(u=>u.Id ==iduser);
-            var lista = _context.Pagos.Where(u=>u.ParticipanteId == usuario.Id && u.estado_pago == "Pago Pendiente").Include(e=>e.Evento).Include(t=>t.TipoPago);
+            var lista = _context.Pagos.Where(u=>u.ParticipanteId == usuario.Id && u.estado_pago == "Cancelados").Include(e=>e.Evento).Include(t=>t.TipoPago);
             return View();
         }
 
