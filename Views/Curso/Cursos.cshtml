@@ -1,11 +1,17 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿@{
+=======
+@{
+>>>>>>> rama_jose
     var idusu = TempData["idusu"] as int?;
 }
 
 @model List<Evento>
-
+  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <body>
+<<<<<<< HEAD
 
             <div class="col-md-9" id="slider">
 
@@ -181,3 +187,28 @@
 </ul>
 >>>>>>> f6d130903e9ae462c97d12eecb4729c2b32e6f53
 
+=======
+  <div class="container" style="padding-top:10px">
+    
+      <div class="card-deck">
+         @foreach (var e in Model){
+        <div class="card">
+          <img class="card-img-top" src="https://www.bbva.com/wp-content/uploads/2018/06/fintech-tecnologia-innovacion-digital-blockchain-bbva_opt-1024x431.jpg" alt="CURSOS_IMG">
+          <div class="card-body">
+            <h4 class="card-title">@e.NombreEvento</h4>
+            <hr>
+            <h5 class="card-text">@e.Categoria.NombreCategoria</h5>
+            <p class="card-text">A cargo de <strong>@e.Instructor.PrimerNombre @e.Instructor.ApellidoPaterno @e.Instructor.ApellidoMaterno</strong></p>
+            <p class="card-text">@e.Descripcion</p>
+            <a asp-controller="Curso"
+                asp-action="CursoDetalle"
+                asp-route-idE="@e.Id" id="but"
+                class="btn float-left">Ver</a>
+          </div>
+        </div> 
+        }
+      </div>
+      
+  </div>
+</body>
+>>>>>>> rama_jose

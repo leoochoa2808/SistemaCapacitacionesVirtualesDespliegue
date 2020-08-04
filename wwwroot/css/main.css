@@ -195,6 +195,8 @@ input, select, textarea {
 
 			.container {
 				width: 1200px;
+				margin-top: 25px;
+				margin-bottom: 25px;
 			}
 
 		}
@@ -203,6 +205,8 @@ input, select, textarea {
 
 			.container {
 				width: 960px;
+				margin-top: 15px;
+				margin-bottom: 15px;
 			}
 
 		}
@@ -211,6 +215,8 @@ input, select, textarea {
 
 			.container {
 				width: 95%;
+				margin-top: 15px;
+				margin-bottom: 15px;
 			}
 
 		}
@@ -3132,7 +3138,7 @@ input, select, textarea {
 						line-height: inherit;
 						text-align: center;
 						width: 44px;
-						color: #fff;
+						color: black;
 						opacity: 0.5;
 					}
 

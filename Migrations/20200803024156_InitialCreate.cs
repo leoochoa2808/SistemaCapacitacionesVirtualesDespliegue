@@ -187,6 +187,7 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                     CodPago = table.Column<int>(nullable: false),
                     FechaEmision = table.Column<DateTime>(nullable: true),
                     FechaVenc = table.Column<DateTime>(nullable: true),
+                    estado_pago = table.Column<string>(nullable: true),
                     MontoPago = table.Column<double>(nullable: false),
                     TipoPagoId = table.Column<int>(nullable: true),
                     ParticipanteId = table.Column<int>(nullable: true),
