@@ -27,35 +27,24 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers
         [HttpPost]
         public IActionResult Login (string user, string pasw) {
 
-            var part = _context.Participantes.FirstOrDefault (P => P.username == user && P.pass == pasw);
             var gest = _context.Gestores.FirstOrDefault(G => G.Gestor_Usuario == user && G.Gestor_Contra == pasw);
-
-            if(part != null && gest is null){
-                idIniciar = part.Id;
-                Rol_usu = "Participante";
-                part.username = user;
-                part.pass = pasw;
-                NombreUsu = part.PrimerNombre;
-
-                return RedirectToAction("Index","Home");
-
-            }else if(gest !=null && part is null){
+            var part = _context.Participantes.FirstOrDefault (P => P.username == user && P.pass == pasw);
+            
+            if(gest !=null && part is null){
                 idIniciar = gest.Id;         
-                gest.Gestor_Usuario = user;
-                gest.Gestor_Contra = pasw;
                 NombreUsu = gest.PrimerNombre;
- 
                 if(gest.Rol == "GerenteEventos"){
-                    ViewBag.Rol = "GerenteEventos";
+                    Rol_usu = "GerenteEventos";
+
                 }else if(gest.Rol == "OrganizadorEventos"){
-                    ViewBag.Rol= "OrganizadorEventos";
+                    Rol_usu= "OrganizadorEventos";
                 }else if(gest.Rol == "Recepcionista"){
-                    ViewBag.Rol = "Recepcionista";
+                    Rol_usu = "Recepcionista";
                 }else{
-                    ViewBag.Rol = "Gestor de Finanzas";
+                    Rol_usu = "Gestor de Finanzas";
                 }
                 return RedirectToAction("Index","Home");
-            }else{
+            }else {
                 return Login("Usuario o contraseña incorrectos");
             }
             

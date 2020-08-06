@@ -17,18 +17,18 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers
         }
         public IActionResult Index()
         {
-            var iniciar = _context.Participantes.FirstOrDefault (U => U.Id == UsuarioController.idIniciar);
+            //var iniciar = _context.Participantes.FirstOrDefault (U => U.Id == UsuarioController.idIniciar);
             var iniciar_gest = _context.Gestores.FirstOrDefault (g => g.Id == UsuarioController.idIniciar);
-            if (iniciar != null && iniciar_gest is null) {
+            /* if (iniciar != null && iniciar_gest is null) {
                 if(UsuarioController.NombreUsu == iniciar.PrimerNombre){
                     ViewBag.Message = UsuarioController.NombreUsu;
                     ViewBag.Rol = UsuarioController.Rol_usu;
                 }
 
-            } else if(iniciar_gest != null && iniciar is null) {
+            } else */ if(iniciar_gest != null /* && iniciar is null */) {
                 if(UsuarioController.NombreUsu == iniciar_gest.PrimerNombre){
                     ViewBag.Message = UsuarioController.NombreUsu;
-                    ViewBag.Rol = "GerenteEventos";
+                    ViewBag.Rol = UsuarioController.Rol_usu;
                 }
 
             }else{
