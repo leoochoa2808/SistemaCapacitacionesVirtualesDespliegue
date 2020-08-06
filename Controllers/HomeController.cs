@@ -11,8 +11,31 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers
 {
     public class HomeController : Controller
     {          
+        private readonly KleerDbContext _context;
+        public HomeController (KleerDbContext context) {
+            _context = context;
+        }
         public IActionResult Index()
         {
+            var iniciar = _context.Participantes.FirstOrDefault (U => U.Id == UsuarioController.idIniciar);
+            var iniciar_gest = _context.Gestores.FirstOrDefault (g => g.Id == UsuarioController.idIniciar);
+            if (iniciar != null && iniciar_gest is null) {
+                if(UsuarioController.NombreUsu == iniciar.PrimerNombre){
+                    ViewBag.Message = UsuarioController.NombreUsu;
+                    ViewBag.Rol = UsuarioController.Rol_usu;
+                }
+
+            } else if(iniciar_gest != null && iniciar is null) {
+                if(UsuarioController.NombreUsu == iniciar_gest.PrimerNombre){
+                    ViewBag.Message = UsuarioController.NombreUsu;
+                    ViewBag.Rol = "GerenteEventos";
+                }
+
+            }else{
+                ViewBag.Rol = " ";
+                ViewBag.Message = "Iniciar Sesión";
+            }
+            
             return View();
         }
         public IActionResult About()
@@ -39,5 +62,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+    
     }
 }
