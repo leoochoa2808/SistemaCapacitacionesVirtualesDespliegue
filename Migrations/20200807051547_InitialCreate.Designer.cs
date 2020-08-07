@@ -10,7 +10,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
 namespace SistemadeCapacitacionesVirtuales.Migrations
 {
     [DbContext(typeof(KleerDbContext))]
-    [Migration("20200807022659_InitialCreate")]
+    [Migration("20200807051547_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,6 +20,20 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
                 .HasAnnotation("ProductVersion", "2.1.14-servicing-32113")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
+
+            modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Boleta", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("cod_boleta");
+
+                    b.Property<DateTime>("fec_emi");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Boletas");
+                });
 
             modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Categoria", b =>
                 {
@@ -152,6 +166,8 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int?>("BoletaId");
+
                     b.Property<int>("CodPago");
 
                     b.Property<int?>("EventoId");
@@ -169,6 +185,8 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                     b.Property<string>("estado_pago");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BoletaId");
 
                     b.HasIndex("EventoId");
 
@@ -289,6 +307,10 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
 
             modelBuilder.Entity("Sistema_de_Capacitaciones_Virtuales.Models.Pago", b =>
                 {
+                    b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Boleta", "Boleta")
+                        .WithMany()
+                        .HasForeignKey("BoletaId");
+
                     b.HasOne("Sistema_de_Capacitaciones_Virtuales.Models.Evento", "Evento")
                         .WithMany()
                         .HasForeignKey("EventoId");

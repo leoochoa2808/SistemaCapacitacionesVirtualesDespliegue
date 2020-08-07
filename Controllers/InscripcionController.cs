@@ -18,7 +18,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         public static String codigo;
         //variable iduser graba la sesion del usuario
         public static int iduser = UsuarioController.idIniciar;
-
+    
         public IActionResult PreInscripcionCursos (int? idE, int? idU) {
 
             var evento = _context.Eventos.FirstOrDefault (e => e.Id == idE);

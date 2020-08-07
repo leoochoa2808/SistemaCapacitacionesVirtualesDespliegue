@@ -9,6 +9,20 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Boletas",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    cod_boleta = table.Column<int>(nullable: false),
+                    fec_emi = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Boletas", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Categorias",
                 columns: table => new
                 {
@@ -192,11 +206,18 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                     MontoPago = table.Column<double>(nullable: false),
                     TipoPagoId = table.Column<int>(nullable: true),
                     ParticipanteId = table.Column<int>(nullable: true),
-                    EventoId = table.Column<int>(nullable: true)
+                    EventoId = table.Column<int>(nullable: true),
+                    BoletaId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Pagos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Pagos_Boletas_BoletaId",
+                        column: x => x.BoletaId,
+                        principalTable: "Boletas",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Pagos_Eventos_EventoId",
                         column: x => x.EventoId,
@@ -265,6 +286,11 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                 column: "GestorId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Pagos_BoletaId",
+                table: "Pagos",
+                column: "BoletaId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Pagos_EventoId",
                 table: "Pagos",
                 column: "EventoId");
@@ -306,6 +332,9 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
 
             migrationBuilder.DropTable(
                 name: "Gestores");
+
+            migrationBuilder.DropTable(
+                name: "Boletas");
 
             migrationBuilder.DropTable(
                 name: "TipoPagos");
