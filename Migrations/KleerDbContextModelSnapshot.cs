@@ -230,7 +230,7 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<char>("CVV")
+                    b.Property<string>("CVV")
                         .HasMaxLength(3);
 
                     b.Property<int>("Cel_Contacto");
@@ -239,10 +239,12 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
 
                     b.Property<DateTime?>("FechaVenc_Tarjeta");
 
-                    b.Property<char>("NroTarjeta")
+                    b.Property<string>("NroTarjeta")
                         .HasMaxLength(16);
 
                     b.Property<double>("Saldo_Tarjeta");
+
+                    b.Property<double>("monto_total");
 
                     b.HasKey("Id");
 

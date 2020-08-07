@@ -1,3 +1,7 @@
+@{
+    var monto = TempData["MontoPago"] as double?;
+}
+
 @model Tarjeta
 
 <body>
@@ -32,7 +36,7 @@
 										
 											<center><h2>Pago</h2></center><br>					
 										
-                                        <form method="post" >
+                                        <form>
                                           <div class="row gtr-50">
 									        
                                             <div class="col-8 col-12-mobilep">
@@ -46,7 +50,7 @@
 										    </div>
                                             <div class="col-6 col-12-mobilep">
                                                 <label class="col-3 col-12-mobilep">CVV</label>
-											    <input asp-for="CVV " type="text" id="name" placeholder="CVV" />
+											    <input asp-for="CVV" type="text" id="name" placeholder="CVV" />
 										    </div>
 
                                             <div class="col-8 col-12-mobilep">
@@ -60,16 +64,13 @@
 										    </div>
                                             <div class="col-6 col-12-mobilep">
                                                 <label class="col-3 col-12-mobilep">Monto a Pagar</label>
-											    <input asp-for="Saldo_Tarjeta " type="text" id="name" placeholder="Saldo" />
+											    <input asp-for="monto_total" type="text" id="name" placeholder="@monto" disabled/>
 										    </div>
 
 										    <div class="col-12">
 											    <br>
-                                                   
-                                                    <a href="" class="button">Cancelar</a>
-                                                    <a href="" class="button">Pagar Ahora</a>
-                                                    
-											    
+                                                    <a asp-controller="Pago" asp-action="RegistroPagoCurso" class="button">Pagar Ahora</a>
+                                                    <a method="get" asp-controller="Inscripcion" asp-action="PreInscripcionCursos" class="button">Cancelar</a>
 										    </div>
                                           </div>
 								        </form>

@@ -89,12 +89,13 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    NroTarjeta = table.Column<char>(maxLength: 16, nullable: false),
+                    NroTarjeta = table.Column<string>(maxLength: 16, nullable: true),
                     FechaVenc_Tarjeta = table.Column<DateTime>(nullable: true),
-                    CVV = table.Column<char>(maxLength: 3, nullable: false),
+                    CVV = table.Column<string>(maxLength: 3, nullable: true),
                     Direccion = table.Column<string>(nullable: true),
                     Cel_Contacto = table.Column<int>(nullable: false),
-                    Saldo_Tarjeta = table.Column<double>(nullable: false)
+                    Saldo_Tarjeta = table.Column<double>(nullable: false),
+                    monto_total = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
                 {

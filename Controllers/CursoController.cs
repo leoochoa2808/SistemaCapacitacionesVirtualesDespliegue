@@ -14,21 +14,22 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         public CursoController (KleerDbContext context) {
             _context = context;
         }
-        public IActionResult Cursos()
-        {
-            return View(_context.Eventos.Include (x => x.Categoria).Include (x => x.Instructor).ToList());
+        public IActionResult Cursos () {
+            ViewBag.Message = UsuarioController.MsjUsu;
+            ViewBag.Rol = UsuarioController.Rol_usu;
+            return View (_context.Eventos.Include (x => x.Categoria).Include (x => x.Instructor).ToList ());
         }
 
-        public IActionResult CursoDetalle(int? idE){
-
-            TempData["idusu"] = 13;
+        public IActionResult CursoDetalle (int? idE) {
+            ViewBag.Message = UsuarioController.MsjUsu;
+            ViewBag.Rol = UsuarioController.Rol_usu;
+            TempData["idusu"] = UsuarioController.idIniciar;
             TempData["ide"] = idE;
             var evento = _context.Eventos.SingleOrDefault (m => m.Id == idE);
-            if(evento==null) return NotFound();
-            return View(evento);
- 
-        }
+            if (evento == null) return NotFound ();
+            return View (evento);
 
+        }
 
     }
 }
