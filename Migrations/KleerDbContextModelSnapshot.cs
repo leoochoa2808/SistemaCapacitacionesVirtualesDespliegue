@@ -28,6 +28,8 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
 
                     b.Property<DateTime>("fec_emi");
 
+                    b.Property<double>("monto_pagado");
+
                     b.HasKey("Id");
 
                     b.ToTable("Boletas");
