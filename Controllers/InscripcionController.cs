@@ -50,7 +50,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                     "<div>Monto a Pagar</div>" + evento.Inversion +
                     "</body>";
                 msg.BodyEncoding = System.Text.Encoding.UTF8;
-                msg.IsBodyHtml = true;
+                msg.IsBodyHtml = true;  
                 msg.From = new System.Net.Mail.MailAddress ("joseacb2496@gmail.com");
 
                 //EL CORREO QUE VA A ENVIAR EL MENSAJE DE PRUEBA

@@ -9,6 +9,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Models
         public int Id { get; set; }
         public Categoria Categoria { get; set; }
         public int? CategoriaId { get; set; }
+        [Required]
         public string NombreEvento { get; set; }
         //[DataType(DataType.Date)]
         public DateTime? FechaInicio { get; set; }
