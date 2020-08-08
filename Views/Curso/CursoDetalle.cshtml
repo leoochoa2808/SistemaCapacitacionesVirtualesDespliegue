@@ -32,12 +32,18 @@
                         <p>@Html.DisplayTextFor(Models => Models.FechaInicio) - @Html.DisplayTextFor(Models => Models.FechaFin)</p>
 				    </div>    
                     <div class="bottom-wrap">
+<<<<<<< HEAD
                                     <a  asp-controller="Inscripcion"
                                         asp-action="PreInscripcionCursos"
                                         asp-route-idE="@idevento"
                                         asp-route-idU="@idu" id="but"
                                         class="btn float-right"
                                         data-toggle="modal" data-target="#myModal">Pre inscripción</a>
+=======
+                                    <a  method="get" asp-controller="Inscripcion" asp-action="PreInscripcionCursos" asp-route-iduser = "@idu" id="but"
+                                        class="btn float-right"
+                                        >Pre inscripción</a>
+>>>>>>> 7f13ba2a3efcb1c963ef314bbe3d842ebca707ba
                                         <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -46,13 +52,17 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7f13ba2a3efcb1c963ef314bbe3d842ebca707ba
           <h4 class="modal-title">PRE INSCRIPCION EXITOSA</h4>
         </div>
         <div class="modal-body">
           <p>SE TE HA ENVIADO 1 CORREO CUCON.</p>
         </div>
         <div class="modal-footer">
+<<<<<<< HEAD
 
           <button method="post" asp-controller="Inscripcion" asp-action="PreInscripcionCursos" type="button" class="btn btn-default" data-dismiss="modal">Cursos PreInscritos</button>
 
@@ -65,6 +75,9 @@
 
           <a method="get" asp-controller="Inscripcion" asp-action="PreInscripcionCursos" type="button" class="btn btn-default">Cursos PreInscritos</a>
 
+=======
+          <button method="post" asp-controller="Inscripcion" asp-action="PreInscripcionCursos" asp-route-iduser = "@idu" type="button" class="btn btn-default" data-dismiss="modal">Cursos PreInscritos</button>
+>>>>>>> 7f13ba2a3efcb1c963ef314bbe3d842ebca707ba
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -77,16 +90,10 @@
 						
 		</div>
         <br><br>
-<<<<<<< HEAD
 
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
-=======
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
->>>>>>> 6140da1236874cd6164a128fee9babddad7b8185
 </body>
 
 
