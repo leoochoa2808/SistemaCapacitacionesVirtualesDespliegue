@@ -86,14 +86,9 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 return NotFound ();
             }
         }
-<<<<<<< HEAD
         public static double MontoPagar;
         [HttpGet]
         public IActionResult PreInscripcionCursos () {
-=======
-        [HttpGet]
-        public IActionResult PreInscripcionCursos(int? iduser){
->>>>>>> 7f13ba2a3efcb1c963ef314bbe3d842ebca707ba
 
             var usuario = _context.Participantes.FirstOrDefault (u => u.Id == iduser);
             var lista = _context.Pagos.Where (u => u.ParticipanteId == usuario.Id && u.estado_pago == "Pago Pendiente").Include (e => e.Evento).Include (t => t.TipoPago).Include (e => e.Evento.Categoria).ToList ();
@@ -107,19 +102,11 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
 
         }
 
-<<<<<<< HEAD
         public IActionResult CursosInscritos () {
 
             var usuario = _context.Participantes.SingleOrDefault (u => u.Id == iduser);
             var lista = _context.Pagos.Where (u => u.ParticipanteId == usuario.Id && u.estado_pago == "Cancelado").Include (e => e.Evento).Include (t => t.TipoPago).Include (e => e.Evento.Categoria).ToList ();
             return View (lista);
-=======
-        public IActionResult CursosInscritos(){
-            
-            var usuario = _context.Participantes.SingleOrDefault(u=>u.Id ==iduser);
-            var lista = _context.Pagos.Where(u=>u.ParticipanteId == usuario.Id && u.estado_pago == "Cancelados").Include(e=>e.Evento).Include(t=>t.TipoPago);
-            return View();
->>>>>>> 7f13ba2a3efcb1c963ef314bbe3d842ebca707ba
         }
 
     }

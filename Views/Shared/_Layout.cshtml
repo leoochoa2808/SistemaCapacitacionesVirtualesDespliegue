@@ -19,23 +19,6 @@
 							<ul>
 								<li class="current"><a href="~/Home/Index">Home</a></li>
 								<li><a asp-controller="Home" asp-action="Somos">Somos</a></li>
-<<<<<<< HEAD
-								<li><a asp-controller="Curso" asp-action="Cursos">Cursos</a></li>
-								<li><a asp-controller="Evento" asp-action="CrearEvento">Crear Evento</a></li>
-								  <li>
-									<a href="#">Lista de Eventos</a>
-									<ul>
-										<li><a asp-controller="Evento" asp-action="VisualizarTodo">Visualizar Todo</a></li>
-										<li><a asp-controller="Evento" asp-action="VisualizarConfirmados">Visualizar Confirmados</a></li>
-										<li><a asp-controller="Evento" asp-action="VisualizarPendientes">Visualizar Pendientes</a></li>
-										
-									</ul>
-								</li> 
-								<li><a asp-controller="Evento" asp-action=""></a></li>
-								<li><a asp-controller="Evento" asp-action=""></a></li>
-								<li><a asp-controller="Evento" asp-action=""></a></li>
-								
-=======
 								<li>
 									@{if(!String.IsNullOrEmpty(ViewBag.Rol)){
 										if(@ViewBag.Rol=="Participante"){
@@ -76,7 +59,6 @@
 										}
 									}	
 								</li>
->>>>>>> rama_jose
 							</ul>
 						</nav>
 				</div>
