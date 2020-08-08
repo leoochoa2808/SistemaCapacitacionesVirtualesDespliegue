@@ -18,6 +18,10 @@
             <h5 class="card-text">@e.Categoria.NombreCategoria</h5>
             <p class="card-text">A cargo de <strong>@e.Instructor.PrimerNombre @e.Instructor.ApellidoPaterno @e.Instructor.ApellidoMaterno</strong></p>
             <p class="card-text">@e.Descripcion</p>
+            <a asp-controller="Curso"
+                asp-action="CursoDetalle"
+                asp-route-idE="@e.Id" id="but"
+                class="btn float-left">Ver</a>
           </div>
         </div> 
         }

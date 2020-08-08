@@ -16,6 +16,8 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         //variable estatica para guardar el Evento
         /* public static int idevento; */
         public IActionResult CrearEvento () {
+            ViewBag.Message = UsuarioController.MsjUsu;
+            ViewBag.Rol = UsuarioController.Rol_usu;
             ViewBag.Categorias = _context.Categorias.ToList ();
             ViewBag.Instructores = _context.Instructores.ToList ();
             return View ();
@@ -23,6 +25,8 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
 
         [HttpPost]
         public IActionResult CrearEvento (Evento e) {
+            ViewBag.Message = UsuarioController.MsjUsu;
+            ViewBag.Rol = UsuarioController.Rol_usu;
             if (ModelState.IsValid) {
                 e.estado = "Pendiente";
                 _context.Add (e);
@@ -35,18 +39,22 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
 
         [HttpGet]
         public IActionResult VisualizarPendientes () {
-            TempData["est1"]=1; //es el estado para Confirmar el evento
-            TempData["est2"]=2; //es el estado para Rechazar el evento
-            return View (_context.Eventos.Include(x=>x.Categoria).Where(x=>x.estado=="Pendiente").ToList());
+            ViewBag.Message = UsuarioController.MsjUsu;
+            ViewBag.Rol = UsuarioController.Rol_usu;
+            TempData["est1"] = 1; //es el estado para Confirmar el evento
+            TempData["est2"] = 2; //es el estado para Rechazar el evento
+            return View (_context.Eventos.Include (x => x.Categoria).Where (x => x.estado == "Pendiente").ToList ());
         }
 
         public IActionResult CambioEstadoCR (int? id, int? est) {
 
-            if(id != null && est != null){
+            if (id != null && est != null) {
+                ViewBag.Message = UsuarioController.MsjUsu;
+                ViewBag.Rol = UsuarioController.Rol_usu;
 
                 var evento = _context.Eventos.SingleOrDefault (m => m.Id == id);
 
-                if (est == 1 && evento.estado == "Pendiente" && evento.estado !="Rechazado") {
+                if (est == 1 && evento.estado == "Pendiente" && evento.estado != "Rechazado") {
                     evento.estado = "Confirmado";
                     evento.FechConfirmacion = DateTime.Now;
                 } else if (est == 2 && evento.estado == "Pendiente" && evento.estado != "Confirmado") {
@@ -55,37 +63,40 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 _context.Entry (evento).State = EntityState.Modified;
                 _context.SaveChanges ();
 
-                return RedirectToAction("VisualizarPendientes");
+                return RedirectToAction ("VisualizarPendientes");
 
             }
-            return View("VisualizarPendientes");
+            return View ("VisualizarPendientes");
 
         }
 
-        public IActionResult DetallePendiente (int? idevento)
-        {
+        public IActionResult DetallePendiente (int? idevento) {
+            ViewBag.Message = UsuarioController.MsjUsu;
+            ViewBag.Rol = UsuarioController.Rol_usu;
             var evento = _context.Eventos.SingleOrDefault (m => m.Id == idevento);
-            if(evento==null) return NotFound();
-            return View(evento);
+            if (evento == null) return NotFound ();
+            return View (evento);
         }
 
-        public static int idE; 
-        public IActionResult DetalleConfirmado (int? id)
-        {
+        public static int idE;
+        public IActionResult DetalleConfirmado (int? id) {
+            ViewBag.Message = UsuarioController.MsjUsu;
+            ViewBag.Rol = UsuarioController.Rol_usu;
+
             ViewBag.Categorias = _context.Categorias.ToList ();
             ViewBag.Instructores = _context.Instructores.ToList ();
-            var evento = _context.Eventos.Include(x => x.Categoria).Include(x => x.Instructor).SingleOrDefault (m => m.Id == id);
+            var evento = _context.Eventos.Include (x => x.Categoria).Include (x => x.Instructor).SingleOrDefault (m => m.Id == id);
             idE = evento.Id;
-            if(evento==null) return NotFound();
-            return View(evento);   
+            if (evento == null) return NotFound ();
+            return View (evento);
         }
 
         [HttpPost]
-        public IActionResult ModificarEvento(Evento e)
-        {
-            var evento = _context.Eventos.Include(x => x.Categoria).Include(x => x.Instructor).SingleOrDefault (m => m.Id == idE);
-            if (ModelState.IsValid)
-            {
+        public IActionResult ModificarEvento (Evento e) {
+            ViewBag.Message = UsuarioController.MsjUsu;
+            ViewBag.Rol = UsuarioController.Rol_usu;
+            var evento = _context.Eventos.Include (x => x.Categoria).Include (x => x.Instructor).SingleOrDefault (m => m.Id == idE);
+            if (ModelState.IsValid) {
                 evento.NombreEvento = e.NombreEvento;
                 evento.CategoriaId = e.CategoriaId;
                 evento.Frecuencia = e.Frecuencia;
@@ -100,7 +111,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 _context.Entry (evento).State = EntityState.Modified;
                 _context.SaveChanges ();
                 return RedirectToAction ("VisualizarConfirmados");
-            }else{
+            } else {
                 TempData["Message"] = "Datos incompletos";
                 return View ();
             }
@@ -110,35 +121,41 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
 
         [HttpGet]
         public IActionResult VisualizarConfirmados () {
-            TempData["est1"]=1; //es el estado para Cancelar el eventoNADA
 
-            return View (_context.Eventos.Include(x=>x.Categoria).Where(x=>x.estado=="Confirmado").ToList());
+            ViewBag.Message = UsuarioController.MsjUsu;
+            ViewBag.Rol = UsuarioController.Rol_usu;
+            TempData["est1"] = 1; //es el estado para Cancelar el eventoNADA
+
+            return View (_context.Eventos.Include (x => x.Categoria).Where (x => x.estado == "Confirmado").ToList ());
         }
 
         public IActionResult CambioEstadoCC (int? id, int? est) {
 
-            if(id != null && est != null){
+            if (id != null && est != null) {
+
+                ViewBag.Message = UsuarioController.MsjUsu;
+                ViewBag.Rol = UsuarioController.Rol_usu;
 
                 var evento = _context.Eventos.SingleOrDefault (m => m.Id == id);
 
-                if (est == 1 && evento.estado == "Confirmado" && evento.estado !="Cancelado") {
+                if (est == 1 && evento.estado == "Confirmado" && evento.estado != "Cancelado") {
                     evento.estado = "Cancelado";
                     evento.FechConfirmacion = DateTime.Now;
-                } 
+                }
                 _context.Entry (evento).State = EntityState.Modified;
                 _context.SaveChanges ();
 
-                return RedirectToAction("VisualizarConfirmados");
+                return RedirectToAction ("VisualizarConfirmados");
 
             }
-            return View("VisualizarConfirmados");
+            return View ("VisualizarConfirmados");
 
         }
 
         #endregion        
 
         #region Visualizar Todo
-        public IActionResult VisualizarTodo() => View(_context.Eventos.Include(x => x.Categoria).ToList());
+        public IActionResult VisualizarTodo () => View (_context.Eventos.Include (x => x.Categoria).ToList ());
         #endregion
 
     }

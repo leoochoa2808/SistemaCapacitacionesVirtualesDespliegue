@@ -11,8 +11,9 @@ namespace Sistema_de_Capacitaciones_Virtuales.Models {
         public DbSet<Gestor> Gestores { get; set; }
         public DbSet<Gestor_Evento> Gestor_Eventos { get; set; }
         public DbSet<Pago> Pagos { get; set; }
-        public DbSet<TipoPago> TipoPagos {get; set;}
-        public DbSet<Tarjeta> Tarjetas { get; set;}
-        
+        public DbSet<TipoPago> TipoPagos { get; set; }
+        public DbSet<Tarjeta> Tarjetas { get; set; }
+        public DbSet<Boleta> Boletas { get; set; }
+
     }
 }
