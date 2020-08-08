@@ -18,7 +18,11 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         public static String codigo;
         //variable iduser graba la sesion del usuario
         public static int iduser = UsuarioController.idIniciar;
+<<<<<<< HEAD
         public static int idevento;
+=======
+    
+>>>>>>> develop
         public IActionResult PreInscribir (int? idE, int? idU) {
 
             var evento = _context.Eventos.FirstOrDefault (e => e.Id == idE);
@@ -80,7 +84,10 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 //return View();
                 _context.Add (pago);
                 _context.SaveChanges ();
+<<<<<<< HEAD
 
+=======
+>>>>>>> develop
                 return RedirectToAction ("PreInscripcionCursos");
             } else {
                 TempData["Message"] = "Correo invalido";
