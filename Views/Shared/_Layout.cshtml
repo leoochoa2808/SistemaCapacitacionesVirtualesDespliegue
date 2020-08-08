@@ -19,21 +19,46 @@
 							<ul>
 								<li class="current"><a href="~/Home/Index">Home</a></li>
 								<li><a asp-controller="Home" asp-action="Somos">Somos</a></li>
-								<li><a asp-controller="Curso" asp-action="Cursos">Cursos</a></li>
-								<li><a asp-controller="Evento" asp-action="CrearEvento">Crear Evento</a></li>
-								  <li>
-									<a href="#">Lista de Eventos</a>
-									<ul>
-										<li><a asp-controller="Evento" asp-action="VisualizarTodo">Visualizar Todo</a></li>
-										<li><a asp-controller="Evento" asp-action="VisualizarConfirmados">Visualizar Confirmados</a></li>
-										<li><a asp-controller="Evento" asp-action="VisualizarPendientes">Visualizar Pendientes</a></li>
-										
-									</ul>
-								</li> 
-								<li><a asp-controller="Evento" asp-action=""></a></li>
-								<li><a asp-controller="Evento" asp-action=""></a></li>
-								<li><a asp-controller="Evento" asp-action=""></a></li>
-								
+								<li>
+									@{if(!String.IsNullOrEmpty(ViewBag.Rol)){
+										if(@ViewBag.Rol=="Participante"){
+											<a asp-controller="Curso" asp-action="Cursos">Cursos</a>
+										}
+										if(@ViewBag.Rol=="GerenteEventos"){
+											<a asp-controller="Evento" asp-action="CrearEvento">Crear Evento</a>
+											<li><a asp-controller="Evento" asp-action="VisualizarTodo">Visualizar Todo</a></li>
+										}
+										if(@ViewBag.Rol=="OrganizadorEventos"){
+											<a href="#">Lista de Eventos</a>
+											<ul><br>
+											<li><a asp-controller="Evento" asp-action="VisualizarTodo">Visualizar Todo</a></li>
+											<li><a asp-controller="Evento" asp-action="VisualizarConfirmados">Visualizar Confirmados</a></li>
+											<li><a asp-controller="Evento" asp-action="VisualizarPendientes">Visualizar Pendientes</a></li>
+											
+										</ul>
+										}
+									}
+
+									}
+								<li>
+								<li>	
+									@{
+										if(!String.IsNullOrEmpty(ViewBag.Message)){
+											if(@ViewBag.Message=="Iniciar Sesión"){
+											<a class="nav-link" asp-controller="Usuario" asp-action="Login">Iniciar Sesión</a>
+											}
+											else{
+												<a class="nav-link dropdown-toggle"  data-toggle="dropdown" role="button" aria-haspopup="true" id="user" >@ViewBag.Message</a>
+											<ul><br>
+												<li><a asp-controller="Evento" asp-action="VisualizarConfirmados">Ver Perfil</a></li>
+												<li><a class="dropdown-item" id="opt" asp-controller="Usuario" asp-action="Login">Cerrar sesión</a></li>		
+											</ul>
+												<li><a  class="nav-link" method="get" asp-controller="Inscripcion" asp-action="PreInscripcionCursos"><i id="carrito" class="far fa-clipboard"></i></a></li>
+												<li><a  class="nav-link" asp-controller="Inscripcion" asp-action="CursosInscritos"><i id="carrito" class="fas fa-clipboard-list"></i></a></li>                                     					
+											}                             
+										}
+									}	
+								</li>
 							</ul>
 						</nav>
 				</div>

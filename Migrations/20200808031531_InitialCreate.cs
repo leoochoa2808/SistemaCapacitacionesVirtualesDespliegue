@@ -9,6 +9,21 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Boletas",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    cod_boleta = table.Column<int>(nullable: false),
+                    fec_emi = table.Column<DateTime>(nullable: false),
+                    monto_pagado = table.Column<double>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Boletas", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Categorias",
                 columns: table => new
                 {
@@ -89,12 +104,13 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    NroTarjeta = table.Column<char>(maxLength: 16, nullable: false),
+                    NroTarjeta = table.Column<string>(maxLength: 16, nullable: true),
                     FechaVenc_Tarjeta = table.Column<DateTime>(nullable: true),
-                    CVV = table.Column<char>(maxLength: 3, nullable: false),
+                    CVV = table.Column<string>(maxLength: 3, nullable: true),
                     Direccion = table.Column<string>(nullable: true),
                     Cel_Contacto = table.Column<int>(nullable: false),
-                    Saldo_Tarjeta = table.Column<double>(nullable: false)
+                    Saldo_Tarjeta = table.Column<double>(nullable: false),
+                    monto_total = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -187,14 +203,22 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                     CodPago = table.Column<int>(nullable: false),
                     FechaEmision = table.Column<DateTime>(nullable: true),
                     FechaVenc = table.Column<DateTime>(nullable: true),
+                    estado_pago = table.Column<string>(nullable: true),
                     MontoPago = table.Column<double>(nullable: false),
                     TipoPagoId = table.Column<int>(nullable: true),
                     ParticipanteId = table.Column<int>(nullable: true),
-                    EventoId = table.Column<int>(nullable: true)
+                    EventoId = table.Column<int>(nullable: true),
+                    BoletaId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Pagos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Pagos_Boletas_BoletaId",
+                        column: x => x.BoletaId,
+                        principalTable: "Boletas",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Pagos_Eventos_EventoId",
                         column: x => x.EventoId,
@@ -263,6 +287,11 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                 column: "GestorId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Pagos_BoletaId",
+                table: "Pagos",
+                column: "BoletaId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Pagos_EventoId",
                 table: "Pagos",
                 column: "EventoId");
@@ -304,6 +333,9 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
 
             migrationBuilder.DropTable(
                 name: "Gestores");
+
+            migrationBuilder.DropTable(
+                name: "Boletas");
 
             migrationBuilder.DropTable(
                 name: "TipoPagos");
