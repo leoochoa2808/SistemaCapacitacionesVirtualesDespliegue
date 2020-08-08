@@ -31,41 +31,6 @@
 /* Image */
 
 .image {
-    display: inline-block;
+    width: 100px;
+    height: 100px;
 }
-
-    .image img {
-        display: block;
-        width: 100%;
-    }
-
-    .image.fit {
-        display: block;
-        width: 100%;
-    }
-
-    .image.left {
-        float: left;
-        margin: 0 2em 2em 0;
-    }
-
-    .image.centered {
-        display: block;
-        margin: 0 0 2em 0;
-    }
-
-        .image.centered img {
-            margin: 0 auto;
-            width: auto;
-        }
-
-    .image.featured {
-        display: block;
-        width: 100%;
-        margin: 0 0 2em 0;
-    }
-
-    .wrapper.style5 {
-        background-color: #9bd186;
-        
-    }
