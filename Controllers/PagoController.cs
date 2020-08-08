@@ -113,5 +113,28 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
             }
         }
 
+        public IActionResult BoletasPorEventoCbo () {
+            ViewBag.Eventos = _context.Eventos.ToList ();
+            return View ();
+        }
+        [HttpPost]
+        public IActionResult BoletasPorEvento (int ? idE) {
+             if (idE != null) {
+                var lista = _context.Pagos.Include (e => e.Evento).Include (u => u.Participante)
+                    .Where (p => p.EventoId == idE && p.estado_pago == "Cancelado").ToList ();
+                string nombre_evento = "";
+                int contador_participantes = 0;
+                foreach (Pago p in lista) {
+                    nombre_evento = p.Evento.NombreEvento;
+                    contador_participantes++;
+                }
+                TempData["nro_participante"] = contador_participantes;
+                TempData["nom_evento"] = nombre_evento;
+                return View (lista);
+            } else {
+                return NotFound ();
+            }
+        }
+
     }
 }
