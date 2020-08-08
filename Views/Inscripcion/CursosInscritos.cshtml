@@ -5,9 +5,10 @@
 @model List<Pago>
 
 <body>
-<h1>CURSOS INSCRITOS</h1>
-            <div class="col-md-9" id="slider">
 
+            
+            <div class="container col-md-9" style="padding-top: 50px;" id="slider">
+                <center><h1 style=" font-size: 35px">Cursos Inscritos</h1></center>
                 <div class="row ml-4 pl-4">
 
                     @foreach (var p in Model)
@@ -32,8 +33,7 @@
                             <center><a style="border-color:white;" class="btn"
                                     asp-action="CancelarPreinscripcion"
                                     asp-controller="Inscripcion"
-                                    asp-route-id="@p.Id"><i
-                                        class="fa fa-trash"></i></a></center>
+                                    asp-route-id="@p.Id"></a></center>
                         </div>
                   @*   <div class="col-md-3">
                         <figure class="card card-product">
@@ -82,15 +82,15 @@
                         if(TempData["Monto"]!=null)
                         {
                         <div class="col-md-3 p-2 mt-4" style="font-weight:
-                            lighter; text-align:center;" class="price-wrap"><h5>S/.@TempData["Monto"]</h5></div>
+                            lighter; text-align:center;" class="price-wrap"><h5>S/.@TempData["Monto"]</h5>
+                        </div>
                         }
                         }
                     </div>
                 </div>
 
-            </div><br>
-                    </div>
-                </div>
             </div>
+                    +
+            
 
 </body>

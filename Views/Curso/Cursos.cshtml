@@ -5,13 +5,16 @@
 @model List<Evento>
   
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 <body>
   <div class="container" style="padding-top:10px">
-    
+            <header class="major">
+								<br><center><h2 class="letra">Desarrollo de Software</h2><center><br>
+            </header>    
       <div class="card-deck">
          @foreach (var e in Model){
         <div class="card">
-          <img class="card-img-top" src="https://www.bbva.com/wp-content/uploads/2018/06/fintech-tecnologia-innovacion-digital-blockchain-bbva_opt-1024x431.jpg" alt="CURSOS_IMG">
+          <img class="card-img-top" src="https://www.liguesite.com.br/images/blog/gestao-da-producao.jpg" alt="CURSOS_IMG">
           <div class="card-body">
             <h4 class="card-title">@e.NombreEvento</h4>
             <hr>
