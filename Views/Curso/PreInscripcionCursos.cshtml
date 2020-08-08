@@ -1,0 +1,97 @@
+﻿@{
+    var idusu = TempData["idusu"] as int?;
+}
+
+@model List<Evento>
+
+<body>
+
+            <div class="col-md-9" id="slider">
+
+                <div class="row ml-4 pl-4">
+
+                    @foreach (var e in Model)
+                    {
+                        
+                        <div class="col-3 col-12-mobilep" style="font-weight:
+                            lighter; text-align:justified;"><br>
+                            <div class="price-wrap" id="tag">Evento</div>
+                            <div class="price-wrap">@e.NombreEvento</div>
+                        </div>
+                        <div class="col-3 col-12-mobilep" style="font-weight:
+                            lighter; text-align:justified;"><br>
+                            <div class="price-wrap" id="tag">Categoria</div>
+                            <div class="price-wrap">@e.Categoria.NombreCategoria</div>
+                        </div>
+                        <div class="col-3 col-12-mobilep" style="font-weight:
+                            lighter; text-align:justified;"><br>
+                            <div class="price-wrap" id="tag">Inversion</div>
+                            <div class="price-wrap">S/. @e.Inversion</div>
+                        </div>
+                        <div class="col-3 col-12-mobilep"><br><br>
+                            <center><a style="border-color:white;" class="btn"
+                                    asp-action="CancelarPreinscripcion"
+                                    asp-controller="Inscripcion"
+                                    asp-route-id="@e.Id"><i
+                                        class="fa fa-trash"></i></a></center>
+                        </div>
+                  @*   <div class="col-md-3">
+                        <figure class="card card-product">
+                            <div class="img-wrap"><div class="img-wrap"><a
+                                        asp-action="PreInscripcionCursos"
+                                        asp-controller="Inscripcion"
+                                        asp-route-id="1"
+                                        asp-route-idU="2">
+                                        @e.NombreEvento</a></div>
+                                <figcaption class="info-wrap">
+                                    <h4 class="title">@e.Categoria.NombreCategoria</h4>
+                                    <p class="desc"
+                                        style="text-overflow:ellipsis;white-space:nowrap;overflow:hidden;">@e.Instructor.PrimerNombre</p>
+                                </figcaption>
+                                <div class="bottom-wrap">
+                                    <a  asp-controller="Carritos"
+                                        asp-action="Carritoc"
+                                        asp-route-idJ="1"
+                                        asp-route-idU="1" id="but"
+                                        class="btn float-right">Pre inscripción</a>
+                                    <div class="price-wrap h5">
+                                        <span class="price-new">S/@e.Inversion</span>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div> *@
+                        }
+                         <div class="row col-md-12">
+                        <div class="col-md-3 p-2 mt-4">
+                            <center><a style="border-color:white;" class="btn"
+                                    href="~/Curso/Cursos"><i id="carrito"
+                                        class="fa fa-arrow-left"></i> Seguir
+                                    comprando</a></center>
+                        </div>
+                        <div class="col-md-3 p-2 mt-4">
+                            <center><a style="border-color:white;" class="btn"
+                                    href="~/Carritos/Pagar"><i id="carrito"
+                                        class="fa fa-check-square-o"></i>
+                                        Comprar</a></center>
+                        </div>
+                        <div class="col-md-3 p-2 mt-4" style="font-weight:
+                            lighter; text-align:center;">
+                            <div><h5>Total estimado</h5></div>
+                        </div>
+                        @{
+                        if(TempData["Monto"]!=null)
+                        {
+                        <div class="col-md-3 p-2 mt-4" style="font-weight:
+                            lighter; text-align:center;" class="price-wrap"><h5>S/.@TempData["Monto"]</h5></div>
+                        }
+                        }
+                    </div>
+                </div>
+
+            </div><br>
+                    </div>
+                </div>
+            </div>
+
+</body>
+
