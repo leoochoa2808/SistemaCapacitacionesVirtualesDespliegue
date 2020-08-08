@@ -117,11 +117,19 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
             ViewBag.Eventos = _context.Eventos.ToList ();
             return View ();
         }
+
         [HttpPost]
         public IActionResult BoletasPorEvento (int ? idE) {
-             if (idE != null) {
-                var lista = _context.Pagos.Include (e => e.Evento).Include (u => u.Participante)
-                    .Where (p => p.EventoId == idE && p.estado_pago == "Cancelado").ToList ();
+            if (idE != null) {
+
+                var info = from pa in _context.Pagos
+                join b in _context.Boletas on pa.BoletaId equals b.Id
+                select pa;
+                var lista = info.Include (e => e.Evento).Include (u => u.Participante).Include(b=>b.Boleta).
+                Where (p => p.EventoId == idE).ToList ();
+
+                /*                 var lista = _context.Pagos.Include (e => e.Evento).Include (u => u.Participante)
+                                    .Where (p => p.EventoId == idE && p.estado_pago == "Cancelado").ToList (); */
                 string nombre_evento = "";
                 int contador_participantes = 0;
                 foreach (Pago p in lista) {

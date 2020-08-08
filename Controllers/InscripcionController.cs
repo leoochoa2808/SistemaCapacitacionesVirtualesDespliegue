@@ -18,18 +18,14 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         public static String codigo;
         //variable iduser graba la sesion del usuario
         public static int iduser = UsuarioController.idIniciar;
-<<<<<<< HEAD
-        public static int idevento;
-=======
     
->>>>>>> develop
         public IActionResult PreInscribir (int? idE, int? idU) {
 
             var evento = _context.Eventos.FirstOrDefault (e => e.Id == idE);
             var usuario = _context.Participantes.FirstOrDefault (p => p.Id == idU);
             var destino_correo = usuario.Correo;
             iduser = usuario.Id;
-            idevento = evento.Id;
+            /* idevento = evento.Id; */
             if (usuario != null && evento != null) {
                 int longitud = 7;
                 const string alfabeto = "0123456789"; //"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
@@ -84,10 +80,6 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 //return View();
                 _context.Add (pago);
                 _context.SaveChanges ();
-<<<<<<< HEAD
-
-=======
->>>>>>> develop
                 return RedirectToAction ("PreInscripcionCursos");
             } else {
                 TempData["Message"] = "Correo invalido";
