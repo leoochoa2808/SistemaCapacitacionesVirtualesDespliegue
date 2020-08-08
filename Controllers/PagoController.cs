@@ -62,19 +62,83 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
 
         }
 
-        public IActionResult ListaPagosPendientesPorEvento () {
+        public IActionResult PagosPendientesPorEventoCbo () {
+            ViewBag.Eventos = _context.Eventos.ToList ();
             return View ();
         }
-
+        /*         public static int contador_participantes; */
         [HttpPost]
         public IActionResult ListaPagosPendientesPorEvento (int? idE) {
 
             if (idE != null) {
+                var lista = _context.Pagos.Include (e => e.Evento).Include (u => u.Participante)
+                    .Where (p => p.EventoId == idE && p.estado_pago == "Pago Pendiente").ToList ();
+                string nombre_evento = "";
+                int contador_participantes = 0;
+                foreach (Pago p in lista) {
+                    nombre_evento = p.Evento.NombreEvento;
+                    contador_participantes++;
+                }
+                TempData["nro_participante"] = contador_participantes;
+                TempData["nom_evento"] = nombre_evento;
 
-                var lista = _context.Pagos.Where (p => p.EventoId == idE && p.estado_pago == "Pago Pendiente" && p.ParticipanteId == iduser).
-                Include (e => e.Evento).Include (u => u.Participante);
+                return View (lista);
+            } else {
+                return NotFound ();
+            }
+        }
 
-                return View ();
+        public IActionResult PagosRealizadosPorEventoCbo () {
+            ViewBag.Eventos = _context.Eventos.ToList ();
+            return View ();
+        }
+
+        [HttpPost]
+        public IActionResult ListaPagosRealizadosPorEvento (int? idE) {
+
+            if (idE != null) {
+                var lista = _context.Pagos.Include (e => e.Evento).Include (u => u.Participante)
+                    .Where (p => p.EventoId == idE && p.estado_pago == "Cancelado").ToList ();
+                string nombre_evento = "";
+                int contador_participantes = 0;
+                foreach (Pago p in lista) {
+                    nombre_evento = p.Evento.NombreEvento;
+                    contador_participantes++;
+                }
+                TempData["nro_participante"] = contador_participantes;
+                TempData["nom_evento"] = nombre_evento;
+                return View (lista);
+            } else {
+                return NotFound ();
+            }
+        }
+
+        public IActionResult BoletasPorEventoCbo () {
+            ViewBag.Eventos = _context.Eventos.ToList ();
+            return View ();
+        }
+
+        [HttpPost]
+        public IActionResult BoletasPorEvento (int ? idE) {
+            if (idE != null) {
+
+                var info = from pa in _context.Pagos
+                join b in _context.Boletas on pa.BoletaId equals b.Id
+                select pa;
+                var lista = info.Include (e => e.Evento).Include (u => u.Participante).Include(b=>b.Boleta).
+                Where (p => p.EventoId == idE).ToList ();
+
+                /*                 var lista = _context.Pagos.Include (e => e.Evento).Include (u => u.Participante)
+                                    .Where (p => p.EventoId == idE && p.estado_pago == "Cancelado").ToList (); */
+                string nombre_evento = "";
+                int contador_participantes = 0;
+                foreach (Pago p in lista) {
+                    nombre_evento = p.Evento.NombreEvento;
+                    contador_participantes++;
+                }
+                TempData["nro_participante"] = contador_participantes;
+                TempData["nom_evento"] = nombre_evento;
+                return View (lista);
             } else {
                 return NotFound ();
             }
