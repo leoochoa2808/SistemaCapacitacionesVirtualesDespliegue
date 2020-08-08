@@ -2,7 +2,10 @@
     var idevento = TempData["ide"] as int?;
     var idu = TempData["idusu"] as int?;
 }
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="~/css/detalle.css">
+<link rel="stylesheet" href="~/css/main.css"/>
 
 @model Evento
 <body>
@@ -36,17 +39,24 @@
 				            </div>    <br><br>
                     <div class="bottom-wrap">
                                     <a  asp-controller="Inscripcion"
-                                        asp-action="PreInscripcionCursos"
+                                        asp-action="PreInscribir"
                                         asp-route-idE="@idevento"
                                         asp-route-idU="@idu" id="but"
-                                        class="button large"
-                                        data-toggle="modal" data-target="#myModal">Pre inscripción</a>
-                                   <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-
-
-      
+                                        class="button large">Pre inscripción</a>
+    <!-- Modal -->
+    
+                    </div>
+                </div></center>		
+                		
+			</section>
+						
+		</div>
+        <br><br>          
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+</body>
+@* <div class="modal fade" id="myModal" role="dialog">
+<div class="modal-dialog">      
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
@@ -60,18 +70,6 @@
           <a method="get" asp-controller="Inscripcion" asp-action="PreInscripcionCursos" type="button" class="btn btn-default">Cursos PreInscritos</a>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
-      </div>
-      
+      </div>      
     </div>
-  </div>
-                    </div>
-                </div></center>				
-			</section>
-						
-		</div>
-        <br><br>
-
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
-</body>
+  </div> *@
