@@ -28,9 +28,12 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
             ViewBag.Message = UsuarioController.MsjUsu;
             ViewBag.Rol = UsuarioController.Rol_usu;
             if (ModelState.IsValid) {
-                e.estado = "Pendiente";
-                _context.Add (e);
-                _context.SaveChanges ();
+                if (e.FechaInicio > DateTime.Now && e.FechaInicio < e.FechaFin) {
+                    e.estado = "Pendiente";
+                    _context.Add (e);
+                    _context.SaveChanges ();
+                }
+
                 return RedirectToAction ("Index", "Home");
             } else
                 return View (e);
