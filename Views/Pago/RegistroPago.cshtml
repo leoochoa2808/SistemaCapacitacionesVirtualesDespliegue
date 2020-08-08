@@ -1,0 +1,86 @@
+@{
+    var monto = TempData["MontoPago"] as double?;
+}
+
+@model Tarjeta
+
+<body>
+
+    <section class="wrapper style1">
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-4 col-12-narrower">
+								<div id="sidebar">
+
+									<!-- Sidebar -->
+
+										<section>
+                                            <center><h3>Pagos en ABC</h3></center>
+											
+											<p>Los administrados de ABc, le ofrecemos facilidades para realizar su pago de manera rapida y segura.</p>
+
+                                            <div class="col-5 col-12-mobilep">
+                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQKzFFPx7kfH2gfY7yaJudhBNgYfkXdAN3qh-WethppMjovRCHcFZ_h1YOSM2maqz0kBioqGctT5zq9qgiJCRu3Zol9zKlDs21gRuF-&usqp=CAU&ec=45687381" class="img-fluid">
+										    </div>
+                                            
+										</section>
+
+										
+
+								</div>
+							</div>
+							<div class="col-8 col-12-narrower imp-narrower">
+								<div id="content">
+			
+									<section class="col-8 col-12-narrower">
+										
+											<center><h2>Pago</h2></center><br>					
+										
+                                        <form>
+                                          <div class="row gtr-50">
+									        
+                                            <div class="col-8 col-12-mobilep">
+                                                <label class="col-12 col-12-mobilep">Numero de Tarjeta</label>
+											    <input asp-for="NroTarjeta" type="text" id="name" placeholder="Ingresar numero">
+										    </div>
+
+										    <div class="col-6 col-12-mobilep">
+                                                <label class="col-4 col-12-mobilep">Fecha de Expiracion</label>
+											    <input asp-for="FechaVenc_Tarjeta" type="date"  id="name" placeholder="Fecha de vencimiento" />
+										    </div>
+                                            <div class="col-6 col-12-mobilep">
+                                                <label class="col-3 col-12-mobilep">CVV</label>
+											    <input asp-for="CVV" type="text" id="name" placeholder="CVV" />
+										    </div>
+
+                                            <div class="col-8 col-12-mobilep">
+                                                <label class="col-12 col-12-mobilep">Direccion</label>
+											    <input asp-for="Direccion" type="text" id="name" placeholder="Ingresar direccion">
+										    </div>
+
+                                            <div class="col-6 col-12-mobilep">
+                                                <label class="col-4 col-12-mobilep">Celular</label>
+											    <input asp-for="Cel_Contacto" type="text"  id="name" placeholder="Celular" />
+										    </div>
+                                            <div class="col-6 col-12-mobilep">
+                                                <label class="col-3 col-12-mobilep">Monto a Pagar</label>
+											    <input asp-for="monto_total" type="text" id="name" placeholder="@monto" disabled/>
+										    </div>
+
+										    <div class="col-12">
+											    <br>
+                                                    <a asp-controller="Pago" asp-action="RegistroPagoCurso" class="button">Pagar Ahora</a>
+                                                    <a method="get" asp-controller="Inscripcion" asp-action="PreInscripcionCursos" class="button">Cancelar</a>
+										    </div>
+                                          </div>
+								        </form>
+
+									
+								    </section>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+</body>
