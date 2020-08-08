@@ -10,7 +10,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
 namespace SistemadeCapacitacionesVirtuales.Migrations
 {
     [DbContext(typeof(KleerDbContext))]
-    [Migration("20200807051547_InitialCreate")]
+    [Migration("20200808031531_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,6 +29,8 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                     b.Property<int>("cod_boleta");
 
                     b.Property<DateTime>("fec_emi");
+
+                    b.Property<double>("monto_pagado");
 
                     b.HasKey("Id");
 
