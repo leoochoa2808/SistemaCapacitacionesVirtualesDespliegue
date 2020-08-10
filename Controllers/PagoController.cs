@@ -125,7 +125,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 var info = from pa in _context.Pagos
                 join b in _context.Boletas on pa.BoletaId equals b.Id
                 select pa;
-                var lista = info.Include (e => e.Evento).Include (u => u.Participante).Include(b=>b.Boleta).
+                var lista = info.Include (e => e.Evento).Include (u => u.Participante).Include (b => b.Boleta).
                 Where (p => p.EventoId == idE).ToList ();
 
                 /*                 var lista = _context.Pagos.Include (e => e.Evento).Include (u => u.Participante)
@@ -142,6 +142,34 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
             } else {
                 return NotFound ();
             }
+        }
+
+        public IActionResult BoletaDetalle (int? idU) {
+            /* var datos = from b in _context.Boletas 
+            join pa in _context.Pagos 
+            on b.Id equals pa.BoletaId where pa.ParticipanteId == idU select b; */
+            var datos = from pa in _context.Pagos
+            join b in _context.Boletas on pa.BoletaId equals b.Id
+            where pa.ParticipanteId == idU select pa;
+            var lista = datos.Include (b => b.Boleta).Include (p => p.Participante).Include (e => e.Evento).ToList ();
+            int c_boleta = 1;
+            foreach (Pago p in lista) {
+                if (c_boleta == lista.Count()) {
+                    lista.Count();
+                    p.Boleta.cod_boleta = p.Boleta.cod_boleta;
+                    p.Boleta.monto_pagado = p.Boleta.monto_pagado;
+                    p.Participante.PrimerNombre = p.Participante.PrimerNombre;
+                    c_boleta++;
+                } else {
+                    p.Boleta.cod_boleta = 0;
+                    p.Boleta.monto_pagado = 0;
+                    p.Participante.PrimerNombre = "";
+                    c_boleta++;
+                }
+                /*                 ViewBag.Contador = c_boleta; */
+            }
+            return View (lista);
+
         }
 
     }

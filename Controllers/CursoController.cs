@@ -14,7 +14,6 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         public CursoController (KleerDbContext context) {
             _context = context;
         }
-        public static int idEvento;
         public IActionResult Cursos () {
             ViewBag.Message = UsuarioController.MsjUsu;
             ViewBag.Rol = UsuarioController.Rol_usu;
