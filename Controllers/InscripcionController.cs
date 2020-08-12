@@ -48,7 +48,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 msg.Body =
                     "<body>" +
                     "<div id='msg'><p>SE HA REALIZADO SU PREINSCRIPCION CON EL SIGUIENTE CÓDIGO DE PAGO: </p><br><strong><h1>" + codigo + "</h1><strong></div><br>" +
-                    "<div>Monto a Pagar</div>" + evento.Inversion +
+                    "<div>Monto a Pagar por el Curso de:</div>" +evento.NombreEvento +"  "+ evento.Inversion +
                     "</body>";
                 msg.BodyEncoding = System.Text.Encoding.UTF8;
                 msg.IsBodyHtml = true;
