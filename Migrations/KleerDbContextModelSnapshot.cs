@@ -26,9 +26,13 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
 
                     b.Property<int>("cod_boleta");
 
+                    b.Property<string>("cursos_detalle");
+
                     b.Property<DateTime>("fec_emi");
 
                     b.Property<double>("monto_pagado");
+
+                    b.Property<string>("montocursos_detalle");
 
                     b.HasKey("Id");
 

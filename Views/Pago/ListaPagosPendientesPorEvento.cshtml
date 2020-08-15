@@ -1,25 +1,29 @@
 @{
-    var evento = TempData["nom_evento"] as string;
-	var cantidad = TempData["nro_participante"] as int?;
+var evento = TempData["nom_evento"] as string;
+var cantidad = TempData["nro_participante"] as int?;
 }
 
 @model List<Pago>
-	
-	<link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css"
+		href="~/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css"
+		href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
 	<link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
-	<link rel="stylesheet" type="text/css" href="~/vendor/perfect-scrollbar/perfect-scrollbar.css">
+	<link rel="stylesheet" type="text/css"
+		href="~/vendor/perfect-scrollbar/perfect-scrollbar.css">
 	<link rel="stylesheet" type="text/css" href="~/css/tableutil.css">
 	<link rel="stylesheet" type="text/css" href="~/css/tableconfirmados.css">
-	<link rel="stylesheet" href="~/css/main.css"/>
+	<link rel="stylesheet" href="~/css/main.css" />
 
-<div class="limiter">
-	<br><h3 align="center" style="font-size: 40px;">Pagos Pendientes</h3>
+	<div class="limiter">
+		<br><h3 align="center" style="font-size: 40px;">Pagos Pendientes</h3>
 		<div class="container-table100">
-			<div class="row">Nombre Evento: @evento Nro_Participante: @cantidad</div>
 			<div class="wrap-table100">
 				<div class="table100">
+					<div><p align="center">Nombre Evento: @evento </p></div>
+					<div><p align="center">Nro_Boletas: @cantidad</p></div>
 					<table>
 						<thead>
 							<tr class="table100-head">
@@ -31,22 +35,22 @@
 							</tr>
 						</thead>
 						<tbody>
-              @foreach (var p in Model){
-								<tr>
-									<td class="column">@p.Participante.PrimerNombre</td>
-									 <td class="column">@p.Participante.Correo</td> 
-									<td class="column">@p.Evento.Inversion</td>
-									<td class="column">@p.estado_pago</td>
-									<td class="column">@p.Evento.FechaInicio</td>
-								</tr>}										
+							@foreach (var p in Model){
+							<tr>
+								<td class="column">@p.Participante.PrimerNombre</td>
+								<td class="column">@p.Participante.Correo</td>
+								<td class="column">@p.Evento.Inversion</td>
+								<td class="column">@p.estado_pago</td>
+								<td class="column">@p.Evento.FechaInicio</td>
+							</tr>}
 						</tbody>
 					</table>
 				</div>
 			</div>
 		</div>
 	</div>
-<script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
-<script src="~/vendor/bootstrap/js/popper.js"></script>
-<script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="~/vendor/select2/select2.min.js"></script>
-<script src="~/js/table.js"></script>
+	<script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="~/vendor/bootstrap/js/popper.js"></script>
+	<script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="~/vendor/select2/select2.min.js"></script>
+	<script src="~/js/table.js"></script>
