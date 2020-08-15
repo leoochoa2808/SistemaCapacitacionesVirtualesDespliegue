@@ -49,7 +49,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
 
         public IActionResult MarcarAsistencia(int? idP, int? idE){
 
-            if (idP != null) {
+            if (idP != null && idE!=null) {
                 ViewBag.Message = UsuarioController.MsjUsu;
                 ViewBag.Rol = UsuarioController.Rol_usu;
 
@@ -65,7 +65,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 return RedirectToAction ("AsistenciaPorEvento");
 
             }
-            return View ("AsistenciaPorEvento");
+            return RedirectToAction ("AsistenciaPorEvento");
 
         }
 
