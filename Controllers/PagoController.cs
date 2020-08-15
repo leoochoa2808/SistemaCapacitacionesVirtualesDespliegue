@@ -70,7 +70,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                         pa.estado_pago = "Cancelado";
                         pa.BoletaId = boleta.Id;
                         _context.Entry (pa).State = EntityState.Modified;
-                        _context.SaveChanges (); 
+                        _context.SaveChanges ();
                     }
                 }
 
@@ -164,28 +164,32 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         }
 
         public IActionResult BoletaDetalle (int? idU) {
-            /* var datos = from b in _context.Boletas 
-            join pa in _context.Pagos 
+            /* var datos = from b in _context.Boletas
+            join pa in _context.Pagos
             on b.Id equals pa.BoletaId where pa.ParticipanteId == idU select b; */
-            var datos = from pa in _context.Pagos
+            /* var datos = from pa in _context.Pagos
             join b in _context.Boletas on pa.BoletaId equals b.Id
-            where pa.ParticipanteId == idU select pa;
-            var lista = datos.Include (b => b.Boleta).Include (p => p.Participante).Include (e => e.Evento).Distinct().ToList ();
-            int c_boleta = 1;
-            
+            where pa.ParticipanteId == idU select pa; */
+            var datos = (from pa in _context.Pagos
+            join b in _context.Boletas on pa.BoletaId equals b.Id
+            where pa.ParticipanteId == idU select pa).Distinct();
+
+            var lista = datos.Include (b => b.Boleta).Include (p => p.Participante).ToList();
+            /* var lista = datos.Distinct ().ToList (); */
+
             string[] c_d;
             string[] mc_d;
 
             foreach (Pago p in lista) {
-                    p.Boleta.cod_boleta = p.Boleta.cod_boleta;
-                    c_d = p.Boleta.cursos_detalle.Split(',');
-                    p.Boleta.cursos_detalle = Convert.ToString(c_d);
-                    mc_d = p.Boleta.montocursos_detalle.Split(',');
-                    p.Boleta.montocursos_detalle = Convert.ToString(mc_d);
-                    p.Boleta.monto_pagado = p.Boleta.monto_pagado;
-                    p.Participante.PrimerNombre = p.Participante.PrimerNombre;
-                    c_boleta++;
+                p.Boleta.cod_boleta = p.Boleta.cod_boleta;
+                c_d = p.Boleta.cursos_detalle.Split (',');
+                mc_d = p.Boleta.montocursos_detalle.Split (',');
+                p.Boleta.monto_pagado = p.Boleta.monto_pagado;
+                p.Participante.PrimerNombre = p.Participante.PrimerNombre;
+                ViewBag.cd = c_d;
+                ViewBag.mc = mc_d;
             }
+
             return View (lista);
 
         }

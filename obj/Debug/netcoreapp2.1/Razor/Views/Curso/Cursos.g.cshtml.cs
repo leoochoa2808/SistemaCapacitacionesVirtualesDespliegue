@@ -67,7 +67,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
             WriteLiteral("  \r\n<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\r\n\r\n");
             EndContext();
             BeginContext(290, 1071, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a9bd73a2f5104523905ee12d2a4b06dd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c473b472255a4810bde712d401a6289b", async() => {
                 BeginContext(296, 227, true);
                 WriteLiteral("\r\n  <div class=\"container\" style=\"padding-top:10px\">\r\n            <header class=\"major\">\r\n\t\t\t\t\t\t\t\t<br><center><h2 class=\"letra\">Desarrollo de Software</h2><center><br>\r\n            </header>    \r\n      <div class=\"card-deck\">\r\n");
                 EndContext();
@@ -140,7 +140,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
                 WriteLiteral("</p>\r\n            ");
                 EndContext();
                 BeginContext(1110, 164, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "de636eb2ef1f4b0eb58f36cdb8dcca55", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "96088bfa257f4a04b8dc55937cfd4875", async() => {
                     BeginContext(1267, 3, true);
                     WriteLiteral("Ver");
                     EndContext();
