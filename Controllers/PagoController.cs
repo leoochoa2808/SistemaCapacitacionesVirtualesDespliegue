@@ -164,28 +164,22 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         }
 
         public IActionResult BoletaDetalle (int? idU) {
-            /* var datos = from b in _context.Boletas
+            var datos = (from b in _context.Boletas
             join pa in _context.Pagos
-            on b.Id equals pa.BoletaId where pa.ParticipanteId == idU select b; */
+            on b.Id equals pa.BoletaId where pa.ParticipanteId == idU select b).Distinct();
             /* var datos = from pa in _context.Pagos
             join b in _context.Boletas on pa.BoletaId equals b.Id
             where pa.ParticipanteId == idU select pa; */
-            var datos = (from pa in _context.Pagos
-            join b in _context.Boletas on pa.BoletaId equals b.Id
-            where pa.ParticipanteId == idU select pa).Distinct();
 
-            var lista = datos.Include (b => b.Boleta).Include (p => p.Participante).ToList();
+            var lista = datos.ToList();
             /* var lista = datos.Distinct ().ToList (); */
 
             string[] c_d;
             string[] mc_d;
 
-            foreach (Pago p in lista) {
-                p.Boleta.cod_boleta = p.Boleta.cod_boleta;
-                c_d = p.Boleta.cursos_detalle.Split (',');
-                mc_d = p.Boleta.montocursos_detalle.Split (',');
-                p.Boleta.monto_pagado = p.Boleta.monto_pagado;
-                p.Participante.PrimerNombre = p.Participante.PrimerNombre;
+            foreach (Boleta b in lista) {
+                c_d = b.cursos_detalle.Split (',');
+                mc_d = b.montocursos_detalle.Split (',');
                 ViewBag.cd = c_d;
                 ViewBag.mc = mc_d;
             }

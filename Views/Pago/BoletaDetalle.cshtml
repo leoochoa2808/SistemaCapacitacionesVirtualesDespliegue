@@ -3,7 +3,7 @@ var evento = TempData["nom_evento"] as string;
 var cantidad = TempData["nro_participante"] as int?;
 }
 
-@model List<Pago>
+@model List<Boleta>
 
     <link rel="stylesheet" type="text/css"
         href="~/vendor/bootstrap/css/bootstrap.min.css">
@@ -36,17 +36,17 @@ var cantidad = TempData["nro_participante"] as int?;
                         <tbody>
                             @foreach (var p in Model){
                             <tr>
-                                <td class="column">@p.Boleta.cod_boleta</td>
+                                <td class="column">@p.cod_boleta</td>
                                 @foreach (var c in ViewBag.cd)
                                 {
-                                    <td class="column">@c <br></td>
+                                <td class="column">@c <br></td>
                                 }
                                 @foreach (var m in ViewBag.mc)
                                 {
-                                    <td class="column">@m <br></td>
+                                <td class="column">@m <br></td>
                                 }
-                                <td class="column">@p.Boleta.fec_emi</td>
-                                <td class="column">@p.Boleta.montocursos_detalle</td>
+                                <td class="column">@p.fec_emi</td>
+                                <td class="column">@p.montocursos_detalle</td>
                             </tr>}
                         </tbody>
                     </table>
