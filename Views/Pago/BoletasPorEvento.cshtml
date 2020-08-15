@@ -5,7 +5,8 @@
 
 @model List<Pago>
 	
-	<link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
 	<link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
@@ -15,12 +16,33 @@
 	<link rel="stylesheet" href="~/css/main.css"/>
 
 <div class="limiter">
+	
 	<br><h3 align="center" style="font-size: 40px;">Boletas</h3>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9">
+						<ul class="list-group">
+							<li class="list-group-item" style="font-weight:bold; text-align:center;">
+								@evento				
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<ul class="list-group">
+							<li class="list-group-item d-flex justify-content-between align-items-center">
+								Nro. Boletas: 
+								<span class="badge badge-primary badge-pill">@cantidad</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		<div class="container-table100">
 			<div class="wrap-table100">
-				<div class="table100">
-					<div><p align="center">Nombre Evento: @evento </p></div>
-					<div><p align="center">Nro_Boletas: @cantidad</p></div>
+				<div class="table100">	
+
+									
+					
 					<table>
 						<thead>
 							<tr class="table100-head">
@@ -46,6 +68,7 @@
 			</div>
 		</div>
 	</div>
+	
 <script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
 <script src="~/vendor/bootstrap/js/popper.js"></script>
 <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>

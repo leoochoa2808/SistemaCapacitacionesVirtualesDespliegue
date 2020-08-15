@@ -117,7 +117,8 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
 
             if (idE != null) {
                 var lista = _context.Pagos.Include (e => e.Evento).Include (u => u.Participante)
-                    .Where (p => p.EventoId == idE && p.estado_pago == "Cancelado").ToList ();
+                    .Where (p => p.EventoId == idE && p.estado_pago == "Cancelado").ToList(); 
+
                 string nombre_evento = "";
                 int contador_participantes = 0;
                 foreach (Pago p in lista) {

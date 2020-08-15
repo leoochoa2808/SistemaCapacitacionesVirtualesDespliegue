@@ -12,6 +12,8 @@ namespace Sistema_de_Capacitaciones_Virtuales.Models
         [Required]
         public string NombreEvento { get; set; }
         //[DataType(DataType.Date)]
+        // [DataType(DataType.Date)]
+        // [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? FechaInicio { get; set; }
         //[DataType(DataType.Date)]
         public DateTime? FechaFin {get; set;}
