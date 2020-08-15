@@ -65,14 +65,15 @@
                         <div class="col-md-3 p-2 mt-4">
                             <center><a style="border-color:white;" class="btn"
                                     href="~/Curso/Cursos"><i id="carrito"
-                                        class="fa fa-arrow-left"></i> Seguir
-                                    comprando</a></center>
+                                        class="fa fa-arrow-left"></i> Volver atras</a></center>
                         </div>
                         <div class="col-md-3 p-2 mt-4">
                             <center><a style="border-color:white;" class="btn"
-                                    href="~/Carritos/Pagar"><i id="carrito"
+                                    asp-controller="Pago"
+                                    asp-action="BoletaDetalle"
+                                    asp-route-idU="@idusu"><i id="carrito"
                                         class="fa fa-check-square-o"></i>
-                                        Comprar</a></center>
+                                        Ver Boleta</a></center>
                         </div>
                         <div class="col-md-3 p-2 mt-4" style="font-weight:
                             lighter; text-align:center;">
