@@ -70,7 +70,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(74, 4941, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ccf7fda1c8bf4a9ea8828d8cd14559b3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2decc33e94f4db5b5093b2b7aa284a3", async() => {
                 BeginContext(80, 235, true);
                 WriteLiteral("\r\n\r\n            \r\n            <div class=\"container col-md-9\" style=\"padding-top: 50px;\" id=\"slider\">\r\n                <center><h1 style=\" font-size: 35px\">Cursos Inscritos</h1></center>\r\n                <div class=\"row ml-4 pl-4\">\r\n\r\n");
                 EndContext();
@@ -128,7 +128,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
                 WriteLiteral("</div>\r\n                        </div>\r\n                        <div class=\"col-3 col-12-mobilep\"><br><br>\r\n                            <center>");
                 EndContext();
                 BeginContext(1537, 244, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2e33abbb5ddc42bb8d298522fe4679b3", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2e18e940719849589d7c9c69def10375", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
@@ -173,7 +173,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
                 WriteLiteral("                         <div class=\"row col-md-12\">\r\n                        <div class=\"col-md-3 p-2 mt-4\">\r\n                            <center>");
                 EndContext();
                 BeginContext(3614, 246, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6a436a914c834f47baa4678df000abd9", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd4884165ef942da815f96578f977cad", async() => {
                     BeginContext(3716, 140, true);
                     WriteLiteral("<i id=\"carrito\"\r\n                                        class=\"fa fa-arrow-left\"></i> Seguir\r\n                                    comprando");
                     EndContext();
@@ -196,7 +196,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
                 WriteLiteral("</center>\r\n                        </div>\r\n                        <div class=\"col-md-3 p-2 mt-4\">\r\n                            <center>");
                 EndContext();
                 BeginContext(3996, 247, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c3a8341ca5f34b09ad25e5a1e19ab872", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "040ffa260d5542609e5e0b221f3502dc", async() => {
                     BeginContext(4100, 139, true);
                     WriteLiteral("<i id=\"carrito\"\r\n                                        class=\"fa fa-check-square-o\"></i>\r\n                                        Comprar");
                     EndContext();

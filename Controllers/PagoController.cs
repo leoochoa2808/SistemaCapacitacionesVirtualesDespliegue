@@ -46,8 +46,6 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 /* foreach (var word in words) {
                     System.Console.WriteLine ($"<{word}>");
                 } */
-                //String value = "curso1,curso2,curso3,";
-                //curso1,curso2,curso3
                 boleta.cursos_detalle = "";
                 boleta.montocursos_detalle = "";
                 boleta.monto_pagado = monto_pagar_boleta;
@@ -172,22 +170,21 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
             var datos = from pa in _context.Pagos
             join b in _context.Boletas on pa.BoletaId equals b.Id
             where pa.ParticipanteId == idU select pa;
-            var lista = datos.Include (b => b.Boleta).Include (p => p.Participante).Include (e => e.Evento).ToList ();
+            var lista = datos.Include (b => b.Boleta).Include (p => p.Participante).Include (e => e.Evento).Distinct().ToList ();
             int c_boleta = 1;
+            
+            string[] c_d;
+            string[] mc_d;
+
             foreach (Pago p in lista) {
-                if (c_boleta == lista.Count ()) {
-                    lista.Count ();
                     p.Boleta.cod_boleta = p.Boleta.cod_boleta;
+                    c_d = p.Boleta.cursos_detalle.Split(',');
+                    p.Boleta.cursos_detalle = Convert.ToString(c_d);
+                    mc_d = p.Boleta.montocursos_detalle.Split(',');
+                    p.Boleta.montocursos_detalle = Convert.ToString(mc_d);
                     p.Boleta.monto_pagado = p.Boleta.monto_pagado;
                     p.Participante.PrimerNombre = p.Participante.PrimerNombre;
                     c_boleta++;
-                } else {
-                    p.Boleta.cod_boleta = 0;
-                    p.Boleta.monto_pagado = 0;
-                    p.Participante.PrimerNombre = "";
-                    c_boleta++;
-                }
-                /*                 ViewBag.Contador = c_boleta; */
             }
             return View (lista);
 

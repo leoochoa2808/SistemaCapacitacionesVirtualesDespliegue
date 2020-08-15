@@ -1,3 +1,9 @@
+D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.csprojAssemblyReference.cache
+D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.csproj.CoreCompileInputs.cache
+D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorAssemblyInfo.cache
+D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorAssemblyInfo.cs
+D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.AssemblyInfoInputs.cache
+D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.AssemblyInfo.cs
 D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.deps.json
 D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.runtimeconfig.json
 D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.runtimeconfig.dev.json
@@ -5,12 +11,6 @@ D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1
 D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.pdb
 D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.Views.dll
 D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\bin\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.Views.pdb
-D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.csprojAssemblyReference.cache
-D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.csproj.CoreCompileInputs.cache
-D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorAssemblyInfo.cache
-D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorAssemblyInfo.cs
-D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.AssemblyInfoInputs.cache
-D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.AssemblyInfo.cs
 D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.TagHelpers.input.cache
 D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.TagHelpers.output.cache
 D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\obj\Debug\netcoreapp2.1\Sistema de Capacitaciones Virtuales.RazorCoreGenerate.cache
