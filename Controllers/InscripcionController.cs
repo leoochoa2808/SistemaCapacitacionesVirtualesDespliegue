@@ -51,7 +51,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                     "<div>Monto a Pagar por el Curso de:</div>" +evento.NombreEvento +"  "+ evento.Inversion +
                     "</body>";
                 msg.BodyEncoding = System.Text.Encoding.UTF8;
-                msg.IsBodyHtml = true;  
+                msg.IsBodyHtml = true;
                 msg.From = new System.Net.Mail.MailAddress ("joseacb2496@gmail.com");
 
                 //EL CORREO QUE VA A ENVIAR EL MENSAJE DE PRUEBA
@@ -104,7 +104,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         }
 
         public IActionResult CursosInscritos () {
-            TempData["idusu"]=iduser;
+            TempData["idusu"] = iduser;
             var usuario = _context.Participantes.SingleOrDefault (u => u.Id == iduser);
             var lista = _context.Pagos.Where (u => u.ParticipanteId == usuario.Id && u.estado_pago == "Cancelado").Include (e => e.Evento).Include (t => t.TipoPago).Include (e => e.Evento.Categoria).ToList ();
             return View (lista);

@@ -1,39 +1,61 @@
-
 @{
 var evento = TempData["nom_evento"] as string;
 var cantidad = TempData["nro_participante"] as int?;
 }
 
 @model List<Boleta>
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css"
+        href="~/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css"
+        href="~/vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="~/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" type="text/css" href="~/css/tableutil.css">
+    <link rel="stylesheet" type="text/css" href="~/css/tableconfirmados.css">
     <link rel="stylesheet" href="~/css/main.css" />
-    <div class="container pt-4" style="width:60%">
-        <div class="shadow p-3 mb-5 bg-white rounded">
-            <h3 class="pt-2" align="center" style="font-size: 40px;">BOLETA DE VENTA</h3>
-            @foreach (var p in Model){
-            <div class="shadow-none p-3 mb-2 bg-light rounded" align="right" style="font-weight:bold"> Nro° Boleta: #@p.cod_boleta</div>
-            <div class="shadow-sm p-2 mb-4 bg-white rounded">Fecha y hora de emisión: @p.fec_emi</div>
-                                <div class="container pl-5 pt-3 row mb-4">
-                                    <div class="col-md-6">
-                                       @foreach (var c in ViewBag.cd)
-                                        {
-                                        <p style="margin:-8px;">@c</p><br>
-                                        } 
-                                    </div>
-                                    <div class="col-md-6" align="right">
-                                        @foreach (var m in ViewBag.mc)
-                                        {
-                                        <p style="margin:-8px;">S/@m.00</p><br>
-                                        }
-                                    </div>
-                                </div>                                         
-            <div class="container card-footer" align="right"><div class="container"><p class="pr-3" style="margin:-8px;">S/@p.monto_pagado.00</p></div></div>
-            }
+
+    <div class="limiter">
+        <br><h3 align="center" style="font-size: 40px;">Pagos Pendientes</h3>
+        <div class="container-table100">
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead>
+                            <tr class="table100-head">
+                                <th class="column">Codigo Boleta</th>
+                                <th class="column">Monto pagado</th>
+                                <th class="column">Costo del EVento</th>
+                                <th class="column">Fecha emision</th>
+                                <th class="column">Fecha inicio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var p in Model){
+                            <tr>
+                                <td class="column">@p.cod_boleta</td>
+                                @foreach (var c in ViewBag.cd)
+                                {
+                                <td class="column">@c <br></td>
+                                }
+                                @foreach (var m in ViewBag.mc)
+                                {
+                                <td class="column">@m <br></td>
+                                }
+                                <td class="column">@p.fec_emi</td>
+                                <td class="column">@p.monto_pagado</td>
+                            </tr>}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    
+    <script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="~/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/vendor/select2/select2.min.js"></script>
+    <script src="~/js/table.js"></script>

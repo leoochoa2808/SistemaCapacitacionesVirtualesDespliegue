@@ -49,10 +49,18 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 boleta.cursos_detalle = "";
                 boleta.montocursos_detalle = "";
                 boleta.monto_pagado = monto_pagar_boleta;
+    
                 //recorremos el listado de pagoss
                 foreach (Pago p in pagos) {
+                    //inicializo la tabla con 2 FK
+                    var t_part_even = new Participante_Evento();
                     var eventos = _context.Eventos.SingleOrDefault (e => e.Id == p.EventoId);
                     if (eventos != null) {
+                        t_part_even.EventoId = eventos.Id;
+                        t_part_even.ParticipanteId = iduser;
+                        t_part_even.Comentario = "Pendiente";
+                        _context.Add(t_part_even);
+                        _context.SaveChanges();
                         /* boleta.cursos_detalle = boleta.cursos_detalle + p.Evento.NombreEvento + ","; */
                         boleta.cursos_detalle = boleta.cursos_detalle + eventos.NombreEvento + ",";
                         boleta.montocursos_detalle = boleta.montocursos_detalle + eventos.Inversion + ",";

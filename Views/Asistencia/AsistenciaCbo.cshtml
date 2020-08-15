@@ -1,0 +1,36 @@
+@model Evento
+
+<body>
+
+    <div class="container" style="padding-bottom: 10%; padding-right:10%; padding-left:10%; padding-top:2%;">						
+            <section  class="col-8 col-12-narrower">
+								<h3 align="center" style="font-size: 40px;">Asistencia de Participantes por Evento</h3>
+								<form method="post" >
+									<div class="row gtr-50">
+										<div class="col-12 col-12-mobilep">
+                                        <label class="col-12 col-12-mobilep">Nombre del Evento</label>
+										</div>
+                    <div class="col-8 col-12-mobilep">
+                       <select type="combx" name="idE" id="name">
+                            <option value="">--- Seleccionar Evento</option>
+                         @foreach(var ev in (List<Evento>)ViewBag.Eventos)
+                           {
+                            <option name="combx" value="@ev.Id">@ev.NombreEvento</option>
+                            }                                                                                                                    
+                      </select>										
+                    </div>
+            
+                            <div class="col-12">
+                                <ul class="actions">
+                                    <li><input type="submit" asp-Controller="Asistencia" asp-action="AsistenciaPorEvento" class="button alt create" value="Buscar" /></li>
+                                </ul>
+                            </div>
+									</div>
+								</form>
+        </section>
+						
+    </div>
+    
+    <br><br>
+          
+</body>
