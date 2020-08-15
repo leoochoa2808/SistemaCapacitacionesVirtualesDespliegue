@@ -104,7 +104,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         }
 
         public IActionResult CursosInscritos () {
-
+            TempData["idusu"] = iduser;
             var usuario = _context.Participantes.SingleOrDefault (u => u.Id == iduser);
             var lista = _context.Pagos.Where (u => u.ParticipanteId == usuario.Id && u.estado_pago == "Cancelado").Include (e => e.Evento).Include (t => t.TipoPago).Include (e => e.Evento.Categoria).ToList ();
             return View (lista);
