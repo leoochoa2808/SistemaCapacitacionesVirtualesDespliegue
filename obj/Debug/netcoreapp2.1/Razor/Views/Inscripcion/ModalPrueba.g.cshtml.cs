@@ -50,7 +50,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             BeginContext(0, 1181, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "afa81684c5b3450982c566a7f7250679", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0a536528136240c28c67cbabb6f93b22", async() => {
                 BeginContext(6, 1168, true);
                 WriteLiteral(@"
 <div class=""container"">

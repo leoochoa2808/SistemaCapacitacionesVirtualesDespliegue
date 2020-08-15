@@ -65,7 +65,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(17, 1585, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3d63bf80f91b4ea9b21969570e4a7246", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a4d4fd97c7a446908d43a1f6afd35a5c", async() => {
                 BeginContext(23, 267, true);
                 WriteLiteral(@"
 
@@ -75,7 +75,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
 								");
                 EndContext();
                 BeginContext(290, 1231, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0c19341cd16e4ea6859589ba8b55c075", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0dccd3d0eb3848fcaa89aee523a00417", async() => {
                     BeginContext(311, 357, true);
                     WriteLiteral(@"
 									<div class=""row gtr-50"">
@@ -87,7 +87,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
                             ");
                     EndContext();
                     BeginContext(668, 48, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ecbf1026e3d4041acf2b05ec2215bc8", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4e6fcf9404774a5d8a638358b2ef382a", async() => {
                         BeginContext(685, 22, true);
                         WriteLiteral("--- Seleccionar Evento");
                         EndContext();
@@ -118,7 +118,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
                     WriteLiteral("                            ");
                     EndContext();
                     BeginContext(852, 61, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "15eacafb15c244ab9770ace8ba1657d3", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8509857f4f134971a4750c8d6d31d8a6", async() => {
                         BeginContext(889, 15, false);
 #line 18 "D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\Views\Pago\BoletasPorEventoCbo.cshtml"
                                                            Write(ev.NombreEvento);
@@ -160,7 +160,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
                     WriteLiteral("                      </select>\t\t\t\t\t\t\t\t\t\t\r\n                    </div>\r\n            \r\n                            <div class=\"col-12\">\r\n                                <ul class=\"actions\">\r\n                                    <li>");
                     EndContext();
                     BeginContext(1291, 116, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a4d0a9ff824e4506a88779b7cd6b7a48", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d030cd8dcf274723ac5c09faaf24ca3e", async() => {
                     }
                     );
                     __Microsoft_AspNetCore_Mvc_TagHelpers_FormActionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormActionTagHelper>();

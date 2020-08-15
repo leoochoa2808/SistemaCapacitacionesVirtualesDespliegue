@@ -65,7 +65,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(17, 1607, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b85b52d75a714606910e879fdd0d75ca", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98087b75376b4077ab8c0db4f56f4fe0", async() => {
                 BeginContext(23, 276, true);
                 WriteLiteral(@"
 
@@ -75,7 +75,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
 								");
                 EndContext();
                 BeginContext(299, 1244, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c1551033747e4747887644c2d92016b8", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "745f9065ebe549f682853c03fdd71490", async() => {
                     BeginContext(320, 357, true);
                     WriteLiteral(@"
 									<div class=""row gtr-50"">
@@ -87,7 +87,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
                             ");
                     EndContext();
                     BeginContext(677, 48, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b597c4f35faa4395b0718c56e6b67b4f", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c9d43ba2b67948778b923bb89a813e23", async() => {
                         BeginContext(694, 22, true);
                         WriteLiteral("--- Seleccionar Evento");
                         EndContext();
@@ -118,7 +118,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
                     WriteLiteral("                            ");
                     EndContext();
                     BeginContext(861, 61, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ae304c7b6f849c6885e88b4482dd39b", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8afb52f6369e45c59500785d507fd3a3", async() => {
                         BeginContext(898, 15, false);
 #line 18 "D:\sw2 - rama master\Sistema de Capacitaciones Virtuales\Views\Pago\PagosPendientesPorEventoCbo.cshtml"
                                                            Write(ev.NombreEvento);
@@ -160,7 +160,7 @@ using Sistema_de_Capacitaciones_Virtuales.Models;
                     WriteLiteral("                      </select>\t\t\t\t\t\t\t\t\t\t\r\n                    </div>\r\n            \r\n                            <div class=\"col-12\">\r\n                                <ul class=\"actions\">\r\n                                    <li>");
                     EndContext();
                     BeginContext(1300, 129, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "84060de082024854af4513366474f2bc", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ec400efd50eb470a9969d40ff197770b", async() => {
                     }
                     );
                     __Microsoft_AspNetCore_Mvc_TagHelpers_FormActionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormActionTagHelper>();

@@ -41,17 +41,38 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 }
                 boleta.cod_boleta = codigo_boleta;
                 boleta.fec_emi = DateTime.Now;
+                /*                 boleta.cursos_detalle = "CURSO1,CURSO2,CURSO3,"; */
+                //funcion split para separar los cursos usando una coma CUACKIZI WAS HERE 
+                /* foreach (var word in words) {
+                    System.Console.WriteLine ($"<{word}>");
+                } */
+                //String value = "curso1,curso2,curso3,";
+                //curso1,curso2,curso3
+                boleta.cursos_detalle = "";
+                boleta.montocursos_detalle = "";
                 boleta.monto_pagado = monto_pagar_boleta;
-                _context.Add (boleta);
-                _context.SaveChanges ();
                 //recorremos el listado de pagoss
                 foreach (Pago p in pagos) {
-                    if (p.estado_pago == "Pago Pendiente") {
+                    var eventos = _context.Eventos.SingleOrDefault (e => e.Id == p.EventoId);
+                    if (eventos != null) {
+                        /* boleta.cursos_detalle = boleta.cursos_detalle + p.Evento.NombreEvento + ","; */
+                        boleta.cursos_detalle = boleta.cursos_detalle + eventos.NombreEvento + ",";
+                        boleta.montocursos_detalle = boleta.montocursos_detalle + eventos.Inversion + ",";
+                    }
+                }
+                boleta.cursos_detalle = boleta.cursos_detalle.Substring (0, boleta.cursos_detalle.Length - 1);
+                boleta.montocursos_detalle = boleta.montocursos_detalle.Substring (0, boleta.montocursos_detalle.Length - 1);
+                /* Console.WriteLine (substring); */
+                _context.Add (boleta);
+                _context.SaveChanges ();
+                foreach (Pago pa in pagos) {
+
+                    if (pa.estado_pago == "Pago Pendiente") {
                         /* DateTime.Today.ToString("dd-MM-yyyy"); */
-                        p.estado_pago = "Cancelado";
-                        p.BoletaId = boleta.Id;
-                        _context.Entry (p).State = EntityState.Modified;
-                        _context.SaveChanges ();
+                        pa.estado_pago = "Cancelado";
+                        pa.BoletaId = boleta.Id;
+                        _context.Entry (pa).State = EntityState.Modified;
+                        _context.SaveChanges (); 
                     }
                 }
 
@@ -154,8 +175,8 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
             var lista = datos.Include (b => b.Boleta).Include (p => p.Participante).Include (e => e.Evento).ToList ();
             int c_boleta = 1;
             foreach (Pago p in lista) {
-                if (c_boleta == lista.Count()) {
-                    lista.Count();
+                if (c_boleta == lista.Count ()) {
+                    lista.Count ();
                     p.Boleta.cod_boleta = p.Boleta.cod_boleta;
                     p.Boleta.monto_pagado = p.Boleta.monto_pagado;
                     p.Participante.PrimerNombre = p.Participante.PrimerNombre;
