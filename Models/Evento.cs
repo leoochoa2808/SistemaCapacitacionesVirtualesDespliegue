@@ -9,8 +9,11 @@ namespace Sistema_de_Capacitaciones_Virtuales.Models
         public int Id { get; set; }
         public Categoria Categoria { get; set; }
         public int? CategoriaId { get; set; }
+        [Required]
         public string NombreEvento { get; set; }
         //[DataType(DataType.Date)]
+        // [DataType(DataType.Date)]
+        // [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? FechaInicio { get; set; }
         //[DataType(DataType.Date)]
         public DateTime? FechaFin {get; set;}

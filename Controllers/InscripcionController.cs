@@ -25,7 +25,8 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
             var usuario = _context.Participantes.FirstOrDefault (p => p.Id == idU);
             var destino_correo = usuario.Correo;
             iduser = usuario.Id;
-            if (usuario != null || evento != null) {
+            /* idevento = evento.Id; */
+            if (usuario != null && evento != null) {
                 int longitud = 7;
                 const string alfabeto = "0123456789"; //"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
                 StringBuilder token = new StringBuilder ();
@@ -47,10 +48,10 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                 msg.Body =
                     "<body>" +
                     "<div id='msg'><p>SE HA REALIZADO SU PREINSCRIPCION CON EL SIGUIENTE CÓDIGO DE PAGO: </p><br><strong><h1>" + codigo + "</h1><strong></div><br>" +
-                    "<div>Monto a Pagar</div>" + evento.Inversion +
+                    "<div>Monto a Pagar por el Curso de:</div>" +evento.NombreEvento +"  "+ evento.Inversion +
                     "</body>";
                 msg.BodyEncoding = System.Text.Encoding.UTF8;
-                msg.IsBodyHtml = true;
+                msg.IsBodyHtml = true;  
                 msg.From = new System.Net.Mail.MailAddress ("joseacb2496@gmail.com");
 
                 //EL CORREO QUE VA A ENVIAR EL MENSAJE DE PRUEBA
@@ -103,7 +104,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
         }
 
         public IActionResult CursosInscritos () {
-
+            TempData["idusu"]=iduser;
             var usuario = _context.Participantes.SingleOrDefault (u => u.Id == iduser);
             var lista = _context.Pagos.Where (u => u.ParticipanteId == usuario.Id && u.estado_pago == "Cancelado").Include (e => e.Evento).Include (t => t.TipoPago).Include (e => e.Evento.Categoria).ToList ();
             return View (lista);

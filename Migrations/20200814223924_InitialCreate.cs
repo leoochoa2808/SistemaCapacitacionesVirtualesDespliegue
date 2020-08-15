@@ -16,6 +16,8 @@ namespace SistemadeCapacitacionesVirtuales.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     cod_boleta = table.Column<int>(nullable: false),
                     fec_emi = table.Column<DateTime>(nullable: false),
+                    cursos_detalle = table.Column<string>(nullable: true),
+                    montocursos_detalle = table.Column<string>(nullable: true),
                     monto_pagado = table.Column<double>(nullable: false)
                 },
                 constraints: table =>

@@ -47,7 +47,7 @@ namespace Sistema_de_Capacitaciones_Virtuales.Controllers {
                     } else if (gest.Rol == "Recepcionista") {
                         Rol_usu = "Recepcionista";
                     } else {
-                        Rol_usu = "Gestor de Finanzas";
+                        Rol_usu = "GestorFinanzas";
                     }
                     return RedirectToAction ("Index", "Home");
                 }
